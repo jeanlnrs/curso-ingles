@@ -472,6 +472,58 @@
     cursor: pointer;
     color: var(--ink-soft);
   }
+
+  .eyebrow-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+
+  .lesson-link {
+    background: transparent;
+    border: 1px solid var(--line);
+    border-radius: 20px;
+    padding: 4px 12px;
+    font-size: 0.78rem;
+    font-weight: 600;
+    cursor: pointer;
+    color: var(--accent-2);
+    white-space: nowrap;
+  }
+
+  .lesson-link:hover { background: var(--surface-2); }
+
+  .lesson-content {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    font-size: 0.98rem;
+    line-height: 1.55;
+  }
+
+  .lesson-content p { margin: 0; }
+  .lesson-content b { color: var(--accent-2); }
+
+  .table-scroll { overflow-x: auto; }
+
+  .lesson-table {
+    border-collapse: collapse;
+    font-size: 0.88rem;
+    min-width: max-content;
+  }
+
+  .lesson-table th, .lesson-table td {
+    border: 1px solid var(--line);
+    padding: 6px 12px;
+    text-align: left;
+  }
+
+  .lesson-table th {
+    background: var(--surface-2);
+    font-family: "Segoe UI Semibold", "Segoe UI", sans-serif;
+  }
 </style>
 
 <div class="app">
@@ -502,6 +554,10 @@
     {
       id: "nouns", num: "1-2", category: "Sustantivos y artículos", title: "Nouns y plurales",
       truco: "Regla general: suma -s. Con -s/-x/-ch/-sh suma -es. Consonante+y → -ies. Y ojo con los irregulares: man→men, child→children, foot→feet.",
+      lesson: "<p><b>Noun</b> = sustantivo. Nombra personas, animales, lugares, cosas o ideas: book, dog, teacher, school.</p>" +
+        "<p><b>Plural:</b> regla general +s (book → books). Terminadas en -s/-x/-ch/-sh suman -es (bus → buses). Consonante + y → -ies (baby → babies).</p>" +
+        "<p><b>Irregulares:</b> man→men, woman→women, child→children, person→people, foot→feet, tooth→teeth, mouse→mice.</p>" +
+        "<p><b>Error común:</b> escribir 'mouses' o 'childs' — son irregulares, no llevan -s.</p>",
       questions: [
         { type: "mc", prompt: "¿Cuál de estas palabras es un noun (sustantivo)?", options: ["run", "teacher", "quickly", "blue"], answer: 1,
           explain: "Teacher nombra a una persona: es un noun. Run es un verbo, quickly un adverbio y blue aquí sería un adjetivo." },
@@ -520,6 +576,9 @@
     {
       id: "article", num: "3-4", category: "Sustantivos y artículos", title: "A / An",
       truco: "Escucha el sonido, no mires la letra. Si la palabra empieza con sonido de vocal, usa an (incluso si la letra es consonante, como en 'an hour').",
+      lesson: "<p>Se elige según el <b>sonido</b> con el que empieza la palabra, no la letra.</p>" +
+        "<p>a book, a university (suena 'yu'), an apple, an umbrella, an hour (la h es muda).</p>" +
+        "<p><b>Error común:</b> decir 'a hour' — aunque hour empieza con consonante (h) por escrito, suena como vocal, así que es <b>an hour</b>.</p>",
       questions: [
         { type: "mc", prompt: "___ apple", options: ["a", "an"], answer: 1, explain: "Apple empieza con sonido de vocal → an apple." },
         { type: "mc", prompt: "___ university", options: ["a", "an"], answer: 0, explain: "University suena como 'yu-niversity' (sonido de consonante) → a university." },
@@ -531,6 +590,9 @@
     {
       id: "adjectives", num: "5", category: "Descripciones y posesión", title: "Adjectives",
       truco: "Los adjectives describen sustantivos (happy, big, old). Los purpose adjectives dicen para qué sirve algo: coffee cup = taza para café.",
+      lesson: "<p><b>Adjective</b> = describe un sustantivo: happy, big, beautiful, old, new.</p>" +
+        "<p><b>Purpose adjectives</b> indican para qué sirve algo: coffee cup (taza para café), tennis ball, sleeping bag, running shoes.</p>" +
+        "<p>Van siempre <b>antes</b> del sustantivo: a big dog, no 'a dog big'.</p>",
       questions: [
         { type: "mc", prompt: "En 'the big dog', ¿cuál palabra es el adjective?", options: ["the", "big", "dog"], answer: 1,
           explain: "Big describe a dog: es el adjective." },
@@ -547,6 +609,13 @@
     {
       id: "possessive-adj", num: "6", category: "Descripciones y posesión", title: "Possessive adjectives",
       truco: "its = posesión ('the dog wags its tail'). it's = it is / it has ('it's raining').",
+      lesson: "<p>Cada pronombre tiene su propio adjetivo posesivo:</p>" +
+        "<div class=\"table-scroll\"><table class=\"lesson-table\"><tr><th>Pronombre</th><th>Adjetivo</th></tr>" +
+        "<tr><td>I</td><td>my</td></tr><tr><td>You</td><td>your</td></tr><tr><td>He</td><td>his</td></tr>" +
+        "<tr><td>She</td><td>her</td></tr><tr><td>It</td><td>its</td></tr><tr><td>We</td><td>our</td></tr>" +
+        "<tr><td>They</td><td>their</td></tr></table></div>" +
+        "<p><b>its</b> = posesión (the dog wags its tail). <b>it's</b> = it is / it has (it's raining).</p>" +
+        "<p><b>Error común:</b> confundir its/it's — its nunca lleva apóstrofo cuando indica posesión.</p>",
       questions: [
         { type: "fill", prompt: "She → ___ (possessive adjective)", answer: "her", explain: "She → her: her book, her dog." },
         { type: "fill", prompt: "They → ___ (possessive adjective)", answer: "their", explain: "They → their: their house." },
@@ -560,6 +629,9 @@
     {
       id: "tobe", num: "7", category: "Verbos base", title: "To be",
       truco: "Uno = is. Varios = are. I siempre es am.",
+      lesson: "<p>I → am. He/She/It → is. You/We/They → are.</p>" +
+        "<p>I am happy. She is a teacher. They are students. We are friends.</p>" +
+        "<p><b>Error común:</b> decir 'I is' o 'She are' — cada pronombre tiene su propia forma, no se mezclan.</p>",
       questions: [
         { type: "fill", prompt: "I ___ happy.", answer: "am", explain: "Con I siempre usamos am." },
         { type: "fill", prompt: "She ___ a teacher.", answer: "is", explain: "He/She/It → is (uno)." },
@@ -572,6 +644,9 @@
     {
       id: "havehas", num: "8", category: "Verbos base", title: "Have / Has",
       truco: "He/She/It → has. Todo lo demás (I/You/We/They) → have.",
+      lesson: "<p>He/She/It → has. Todo lo demás (I/You/We/They) → have.</p>" +
+        "<p>I have a car. She has a dog. They have two cats.</p>" +
+        "<p><b>Error común:</b> decir 'She have a dog' — con he/she/it siempre es has.</p>",
       questions: [
         { type: "fill", prompt: "I ___ a car.", answer: "have", explain: "I → have." },
         { type: "fill", prompt: "She ___ a dog.", answer: "has", explain: "She → has (He/She/It son los 'especiales')." },
@@ -583,6 +658,11 @@
     {
       id: "presentsimple", num: "9-10", category: "Presente simple", title: "Present Simple",
       truco: "La S viaja: en afirmación va en el verbo (plays); en pregunta y negación se va al auxiliar (does) y el verbo vuelve a su forma base (play).",
+      lesson: "<p><b>Afirmación:</b> I play. She plays (se agrega -s con he/she/it).</p>" +
+        "<p><b>Negación:</b> I don't play. She doesn't play.</p>" +
+        "<p><b>Pregunta:</b> Do you play? Does she play?</p>" +
+        "<p>La -s de 'plays' se traslada al auxiliar en pregunta y negación (does), por eso el verbo vuelve a su forma base.</p>" +
+        "<p><b>Error común:</b> decir 'Does she plays?' — después de does, el verbo va sin -s: Does she play?</p>",
       questions: [
         { type: "mc", prompt: "¿Cuál afirmación es correcta?", options: ["She play.", "She plays."], answer: 1,
           explain: "Con he/she/it, el verbo suma -s en afirmación: she plays." },
@@ -601,6 +681,10 @@
     {
       id: "havedodoes", num: "11, 16, 17", category: "Presente simple", title: "Have con do/does",
       truco: "Después de do/does/don't/doesn't siempre usamos have (nunca has), aunque el sujeto sea he/she/it.",
+      lesson: "<p>Cuando have significa 'tener', usa do/does como cualquier otro verbo:</p>" +
+        "<p>I have a car. Do you have a car? I don't have a car.</p>" +
+        "<p>She has a dog. Does she have a dog? She doesn't have a dog.</p>" +
+        "<p><b>Error común:</b> decir 'Does she has a dog?' o 'I don't has a car' — después de do/does/don't/doesn't siempre va <b>have</b>, nunca has, aunque el sujeto sea he/she/it.</p>",
       questions: [
         { type: "mc", prompt: "That's nice. I ___ two cats.", options: ["do", "have"], answer: 1,
           explain: "Es una afirmación normal; have es el verbo principal. 'I do two cats' no tiene sentido." },
@@ -617,6 +701,9 @@
     {
       id: "possessive-s", num: "12", category: "Descripciones y posesión", title: "Possessive 's",
       truco: "Si en español puedes decir 'de alguien', normalmente puedes usar 's en inglés: el libro de John → John's book.",
+      lesson: "<p>Para indicar de quién es algo: dueño + 's + cosa.</p>" +
+        "<p>John's book, Maria's car, the teacher's desk.</p>" +
+        "<p><b>Error común:</b> escribir 'the book's John' — el dueño siempre va primero.</p>",
       questions: [
         { type: "fill", prompt: "Traduce: 'el libro de John' (usa 's)", answer: "John's book",
           explain: "John's book: dueño + 's + cosa." },
@@ -631,6 +718,9 @@
     {
       id: "whose-whos", num: "13", category: "Descripciones y posesión", title: "Whose / Who's",
       truco: "whose = ¿de quién? (pregunta por el dueño). who's = who is / who has.",
+      lesson: "<p><b>whose</b> = ¿de quién? (pregunta por el dueño). <b>who's</b> = who is / who has (contracción).</p>" +
+        "<p>Whose book is this? → It's John's. Who's your teacher? → He's Mr. Smith.</p>" +
+        "<p><b>Error común:</b> confundir whose/who's — se escuchan igual pero significan cosas distintas.</p>",
       questions: [
         { type: "mc", prompt: "___ book is this?", options: ["Whose", "Who's"], answer: 0,
           explain: "Pregunta por el dueño del libro → Whose book is this?" },
@@ -645,6 +735,10 @@
     {
       id: "demonstratives", num: "14", category: "Demostrativos y hay", title: "This / That / These / Those",
       truco: "Primero pregúntate: ¿uno o varios? y ¿cerca o lejos? this=uno/cerca, that=uno/lejos, these=varios/cerca, those=varios/lejos.",
+      lesson: "<p>Se eligen según dos preguntas: ¿uno o varios? y ¿cerca o lejos?</p>" +
+        "<div class=\"table-scroll\"><table class=\"lesson-table\"><tr><th></th><th>Cerca</th><th>Lejos</th></tr>" +
+        "<tr><td>Singular</td><td>this</td><td>that</td></tr><tr><td>Plural</td><td>these</td><td>those</td></tr></table></div>" +
+        "<p>This is my book (aquí). That is your car (allá). These are my keys (aquí, varias). Those are your shoes (allá, varias).</p>",
       questions: [
         { type: "mc", prompt: "Un libro que tienes en la mano (cerca, uno solo):", options: ["this", "that", "these", "those"], answer: 0,
           explain: "Singular + cerca = this." },
@@ -659,6 +753,11 @@
     {
       id: "thereisare", num: "15", category: "Demostrativos y hay", title: "There is / There are",
       truco: "Igual que is/are: there is = hay uno; there are = hay varios.",
+      lesson: "<p>Ambos significan 'hay'. There is → uno. There are → varios.</p>" +
+        "<p>There is a book. There are two books.</p>" +
+        "<p>Negativo: There isn't a dog. There aren't any books.</p>" +
+        "<p>Pregunta: Is there a bank? Are there any restaurants?</p>" +
+        "<p><b>Error común:</b> decir 'There is two books' — con plural siempre es there are.</p>",
       questions: [
         { type: "fill", prompt: "___ a book on the table. (hay, uno)", answer: "There is", alt: ["there is"],
           explain: "Uno solo → There is a book on the table." },
@@ -675,6 +774,10 @@
     {
       id: "wh-dodoes", num: "18-19, 23-24", category: "WH questions", title: "WH questions con do/does",
       truco: "El tren de la pregunta: WH → DO/DOES → SUJETO → VERBO.",
+      lesson: "<p>Palabras WH: What (qué), Where (dónde), When (cuándo), Who (quién), Why (por qué), Which (cuál), Whose (de quién), How (cómo).</p>" +
+        "<p>Con verbos normales: <b>WH + do/does + sujeto + verbo</b>.</p>" +
+        "<p>Where does John live? What do you eat? Who does Guy live with? (con → who ... with, la preposición queda al final).</p>" +
+        "<p><b>Error común:</b> olvidar el auxiliar: 'Where John lives?' en vez de 'Where does John live?'.</p>",
       questions: [
         { type: "mc", prompt: "¿Cuál es el orden correcto para preguntas WH con verbos normales?", options: ["WH + sujeto + do/does + verbo", "WH + do/does + sujeto + verbo"], answer: 1,
           explain: "El orden es WH + do/does + sujeto + verbo, como en Where does John live?" },
@@ -689,6 +792,10 @@
     {
       id: "wh-exceptions", num: "20-22", category: "WH questions", title: "Excepciones: to be y who sujeto",
       truco: "¿Veo am/is/are? Si sí, usa to be (sin do/does). Si who es el sujeto de la oración, tampoco se usa do/does.",
+      lesson: "<p>No siempre hay do/does en preguntas WH. Dos excepciones:</p>" +
+        "<p><b>1. Verbo to be:</b> Where is John? Who is your teacher? Why are they happy?</p>" +
+        "<p><b>2. Who es el sujeto:</b> Who lives with Guy? Who plays soccer? (no se usa does porque who ya es quien hace la acción).</p>" +
+        "<p>Valerie is asleep (estado) vs Valerie is sleeping (acción) — ninguna lleva do, porque el verbo principal es is.</p>",
       questions: [
         { type: "mc", prompt: "Where ___ John?", options: ["is", "does"], answer: 0,
           explain: "El verbo principal es to be (is), así que no se usa does: Where is John?" },
@@ -705,6 +812,9 @@
     {
       id: "wordorder", num: "25", category: "WH questions", title: "Orden de palabras: inglés vs español",
       truco: "No traduzcas palabra por palabra: en inglés el orden de las preguntas es rígido (auxiliar antes del sujeto).",
+      lesson: "<p>En español el orden es flexible en preguntas: '¿Juan vive aquí?' o '¿Vive Juan aquí?' funcionan igual.</p>" +
+        "<p>En inglés el orden es rígido: siempre auxiliar + sujeto + verbo. Does John live here? — nunca 'Lives John here?'.</p>" +
+        "<p><b>Consejo:</b> no traduzcas palabra por palabra; piensa directamente en la estructura inglesa.</p>",
       questions: [
         { type: "mc", prompt: "¿Cuál es la pregunta correcta en inglés?", options: ["Lives John here?", "Does John live here?"], answer: 1,
           explain: "El español permite '¿Vive Juan aquí?', pero el inglés necesita el auxiliar does: Does John live here?" },
@@ -717,6 +827,11 @@
     {
       id: "count-noncount", num: "26", category: "Cantidad y sustantivos incontables", title: "Count / non-count nouns",
       truco: "Pregúntate '¿puedo decir two ___?'. Si suena raro, es incontable. Grupo MISHA: Money, Information, Sugar, Homework, Advice.",
+      lesson: "<p><b>Count (contables):</b> se cuentan uno por uno: book, dog, apple.</p>" +
+        "<p><b>Non-count (incontables):</b> son como una 'masa', no se cuentan por unidad: water, rice, money, information.</p>" +
+        "<p>Los incontables nunca llevan -s ni a/an, y siempre usan is: money is, information is.</p>" +
+        "<p><b>Grupo MISHA</b> (incontables en inglés aunque en español los digamos en plural): Money, Information, Sugar, Homework, Advice.</p>" +
+        "<p>Para pedir 'una unidad': a piece of information, a glass of water, a cup of coffee.</p>",
       questions: [
         { type: "mc", prompt: "¿Cuál de estos es non-count (incontable)?", options: ["book", "water", "apple", "dog"], answer: 1,
           explain: "Water no se cuenta por unidades ('two waters' suena raro), es non-count." },
@@ -735,6 +850,13 @@
     {
       id: "some-any-much-many", num: "27", category: "Cantidad y sustantivos incontables", title: "Some / Any / Much / Many",
       truco: "SOME dice que sí, ANY dice que no (o pregunta). MANY = se cuenta con los dedos (contable plural). MUCH = suena a 'mush' (incontable).",
+      lesson: "<p>Para elegir, en orden: 1) ¿afirmativa, negativa o pregunta? 2) ¿contable o incontable? 3) ¿singular o plural?</p>" +
+        "<div class=\"table-scroll\"><table class=\"lesson-table\"><tr><th></th><th>Contable sing.</th><th>Contable plural</th><th>Incontable</th></tr>" +
+        "<tr><td>Afirmativa</td><td>a / an</td><td>some</td><td>some</td></tr>" +
+        "<tr><td>Negativa</td><td>not a / not any</td><td>not any</td><td>not any</td></tr>" +
+        "<tr><td>Pregunta</td><td>a / an</td><td>any</td><td>any</td></tr></table></div>" +
+        "<p><b>Excepción:</b> al ofrecer o pedir algo se usa <b>some</b> aunque sea pregunta: Would you like some coffee? Can I have some water?</p>" +
+        "<p><b>Much/many:</b> many = contable plural (How many books...?). much = incontable (How much water...?). En afirmaciones normales se prefiere <b>a lot of</b> (sirve para ambos), ya que much/many suenan formales.</p>",
       questions: [
         { type: "mc", prompt: "I have ___ books. (afirmativa)", options: ["some", "any"], answer: 0,
           explain: "Afirmativa → some: I have some books." },
@@ -787,7 +909,7 @@
   var tallyEl = document.getElementById("tally");
   var overallCountEl = document.getElementById("overallCount");
 
-  var current = { topic: null, qIndex: 0, correctCount: 0, answered: false };
+  var current = { topic: null, qIndex: 0, correctCount: 0, answered: false, mode: null, finished: false };
 
   function renderNav() {
     navEl.innerHTML = "";
@@ -836,9 +958,68 @@
   }
 
   function startTopic(topic) {
-    current = { topic: topic, qIndex: 0, correctCount: 0, answered: false };
+    current = { topic: topic, qIndex: 0, correctCount: 0, answered: false, mode: "lesson", finished: false };
+    renderNav();
+    renderLesson();
+  }
+
+  function restartQuiz(topic) {
+    current = { topic: topic, qIndex: 0, correctCount: 0, answered: false, mode: "quiz", finished: false };
     renderNav();
     renderQuestion();
+  }
+
+  function showLesson() {
+    current.mode = "lesson";
+    renderLesson();
+  }
+
+  function beginQuiz() {
+    current.mode = "quiz";
+    renderQuestion();
+  }
+
+  function renderLesson() {
+    var t = current.topic;
+    boardEl.innerHTML = "";
+
+    var eyebrow = document.createElement("div");
+    eyebrow.className = "eyebrow";
+    eyebrow.textContent = "Tema " + t.num + " · Explicación";
+    boardEl.appendChild(eyebrow);
+
+    var h2 = document.createElement("h2");
+    h2.textContent = t.title;
+    boardEl.appendChild(h2);
+
+    var lessonBox = document.createElement("div");
+    lessonBox.className = "lesson-content";
+    lessonBox.innerHTML = t.lesson;
+    boardEl.appendChild(lessonBox);
+
+    var trucoBox = document.createElement("div");
+    trucoBox.className = "truco-box";
+    trucoBox.innerHTML = '<span class="tag">Truco</span><span>' + t.truco + "</span>";
+    boardEl.appendChild(trucoBox);
+
+    var actions = document.createElement("div");
+    actions.className = "actions-row";
+
+    var startBtn = document.createElement("button");
+    startBtn.className = "primary-btn";
+    startBtn.textContent = current.finished ? "Repetir práctica" : (current.qIndex > 0 ? "Seguir practicando" : "Empezar práctica");
+    startBtn.addEventListener("click", function () {
+      if (current.finished) restartQuiz(t); else beginQuiz();
+    });
+
+    var backBtn = document.createElement("button");
+    backBtn.className = "secondary-btn";
+    backBtn.textContent = "Volver a temas";
+    backBtn.addEventListener("click", function () { current.topic = null; renderNav(); renderIntro(); });
+
+    actions.appendChild(startBtn);
+    actions.appendChild(backBtn);
+    boardEl.appendChild(actions);
   }
 
   function renderIntro() {
@@ -848,7 +1029,7 @@
     wrap.innerHTML =
       '<div class="eyebrow">Elige un tema en el panel de la izquierda</div>' +
       '<h2>Bienvenido a tu tablero de práctica</h2>' +
-      '<p style="color:var(--ink-soft); max-width:52ch;">Cada tema trae su propio truco de memoria y unas preguntas cortas para practicar lo que ya aprendiste. Tu avance se guarda automáticamente en este navegador.</p>';
+      '<p style="color:var(--ink-soft); max-width:52ch;">Cada tema trae una explicación corta para refrescar la memoria, su truco y unas preguntas cortas para practicar. Tu avance se guarda automáticamente en este navegador.</p>';
     boardEl.appendChild(wrap);
   }
 
@@ -858,10 +1039,18 @@
     current.answered = false;
     boardEl.innerHTML = "";
 
+    var eyebrowRow = document.createElement("div");
+    eyebrowRow.className = "eyebrow-row";
     var eyebrow = document.createElement("div");
     eyebrow.className = "eyebrow";
     eyebrow.textContent = "Tema " + t.num + " · " + t.title;
-    boardEl.appendChild(eyebrow);
+    var lessonLink = document.createElement("button");
+    lessonLink.className = "lesson-link";
+    lessonLink.textContent = "📖 Explicación";
+    lessonLink.addEventListener("click", showLesson);
+    eyebrowRow.appendChild(eyebrow);
+    eyebrowRow.appendChild(lessonLink);
+    boardEl.appendChild(eyebrowRow);
 
     var trucoBox = document.createElement("div");
     trucoBox.className = "truco-box";
@@ -1001,6 +1190,8 @@
     progress[t.id] = prev;
     saveProgress();
 
+    current.finished = true;
+
     renderNav();
     renderTally();
 
@@ -1035,12 +1226,17 @@
     var retryBtn = document.createElement("button");
     retryBtn.className = "primary-btn";
     retryBtn.textContent = "Repetir tema";
-    retryBtn.addEventListener("click", function () { startTopic(t); });
+    retryBtn.addEventListener("click", function () { restartQuiz(t); });
+    var lessonBtn = document.createElement("button");
+    lessonBtn.className = "secondary-btn";
+    lessonBtn.textContent = "📖 Ver explicación";
+    lessonBtn.addEventListener("click", showLesson);
     var backBtn = document.createElement("button");
     backBtn.className = "secondary-btn";
     backBtn.textContent = "Volver a temas";
     backBtn.addEventListener("click", function () { current.topic = null; renderNav(); renderIntro(); });
     actions.appendChild(retryBtn);
+    actions.appendChild(lessonBtn);
     actions.appendChild(backBtn);
     wrap.appendChild(actions);
 
