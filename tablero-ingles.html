@@ -1,0 +1,1054 @@
+<title>Tablero de Inglés</title>
+<style>
+  :root {
+    --board: #F7F8F6;
+    --surface: #FFFFFF;
+    --surface-2: #F0F2EF;
+    --ink: #1F2A24;
+    --ink-soft: #55645C;
+    --accent: #2B6E5E;
+    --accent-ink: #FFFFFF;
+    --accent-2: #B85C1F;
+    --line: #DCE3DE;
+    --correct: #1F7A46;
+    --correct-bg: #E4F5EA;
+    --incorrect: #B3302A;
+    --incorrect-bg: #FBE6E4;
+    --truco-bg: #FDF1DE;
+    --truco-border: #E8B96B;
+    --shadow: rgba(31, 42, 36, 0.16);
+    color-scheme: light;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --board: #16342E;
+      --surface: #1F4A41;
+      --surface-2: #1A3F37;
+      --ink: #F4F1E6;
+      --ink-soft: #BFD1C8;
+      --accent: #F2C879;
+      --accent-ink: #16342E;
+      --accent-2: #E8956B;
+      --line: #2C5750;
+      --correct: #8FD9A8;
+      --correct-bg: rgba(143, 217, 168, 0.14);
+      --incorrect: #F0908A;
+      --incorrect-bg: rgba(240, 144, 138, 0.16);
+      --truco-bg: rgba(242, 200, 121, 0.12);
+      --truco-border: #F2C879;
+      --shadow: rgba(0, 0, 0, 0.35);
+      color-scheme: dark;
+    }
+  }
+
+  :root[data-theme="dark"] {
+    --board: #16342E;
+    --surface: #1F4A41;
+    --surface-2: #1A3F37;
+    --ink: #F4F1E6;
+    --ink-soft: #BFD1C8;
+    --accent: #F2C879;
+    --accent-ink: #16342E;
+    --accent-2: #E8956B;
+    --line: #2C5750;
+    --correct: #8FD9A8;
+    --correct-bg: rgba(143, 217, 168, 0.14);
+    --incorrect: #F0908A;
+    --incorrect-bg: rgba(240, 144, 138, 0.16);
+    --truco-bg: rgba(242, 200, 121, 0.12);
+    --truco-border: #F2C879;
+    --shadow: rgba(0, 0, 0, 0.35);
+    color-scheme: dark;
+  }
+
+  * { box-sizing: border-box; }
+
+  html, body {
+    margin: 0;
+    padding: 0;
+    background: var(--board);
+    color: var(--ink);
+  }
+
+  body {
+    font-family: "Calibri", "Segoe UI", system-ui, -apple-system, sans-serif;
+    font-size: 16px;
+    line-height: 1.5;
+    min-height: 100vh;
+  }
+
+  h1, h2, h3, .display {
+    font-family: "Segoe UI Semibold", "Segoe UI", system-ui, sans-serif;
+    font-weight: 700;
+    letter-spacing: 0.01em;
+    text-wrap: balance;
+    margin: 0;
+  }
+
+  .mono {
+    font-family: "Consolas", "Cascadia Mono", "SFMono-Regular", ui-monospace, monospace;
+    font-variant-numeric: tabular-nums;
+  }
+
+  button {
+    font: inherit;
+    color: inherit;
+  }
+
+  :focus-visible {
+    outline: 3px solid var(--accent-2);
+    outline-offset: 2px;
+  }
+
+  a { color: var(--accent-2); }
+
+  /* ---------- layout ---------- */
+
+  .app {
+    max-width: 1080px;
+    margin: 0 auto;
+    padding: 20px 20px 56px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  header.top {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 10px 20px;
+    padding-bottom: 14px;
+    border-bottom: 2px dashed var(--line);
+  }
+
+  header.top .title-block {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+
+  header.top h1 {
+    font-size: clamp(1.5rem, 1.1rem + 1.6vw, 2rem);
+  }
+
+  header.top .subtitle {
+    color: var(--ink-soft);
+    font-size: 0.92rem;
+  }
+
+  .overall-progress {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .tally {
+    display: flex;
+    gap: 3px;
+  }
+
+  .tally i {
+    width: 8px;
+    height: 18px;
+    border-radius: 1px;
+    background: var(--line);
+    display: block;
+  }
+
+  .tally i.done { background: var(--accent); }
+
+  .overall-progress .count {
+    font-size: 0.85rem;
+    color: var(--ink-soft);
+    white-space: nowrap;
+  }
+
+  .layout {
+    display: grid;
+    grid-template-columns: 240px 1fr;
+    gap: 24px;
+    align-items: start;
+  }
+
+  @media (max-width: 760px) {
+    .layout { grid-template-columns: 1fr; }
+  }
+
+  /* ---------- topic nav ---------- */
+
+  nav.topics {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  @media (max-width: 760px) {
+    nav.topics {
+      flex-direction: row;
+      overflow-x: auto;
+      gap: 10px;
+      padding-bottom: 6px;
+      -webkit-overflow-scrolling: touch;
+    }
+    nav.topics .category { min-width: max-content; }
+    nav.topics .category-label { display: none; }
+  }
+
+  .category-label {
+    font-size: 0.72rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--ink-soft);
+    margin: 0 0 6px 4px;
+  }
+
+  .category {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+  }
+
+  @media (max-width: 760px) {
+    .category { flex-direction: row; gap: 8px; }
+  }
+
+  .topic-btn {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    text-align: left;
+    background: transparent;
+    border: 1px solid transparent;
+    border-radius: 8px;
+    padding: 7px 9px;
+    cursor: pointer;
+    color: var(--ink);
+  }
+
+  .topic-btn:hover { background: var(--surface-2); }
+
+  .topic-btn.active {
+    background: var(--surface);
+    border-color: var(--line);
+    box-shadow: 2px 2px 0 var(--shadow);
+  }
+
+  .topic-btn .num {
+    font-size: 0.72rem;
+    color: var(--ink-soft);
+    min-width: 1.4em;
+  }
+
+  .topic-btn .label {
+    font-size: 0.88rem;
+    flex: 1;
+  }
+
+  .status-dot {
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+    border: 1.5px solid var(--line);
+    flex-shrink: 0;
+  }
+
+  .status-dot.practiced { border-color: var(--accent-2); background: var(--accent-2); opacity: 0.55; }
+  .status-dot.mastered { border-color: var(--accent); background: var(--accent); opacity: 1; }
+
+  /* ---------- main panel ---------- */
+
+  main.board {
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: 12px 14px 12px 15px;
+    box-shadow: 3px 3px 0 var(--shadow);
+    padding: 22px clamp(16px, 3vw, 30px) 26px;
+    min-height: 360px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .intro {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+  }
+
+  .eyebrow {
+    font-size: 0.78rem;
+    text-transform: uppercase;
+    letter-spacing: 0.09em;
+    color: var(--ink-soft);
+  }
+
+  .truco-box {
+    background: var(--truco-bg);
+    border: 1.5px dashed var(--truco-border);
+    border-radius: 10px;
+    padding: 10px 14px;
+    font-size: 0.92rem;
+    display: flex;
+    gap: 10px;
+    align-items: flex-start;
+  }
+
+  .truco-box .tag {
+    font-weight: 700;
+    color: var(--accent-2);
+    white-space: nowrap;
+  }
+
+  .start-btn, .primary-btn {
+    align-self: flex-start;
+    background: var(--accent);
+    color: var(--accent-ink);
+    border: none;
+    border-radius: 8px;
+    padding: 10px 20px;
+    font-weight: 700;
+    font-size: 0.95rem;
+    cursor: pointer;
+    box-shadow: 2px 2px 0 var(--shadow);
+  }
+
+  .start-btn:hover, .primary-btn:hover { filter: brightness(1.05); }
+  .start-btn:active, .primary-btn:active { transform: translate(1px, 1px); box-shadow: 1px 1px 0 var(--shadow); }
+
+  .secondary-btn {
+    background: transparent;
+    border: 1.5px solid var(--line);
+    border-radius: 8px;
+    padding: 9px 18px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    cursor: pointer;
+    color: var(--ink);
+  }
+
+  .secondary-btn:hover { background: var(--surface-2); }
+
+  .q-progress {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.82rem;
+    color: var(--ink-soft);
+  }
+
+  .q-card { display: flex; flex-direction: column; gap: 16px; }
+
+  .q-prompt {
+    font-size: 1.15rem;
+    line-height: 1.45;
+  }
+
+  .options {
+    display: flex;
+    flex-direction: column;
+    gap: 9px;
+  }
+
+  .option-btn {
+    text-align: left;
+    background: var(--surface-2);
+    border: 1.5px solid var(--line);
+    border-radius: 9px;
+    padding: 11px 14px;
+    cursor: pointer;
+    font-size: 0.98rem;
+    color: var(--ink);
+    transition: transform 0.08s ease;
+  }
+
+  .option-btn:hover:not(:disabled) { border-color: var(--accent); }
+  .option-btn:active:not(:disabled) { transform: translate(1px, 1px); }
+  .option-btn:disabled { cursor: default; }
+
+  .option-btn.correct {
+    background: var(--correct-bg);
+    border-color: var(--correct);
+    color: var(--correct);
+    font-weight: 700;
+  }
+
+  .option-btn.incorrect {
+    background: var(--incorrect-bg);
+    border-color: var(--incorrect);
+    color: var(--incorrect);
+    font-weight: 700;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .option-btn, .start-btn, .primary-btn { transition: none; }
+    .option-btn:active:not(:disabled), .start-btn:active, .primary-btn:active { transform: none; }
+  }
+
+  .fill-row {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+
+  .fill-row label {
+    font-size: 0.85rem;
+    color: var(--ink-soft);
+    width: 100%;
+  }
+
+  .fill-row input {
+    flex: 1;
+    min-width: 200px;
+    font: inherit;
+    font-size: 1rem;
+    padding: 10px 12px;
+    border-radius: 8px;
+    border: 1.5px solid var(--line);
+    background: var(--board);
+    color: var(--ink);
+  }
+
+  .fill-row input:disabled { opacity: 0.8; }
+
+  .fill-row input.correct { border-color: var(--correct); color: var(--correct); font-weight: 700; }
+  .fill-row input.incorrect { border-color: var(--incorrect); color: var(--incorrect); font-weight: 700; }
+
+  .feedback {
+    border-radius: 9px;
+    padding: 12px 14px;
+    font-size: 0.94rem;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  .feedback.correct { background: var(--correct-bg); color: var(--correct); }
+  .feedback.incorrect { background: var(--incorrect-bg); color: var(--incorrect); }
+
+  .feedback .explain { color: var(--ink); font-weight: 400; }
+  .feedback .answer-line { font-weight: 700; }
+
+  .actions-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+    flex-wrap: wrap;
+  }
+
+  .summary {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    align-items: flex-start;
+  }
+
+  .summary .score {
+    font-size: 2.4rem;
+    font-family: "Segoe UI Semibold", "Segoe UI", sans-serif;
+    font-weight: 700;
+  }
+
+  .summary .score span { color: var(--ink-soft); font-size: 1.2rem; }
+
+  .summary-actions { display: flex; gap: 10px; flex-wrap: wrap; }
+
+  footer.hint {
+    text-align: center;
+    color: var(--ink-soft);
+    font-size: 0.8rem;
+  }
+
+  .theme-toggle {
+    background: transparent;
+    border: 1px solid var(--line);
+    border-radius: 20px;
+    padding: 5px 12px;
+    font-size: 0.78rem;
+    cursor: pointer;
+    color: var(--ink-soft);
+  }
+</style>
+
+<div class="app">
+  <header class="top">
+    <div class="title-block">
+      <h1>Tablero de Inglés</h1>
+      <div class="subtitle">Practica lo aprendido, un tema a la vez</div>
+    </div>
+    <div class="overall-progress">
+      <div class="tally mono" id="tally"></div>
+      <div class="count mono" id="overallCount">0/15 temas dominados</div>
+    </div>
+  </header>
+
+  <div class="layout">
+    <nav class="topics" id="topicNav" aria-label="Temas"></nav>
+    <main class="board" id="board"></main>
+  </div>
+
+  <footer class="hint">Tu progreso se guarda en este navegador. Elige un tema para empezar.</footer>
+</div>
+
+<script>
+(function () {
+  "use strict";
+
+  var TOPICS = [
+    {
+      id: "nouns", num: "1-2", category: "Sustantivos y artículos", title: "Nouns y plurales",
+      truco: "Regla general: suma -s. Con -s/-x/-ch/-sh suma -es. Consonante+y → -ies. Y ojo con los irregulares: man→men, child→children, foot→feet.",
+      questions: [
+        { type: "mc", prompt: "¿Cuál de estas palabras es un noun (sustantivo)?", options: ["run", "teacher", "quickly", "blue"], answer: 1,
+          explain: "Teacher nombra a una persona: es un noun. Run es un verbo, quickly un adverbio y blue aquí sería un adjetivo." },
+        { type: "fill", prompt: "Escribe el plural de <b>book</b>.", answer: "books",
+          explain: "Regla general: se agrega -s. book → books." },
+        { type: "fill", prompt: "Escribe el plural de <b>bus</b>.", answer: "buses",
+          explain: "Palabras terminadas en -s, -x, -ch, -sh suman -es: bus → buses." },
+        { type: "fill", prompt: "Escribe el plural de <b>baby</b>.", answer: "babies",
+          explain: "Consonante + y → se cambia la y por -ies: baby → babies." },
+        { type: "mc", prompt: "¿Cuál es el plural irregular de <b>child</b>?", options: ["childs", "children", "childes", "childrens"], answer: 1,
+          explain: "child → children es irregular; no sigue la regla de agregar -s." },
+        { type: "mc", prompt: "¿Cuál es el plural de <b>foot</b>?", options: ["foots", "feets", "feet", "footes"], answer: 2,
+          explain: "foot → feet, igual que tooth → teeth y mouse → mice: son irregulares." }
+      ]
+    },
+    {
+      id: "article", num: "3-4", category: "Sustantivos y artículos", title: "A / An",
+      truco: "Escucha el sonido, no mires la letra. Si la palabra empieza con sonido de vocal, usa an (incluso si la letra es consonante, como en 'an hour').",
+      questions: [
+        { type: "mc", prompt: "___ apple", options: ["a", "an"], answer: 1, explain: "Apple empieza con sonido de vocal → an apple." },
+        { type: "mc", prompt: "___ university", options: ["a", "an"], answer: 0, explain: "University suena como 'yu-niversity' (sonido de consonante) → a university." },
+        { type: "mc", prompt: "___ hour", options: ["a", "an"], answer: 1, explain: "La h es muda, se escucha 'our' (vocal) → an hour." },
+        { type: "mc", prompt: "___ book", options: ["a", "an"], answer: 0, explain: "Book empieza con sonido de consonante → a book." },
+        { type: "mc", prompt: "___ umbrella", options: ["a", "an"], answer: 1, explain: "Umbrella empieza con sonido de vocal → an umbrella." }
+      ]
+    },
+    {
+      id: "adjectives", num: "5", category: "Descripciones y posesión", title: "Adjectives",
+      truco: "Los adjectives describen sustantivos (happy, big, old). Los purpose adjectives dicen para qué sirve algo: coffee cup = taza para café.",
+      questions: [
+        { type: "mc", prompt: "En 'the big dog', ¿cuál palabra es el adjective?", options: ["the", "big", "dog"], answer: 1,
+          explain: "Big describe a dog: es el adjective." },
+        { type: "mc", prompt: "¿Qué significa <b>coffee cup</b>?", options: ["café con leche", "taza para café", "café frío"], answer: 1,
+          explain: "Es un purpose adjective: indica para qué sirve la taza (para café)." },
+        { type: "mc", prompt: "¿Cómo se dice 'bolsa para dormir'?", options: ["tennis ball", "coffee cup", "sleeping bag", "running shoes"], answer: 2,
+          explain: "sleeping bag = bolsa para dormir (purpose adjective: sleeping + bag)." },
+        { type: "fill", prompt: "Escribe un adjective que signifique 'feliz'.", answer: "happy",
+          explain: "happy = feliz. También podrías haber pensado en glad, aunque happy es el más común." },
+        { type: "mc", prompt: "'running shoes' significa...", options: ["zapatos para correr", "zapatos viejos", "zapatos de fiesta"], answer: 0,
+          explain: "running shoes = zapatos para correr: running indica el propósito de los shoes." }
+      ]
+    },
+    {
+      id: "possessive-adj", num: "6", category: "Descripciones y posesión", title: "Possessive adjectives",
+      truco: "its = posesión ('the dog wags its tail'). it's = it is / it has ('it's raining').",
+      questions: [
+        { type: "fill", prompt: "She → ___ (possessive adjective)", answer: "her", explain: "She → her: her book, her dog." },
+        { type: "fill", prompt: "They → ___ (possessive adjective)", answer: "their", explain: "They → their: their house." },
+        { type: "fill", prompt: "It → ___ (possessive adjective)", answer: "its", explain: "It → its: its tail." },
+        { type: "mc", prompt: "¿Cuál oración es correcta?", options: ["The dog wags it's tail.", "The dog wags its tail."], answer: 1,
+          explain: "its = posesión (de eso/de él/ella para cosas y animales), sin apóstrofo." },
+        { type: "mc", prompt: "En 'It's raining', it's significa...", options: ["it is", "posesión (its)"], answer: 0,
+          explain: "it's siempre es it is / it has. Para posesión se usa its, sin apóstrofo." }
+      ]
+    },
+    {
+      id: "tobe", num: "7", category: "Verbos base", title: "To be",
+      truco: "Uno = is. Varios = are. I siempre es am.",
+      questions: [
+        { type: "fill", prompt: "I ___ happy.", answer: "am", explain: "Con I siempre usamos am." },
+        { type: "fill", prompt: "She ___ a teacher.", answer: "is", explain: "He/She/It → is (uno)." },
+        { type: "fill", prompt: "They ___ students.", answer: "are", explain: "You/We/They → are (varios)." },
+        { type: "fill", prompt: "We ___ friends.", answer: "are", explain: "We → are." },
+        { type: "mc", prompt: "¿Qué forma de to be usamos con 'the books' (varios)?", options: ["is", "are", "am"], answer: 1,
+          explain: "Varios elementos → are: the books are new." }
+      ]
+    },
+    {
+      id: "havehas", num: "8", category: "Verbos base", title: "Have / Has",
+      truco: "He/She/It → has. Todo lo demás (I/You/We/They) → have.",
+      questions: [
+        { type: "fill", prompt: "I ___ a car.", answer: "have", explain: "I → have." },
+        { type: "fill", prompt: "She ___ a dog.", answer: "has", explain: "She → has (He/She/It son los 'especiales')." },
+        { type: "fill", prompt: "They ___ two cats.", answer: "have", explain: "They → have." },
+        { type: "mc", prompt: "¿Qué forma usamos con He/She/It?", options: ["have", "has"], answer: 1,
+          explain: "He/She/It → has: she has, he has, it has." }
+      ]
+    },
+    {
+      id: "presentsimple", num: "9-10", category: "Presente simple", title: "Present Simple",
+      truco: "La S viaja: en afirmación va en el verbo (plays); en pregunta y negación se va al auxiliar (does) y el verbo vuelve a su forma base (play).",
+      questions: [
+        { type: "mc", prompt: "¿Cuál afirmación es correcta?", options: ["She play.", "She plays."], answer: 1,
+          explain: "Con he/she/it, el verbo suma -s en afirmación: she plays." },
+        { type: "fill", prompt: "Negación: I ___ play soccer. (contracción)", answer: "don't", alt: ["do not"],
+          explain: "I/You/We/They → don't + verbo base." },
+        { type: "fill", prompt: "Negación: She ___ play soccer. (contracción)", answer: "doesn't", alt: ["does not"],
+          explain: "He/She/It → doesn't + verbo base (sin -s, porque la S ya está en doesn't)." },
+        { type: "mc", prompt: "¿Cuál pregunta es correcta con 'you'?", options: ["Do you play?", "Does you play?"], answer: 0,
+          explain: "You → Do: Do you play?" },
+        { type: "mc", prompt: "¿Cuál pregunta es correcta con 'she'?", options: ["Do she play?", "Does she play?"], answer: 1,
+          explain: "She → Does: Does she play?" },
+        { type: "fill", prompt: "She doesn't ___ (play/plays) soccer.", answer: "play",
+          explain: "Truco 'la S viaja': la S ya está en doesn't, así que el verbo vuelve a su forma base: play." }
+      ]
+    },
+    {
+      id: "havedodoes", num: "11, 16, 17", category: "Presente simple", title: "Have con do/does",
+      truco: "Después de do/does/don't/doesn't siempre usamos have (nunca has), aunque el sujeto sea he/she/it.",
+      questions: [
+        { type: "mc", prompt: "That's nice. I ___ two cats.", options: ["do", "have"], answer: 1,
+          explain: "Es una afirmación normal; have es el verbo principal. 'I do two cats' no tiene sentido." },
+        { type: "mc", prompt: "___ you have a car?", options: ["Do", "Does", "Have"], answer: 0,
+          explain: "You → Do: Do you have a car?" },
+        { type: "fill", prompt: "___ she have a dog? (auxiliar)", answer: "Does", alt: ["does"],
+          explain: "She → Does: Does she have a dog?" },
+        { type: "mc", prompt: "I don't ___ a car.", options: ["has", "have"], answer: 1,
+          explain: "Después de don't/doesn't siempre va have, nunca has." },
+        { type: "mc", prompt: "¿Cuál es correcta?", options: ["She doesn't has a dog.", "She doesn't have a dog."], answer: 1,
+          explain: "Con doesn't el verbo vuelve a su forma base: have, no has." }
+      ]
+    },
+    {
+      id: "possessive-s", num: "12", category: "Descripciones y posesión", title: "Possessive 's",
+      truco: "Si en español puedes decir 'de alguien', normalmente puedes usar 's en inglés: el libro de John → John's book.",
+      questions: [
+        { type: "fill", prompt: "Traduce: 'el libro de John' (usa 's)", answer: "John's book",
+          explain: "John's book: dueño + 's + cosa." },
+        { type: "fill", prompt: "Traduce: 'el carro de María' (usa 's)", answer: "Maria's car",
+          explain: "Maria's car: dueño + 's + cosa." },
+        { type: "mc", prompt: "¿Cuál está bien formada?", options: ["the desk's teacher", "the teacher's desk"], answer: 1,
+          explain: "El dueño va primero: the teacher's desk = el escritorio del profesor." },
+        { type: "mc", prompt: "'The dog's toy' significa...", options: ["el juguete del perro", "el perro del juguete"], answer: 0,
+          explain: "El dueño (dog) va antes de 's, seguido de lo que posee (toy)." }
+      ]
+    },
+    {
+      id: "whose-whos", num: "13", category: "Descripciones y posesión", title: "Whose / Who's",
+      truco: "whose = ¿de quién? (pregunta por el dueño). who's = who is / who has.",
+      questions: [
+        { type: "mc", prompt: "___ book is this?", options: ["Whose", "Who's"], answer: 0,
+          explain: "Pregunta por el dueño del libro → Whose book is this?" },
+        { type: "mc", prompt: "___ your teacher?", options: ["Whose", "Who's"], answer: 1,
+          explain: "Who's = who is → Who's your teacher? = ¿Quién es tu profesor?" },
+        { type: "mc", prompt: "'Whose' pregunta por...", options: ["el dueño de algo", "who is / who has"], answer: 0,
+          explain: "whose = ¿de quién? (dueño). who's es la contracción de who is / who has." },
+        { type: "mc", prompt: "'Who's coming to the party?' significa...", options: ["¿De quién es la fiesta?", "¿Quién viene a la fiesta?"], answer: 1,
+          explain: "Who's = who is, así que pregunta quién viene, no de quién es algo." }
+      ]
+    },
+    {
+      id: "demonstratives", num: "14", category: "Demostrativos y hay", title: "This / That / These / Those",
+      truco: "Primero pregúntate: ¿uno o varios? y ¿cerca o lejos? this=uno/cerca, that=uno/lejos, these=varios/cerca, those=varios/lejos.",
+      questions: [
+        { type: "mc", prompt: "Un libro que tienes en la mano (cerca, uno solo):", options: ["this", "that", "these", "those"], answer: 0,
+          explain: "Singular + cerca = this." },
+        { type: "mc", prompt: "Varios libros al otro lado del salón (lejos, varios):", options: ["this", "that", "these", "those"], answer: 3,
+          explain: "Plural + lejos = those." },
+        { type: "mc", prompt: "Un carro estacionado al final de la calle (lejos, uno):", options: ["this", "that", "these", "those"], answer: 1,
+          explain: "Singular + lejos = that." },
+        { type: "mc", prompt: "Las llaves que tienes en tu mano ahora mismo (cerca, varias):", options: ["this", "that", "these", "those"], answer: 2,
+          explain: "Plural + cerca = these." }
+      ]
+    },
+    {
+      id: "thereisare", num: "15", category: "Demostrativos y hay", title: "There is / There are",
+      truco: "Igual que is/are: there is = hay uno; there are = hay varios.",
+      questions: [
+        { type: "fill", prompt: "___ a book on the table. (hay, uno)", answer: "There is", alt: ["there is"],
+          explain: "Uno solo → There is a book on the table." },
+        { type: "fill", prompt: "___ two books on the table. (hay, varios)", answer: "There are", alt: ["there are"],
+          explain: "Varios → There are two books on the table." },
+        { type: "mc", prompt: "Negativo: There ___ a dog.", options: ["isn't", "aren't"], answer: 0,
+          explain: "Uno → there isn't a dog." },
+        { type: "mc", prompt: "Pregunta: ___ a bank near here?", options: ["Is there", "Are there"], answer: 0,
+          explain: "Uno (a bank) → Is there a bank near here?" },
+        { type: "mc", prompt: "Pregunta: ___ any restaurants?", options: ["Is there", "Are there"], answer: 1,
+          explain: "Varios (restaurants) → Are there any restaurants?" }
+      ]
+    },
+    {
+      id: "wh-dodoes", num: "18-19, 23-24", category: "WH questions", title: "WH questions con do/does",
+      truco: "El tren de la pregunta: WH → DO/DOES → SUJETO → VERBO.",
+      questions: [
+        { type: "mc", prompt: "¿Cuál es el orden correcto para preguntas WH con verbos normales?", options: ["WH + sujeto + do/does + verbo", "WH + do/does + sujeto + verbo"], answer: 1,
+          explain: "El orden es WH + do/does + sujeto + verbo, como en Where does John live?" },
+        { type: "fill", prompt: "Where ___ John live?", answer: "does", explain: "John (he) → does: Where does John live?" },
+        { type: "fill", prompt: "What ___ you eat?", answer: "do", explain: "You → do: What do you eat?" },
+        { type: "mc", prompt: "'Who does Guy live with?' significa...", options: ["¿Con quién vive Guy?", "¿Quién vive con Guy?"], answer: 0,
+          explain: "Aquí Guy es el sujeto y who reemplaza al complemento (with who → who ... with)." },
+        { type: "mc", prompt: "'What questions does Guy ask?' sigue el patrón...", options: ["WH + verbo + sujeto", "WH + do/does + sujeto + verbo"], answer: 1,
+          explain: "What questions (WH) + does + Guy (sujeto) + ask (verbo)." }
+      ]
+    },
+    {
+      id: "wh-exceptions", num: "20-22", category: "WH questions", title: "Excepciones: to be y who sujeto",
+      truco: "¿Veo am/is/are? Si sí, usa to be (sin do/does). Si who es el sujeto de la oración, tampoco se usa do/does.",
+      questions: [
+        { type: "mc", prompt: "Where ___ John?", options: ["is", "does"], answer: 0,
+          explain: "El verbo principal es to be (is), así que no se usa does: Where is John?" },
+        { type: "mc", prompt: "Who ___ your teacher?", options: ["is", "does"], answer: 0,
+          explain: "Otra vez to be: Who is your teacher?" },
+        { type: "mc", prompt: "Why ___ they happy?", options: ["are", "do"], answer: 0,
+          explain: "To be con they → are: Why are they happy?" },
+        { type: "mc", prompt: "¿Cuál pregunta está bien formada cuando who ES el sujeto?", options: ["Who does play soccer?", "Who plays soccer?"], answer: 1,
+          explain: "Si who es el sujeto, no se usa do/does: Who plays soccer? (igual que 'Guy plays soccer')." },
+        { type: "mc", prompt: "¿Cuál oración significa 'está durmiendo' (acción en curso)?", options: ["Valerie is asleep.", "Valerie is sleeping."], answer: 1,
+          explain: "is asleep = está dormida (estado). is sleeping = está durmiendo (acción)." }
+      ]
+    },
+    {
+      id: "wordorder", num: "25", category: "WH questions", title: "Orden de palabras: inglés vs español",
+      truco: "No traduzcas palabra por palabra: en inglés el orden de las preguntas es rígido (auxiliar antes del sujeto).",
+      questions: [
+        { type: "mc", prompt: "¿Cuál es la pregunta correcta en inglés?", options: ["Lives John here?", "Does John live here?"], answer: 1,
+          explain: "El español permite '¿Vive Juan aquí?', pero el inglés necesita el auxiliar does: Does John live here?" },
+        { type: "mc", prompt: "El orden básico de una oración afirmativa en inglés es...", options: ["Sujeto + verbo + complemento", "Verbo + sujeto + complemento"], answer: 0,
+          explain: "Igual que en español: Juan vive en Bogotá → John lives in Bogotá." },
+        { type: "mc", prompt: "En español se puede decir '¿Vive Juan aquí?' o '¿Juan vive aquí?'. En inglés...", options: ["hay la misma flexibilidad", "el orden es más rígido: siempre auxiliar + sujeto + verbo"], answer: 1,
+          explain: "El inglés no permite 'Lives John here?'; siempre se necesita el auxiliar do/does/is antes del sujeto." }
+      ]
+    },
+    {
+      id: "count-noncount", num: "26", category: "Cantidad y sustantivos incontables", title: "Count / non-count nouns",
+      truco: "Pregúntate '¿puedo decir two ___?'. Si suena raro, es incontable. Grupo MISHA: Money, Information, Sugar, Homework, Advice.",
+      questions: [
+        { type: "mc", prompt: "¿Cuál de estos es non-count (incontable)?", options: ["book", "water", "apple", "dog"], answer: 1,
+          explain: "Water no se cuenta por unidades ('two waters' suena raro), es non-count." },
+        { type: "mc", prompt: "¿Qué pregunta te ayuda a saber si un noun es contable?", options: ["¿puedo decir 'two ___'?", "¿empieza con vocal?"], answer: 0,
+          explain: "Si 'two ___' suena natural, es count; si suena raro, es non-count." },
+        { type: "mc", prompt: "Los sustantivos incontables siempre van con...", options: ["is", "are"], answer: 0,
+          explain: "Los non-count nunca llevan -s ni a/an, y siempre usan is: money is, information is." },
+        { type: "mc", prompt: "¿Cuál palabra pertenece al grupo MISHA (incontable en inglés aunque en español la digamos en plural)?", options: ["books", "money", "apples", "dogs"], answer: 1,
+          explain: "MISHA: Money, Information, Sugar, Homework, Advice. En español decimos 'los consejos', pero advice es incontable en inglés." },
+        { type: "fill", prompt: "Para pedir 'una unidad' de information: a ___ of information", answer: "piece",
+          explain: "a piece of information, igual que a glass of water o a cup of coffee." },
+        { type: "mc", prompt: "¿Cuál oración es correcta?", options: ["There is money on the table.", "There are money on the table."], answer: 0,
+          explain: "Money es incontable → siempre is, nunca are." }
+      ]
+    },
+    {
+      id: "some-any-much-many", num: "27", category: "Cantidad y sustantivos incontables", title: "Some / Any / Much / Many",
+      truco: "SOME dice que sí, ANY dice que no (o pregunta). MANY = se cuenta con los dedos (contable plural). MUCH = suena a 'mush' (incontable).",
+      questions: [
+        { type: "mc", prompt: "I have ___ books. (afirmativa)", options: ["some", "any"], answer: 0,
+          explain: "Afirmativa → some: I have some books." },
+        { type: "mc", prompt: "I don't have ___ books. (negativa)", options: ["some", "any"], answer: 1,
+          explain: "Negativa → any: I don't have any books." },
+        { type: "mc", prompt: "Do you have ___ books? (pregunta)", options: ["some", "any"], answer: 1,
+          explain: "Pregunta → any: Do you have any books?" },
+        { type: "mc", prompt: "Would you like ___ coffee? (ofrecer algo)", options: ["some", "any"], answer: 0,
+          explain: "Excepción: al ofrecer o pedir algo se usa some aunque sea pregunta: Would you like some coffee?" },
+        { type: "mc", prompt: "I want ___ apple. (contable singular, afirmativa)", options: ["a", "some"], answer: 0,
+          explain: "Contable singular en afirmativa → a/an: I want an apple." },
+        { type: "mc", prompt: "How ___ books do you have? (contable plural)", options: ["much", "many"], answer: 1,
+          explain: "Many se usa con contables plurales: How many books...?" },
+        { type: "mc", prompt: "How ___ water do you need? (incontable)", options: ["much", "many"], answer: 0,
+          explain: "Much se usa con incontables: How much water...?" },
+        { type: "mc", prompt: "En afirmaciones normales de cantidad, se prefiere...", options: ["much / many", "a lot of"], answer: 1,
+          explain: "Much/many suenan formales en afirmaciones; se prefiere a lot of, que sirve para contables e incontables." }
+      ]
+    }
+  ];
+
+  var CATEGORY_ORDER = [];
+  TOPICS.forEach(function (t) {
+    if (CATEGORY_ORDER.indexOf(t.category) === -1) CATEGORY_ORDER.push(t.category);
+  });
+
+  var STORAGE_KEY = "tablero-ingles-progress-v1";
+  var progress = loadProgress();
+
+  function loadProgress() {
+    try {
+      var raw = localStorage.getItem(STORAGE_KEY);
+      return raw ? JSON.parse(raw) : {};
+    } catch (e) { return {}; }
+  }
+
+  function saveProgress() {
+    try { localStorage.setItem(STORAGE_KEY, JSON.stringify(progress)); } catch (e) {}
+  }
+
+  function topicStatus(id) {
+    var p = progress[id];
+    if (!p || p.attempts === 0) return "new";
+    if (p.bestCorrect >= p.total) return "mastered";
+    return "practiced";
+  }
+
+  var navEl = document.getElementById("topicNav");
+  var boardEl = document.getElementById("board");
+  var tallyEl = document.getElementById("tally");
+  var overallCountEl = document.getElementById("overallCount");
+
+  var current = { topic: null, qIndex: 0, correctCount: 0, answered: false };
+
+  function renderNav() {
+    navEl.innerHTML = "";
+    CATEGORY_ORDER.forEach(function (cat) {
+      var wrap = document.createElement("div");
+      wrap.className = "category";
+      var label = document.createElement("div");
+      label.className = "category-label";
+      label.textContent = cat;
+      wrap.appendChild(label);
+      TOPICS.filter(function (t) { return t.category === cat; }).forEach(function (t) {
+        var btn = document.createElement("button");
+        btn.className = "topic-btn" + (current.topic && current.topic.id === t.id ? " active" : "");
+        var status = topicStatus(t.id);
+        btn.innerHTML =
+          '<span class="num mono">' + t.num + '</span>' +
+          '<span class="label">' + t.title + '</span>' +
+          '<span class="status-dot ' + (status === "mastered" ? "mastered" : status === "practiced" ? "practiced" : "") + '"></span>';
+        btn.addEventListener("click", function () { startTopic(t); });
+        wrap.appendChild(btn);
+      });
+      navEl.appendChild(wrap);
+    });
+  }
+
+  function renderTally() {
+    tallyEl.innerHTML = "";
+    var masteredCount = 0;
+    TOPICS.forEach(function (t) {
+      var i = document.createElement("i");
+      var st = topicStatus(t.id);
+      if (st === "mastered") { i.className = "done"; masteredCount++; }
+      tallyEl.appendChild(i);
+    });
+    overallCountEl.textContent = masteredCount + "/" + TOPICS.length + " temas dominados";
+  }
+
+  function normalize(s) {
+    return s.trim().toLowerCase().replace(/[.!?]+$/, "").replace(/\s+/g, " ");
+  }
+
+  function checkFillAnswer(q, value) {
+    var candidates = [q.answer].concat(q.alt || []);
+    var v = normalize(value);
+    return candidates.some(function (c) { return normalize(c) === v; });
+  }
+
+  function startTopic(topic) {
+    current = { topic: topic, qIndex: 0, correctCount: 0, answered: false };
+    renderNav();
+    renderQuestion();
+  }
+
+  function renderIntro() {
+    boardEl.innerHTML = "";
+    var wrap = document.createElement("div");
+    wrap.className = "intro";
+    wrap.innerHTML =
+      '<div class="eyebrow">Elige un tema en el panel de la izquierda</div>' +
+      '<h2>Bienvenido a tu tablero de práctica</h2>' +
+      '<p style="color:var(--ink-soft); max-width:52ch;">Cada tema trae su propio truco de memoria y unas preguntas cortas para practicar lo que ya aprendiste. Tu avance se guarda automáticamente en este navegador.</p>';
+    boardEl.appendChild(wrap);
+  }
+
+  function renderQuestion() {
+    var t = current.topic;
+    var q = t.questions[current.qIndex];
+    current.answered = false;
+    boardEl.innerHTML = "";
+
+    var eyebrow = document.createElement("div");
+    eyebrow.className = "eyebrow";
+    eyebrow.textContent = "Tema " + t.num + " · " + t.title;
+    boardEl.appendChild(eyebrow);
+
+    var trucoBox = document.createElement("div");
+    trucoBox.className = "truco-box";
+    trucoBox.innerHTML = '<span class="tag">Truco</span><span>' + t.truco + "</span>";
+    boardEl.appendChild(trucoBox);
+
+    var qProgress = document.createElement("div");
+    qProgress.className = "q-progress mono";
+    qProgress.textContent = "Pregunta " + (current.qIndex + 1) + " de " + t.questions.length;
+    boardEl.appendChild(qProgress);
+
+    var card = document.createElement("div");
+    card.className = "q-card";
+
+    var prompt = document.createElement("div");
+    prompt.className = "q-prompt";
+    prompt.innerHTML = q.prompt;
+    card.appendChild(prompt);
+
+    var feedbackHolder = document.createElement("div");
+
+    if (q.type === "mc") {
+      var opts = document.createElement("div");
+      opts.className = "options";
+      q.options.forEach(function (optText, i) {
+        var b = document.createElement("button");
+        b.className = "option-btn";
+        b.textContent = optText;
+        b.addEventListener("click", function () { answerMC(q, i, opts, feedbackHolder); });
+        opts.appendChild(b);
+      });
+      card.appendChild(opts);
+    } else {
+      var row = document.createElement("div");
+      row.className = "fill-row";
+      var lbl = document.createElement("label");
+      lbl.textContent = "Escribe tu respuesta:";
+      lbl.setAttribute("for", "fillInput");
+      var input = document.createElement("input");
+      input.type = "text";
+      input.id = "fillInput";
+      input.autocomplete = "off";
+      input.spellcheck = false;
+      row.appendChild(lbl);
+      row.appendChild(input);
+      var checkBtn = document.createElement("button");
+      checkBtn.className = "primary-btn";
+      checkBtn.textContent = "Verificar";
+      checkBtn.addEventListener("click", function () { answerFill(q, input, checkBtn, feedbackHolder); });
+      input.addEventListener("keydown", function (e) {
+        if (e.key === "Enter" && !current.answered) answerFill(q, input, checkBtn, feedbackHolder);
+      });
+      row.appendChild(checkBtn);
+      card.appendChild(row);
+    }
+
+    card.appendChild(feedbackHolder);
+    boardEl.appendChild(card);
+
+    var actions = document.createElement("div");
+    actions.className = "actions-row";
+    var backBtn = document.createElement("button");
+    backBtn.className = "secondary-btn";
+    backBtn.textContent = "Volver a temas";
+    backBtn.addEventListener("click", function () { current.topic = null; renderNav(); renderIntro(); });
+    actions.appendChild(backBtn);
+    boardEl.appendChild(actions);
+  }
+
+  function showFeedback(holder, isCorrect, explain, correctText) {
+    var box = document.createElement("div");
+    box.className = "feedback " + (isCorrect ? "correct" : "incorrect");
+    var line1 = document.createElement("div");
+    line1.className = "answer-line";
+    line1.textContent = isCorrect ? "¡Correcto!" : "No es así. Respuesta correcta: " + correctText;
+    var line2 = document.createElement("div");
+    line2.className = "explain";
+    line2.innerHTML = explain;
+    box.appendChild(line1);
+    box.appendChild(line2);
+    holder.innerHTML = "";
+    holder.appendChild(box);
+
+    var nextBtn = document.createElement("button");
+    nextBtn.className = "primary-btn";
+    nextBtn.style.marginTop = "10px";
+    nextBtn.textContent = current.qIndex + 1 < current.topic.questions.length ? "Siguiente pregunta" : "Ver resultado";
+    nextBtn.addEventListener("click", advance);
+    holder.appendChild(nextBtn);
+    nextBtn.focus();
+  }
+
+  function answerMC(q, chosenIndex, optsEl, feedbackHolder) {
+    if (current.answered) return;
+    current.answered = true;
+    var isCorrect = chosenIndex === q.answer;
+    if (isCorrect) current.correctCount++;
+    Array.prototype.forEach.call(optsEl.children, function (btn, i) {
+      btn.disabled = true;
+      if (i === q.answer) btn.classList.add("correct");
+      else if (i === chosenIndex) btn.classList.add("incorrect");
+    });
+    showFeedback(feedbackHolder, isCorrect, q.explain, q.options[q.answer]);
+  }
+
+  function answerFill(q, input, checkBtn, feedbackHolder) {
+    if (current.answered) return;
+    if (!input.value.trim()) { input.focus(); return; }
+    current.answered = true;
+    var isCorrect = checkFillAnswer(q, input.value);
+    if (isCorrect) current.correctCount++;
+    input.disabled = true;
+    checkBtn.disabled = true;
+    input.classList.add(isCorrect ? "correct" : "incorrect");
+    showFeedback(feedbackHolder, isCorrect, q.explain, q.answer);
+  }
+
+  function advance() {
+    var t = current.topic;
+    if (current.qIndex + 1 < t.questions.length) {
+      current.qIndex++;
+      renderQuestion();
+    } else {
+      finishTopic();
+    }
+  }
+
+  function finishTopic() {
+    var t = current.topic;
+    var total = t.questions.length;
+    var correct = current.correctCount;
+
+    var prev = progress[t.id] || { attempts: 0, bestCorrect: 0, total: total };
+    prev.attempts++;
+    prev.total = total;
+    prev.bestCorrect = Math.max(prev.bestCorrect, correct);
+    progress[t.id] = prev;
+    saveProgress();
+
+    renderNav();
+    renderTally();
+
+    boardEl.innerHTML = "";
+    var wrap = document.createElement("div");
+    wrap.className = "summary";
+    var eyebrow = document.createElement("div");
+    eyebrow.className = "eyebrow";
+    eyebrow.textContent = "Tema " + t.num + " · " + t.title + " — resultado";
+    wrap.appendChild(eyebrow);
+
+    var score = document.createElement("div");
+    score.className = "score mono";
+    score.innerHTML = correct + " <span>/ " + total + "</span>";
+    wrap.appendChild(score);
+
+    var msg = document.createElement("p");
+    msg.style.color = "var(--ink-soft)";
+    msg.style.maxWidth = "52ch";
+    msg.textContent = correct === total
+      ? "¡Tema dominado! Repite cuando quieras para reforzarlo."
+      : "Vas bien. Repite el tema para mejorar tu marca o sigue con otro.";
+    wrap.appendChild(msg);
+
+    var trucoBox = document.createElement("div");
+    trucoBox.className = "truco-box";
+    trucoBox.innerHTML = '<span class="tag">Recuerda</span><span>' + t.truco + "</span>";
+    wrap.appendChild(trucoBox);
+
+    var actions = document.createElement("div");
+    actions.className = "summary-actions";
+    var retryBtn = document.createElement("button");
+    retryBtn.className = "primary-btn";
+    retryBtn.textContent = "Repetir tema";
+    retryBtn.addEventListener("click", function () { startTopic(t); });
+    var backBtn = document.createElement("button");
+    backBtn.className = "secondary-btn";
+    backBtn.textContent = "Volver a temas";
+    backBtn.addEventListener("click", function () { current.topic = null; renderNav(); renderIntro(); });
+    actions.appendChild(retryBtn);
+    actions.appendChild(backBtn);
+    wrap.appendChild(actions);
+
+    boardEl.appendChild(wrap);
+  }
+
+  renderNav();
+  renderTally();
+  renderIntro();
+})();
+</script>
