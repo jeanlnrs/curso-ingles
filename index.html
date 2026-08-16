@@ -855,7 +855,8 @@
         "<tr><td>Afirmativa</td><td>a / an</td><td>some</td><td>some</td></tr>" +
         "<tr><td>Negativa</td><td>not a / not any</td><td>not any</td><td>not any</td></tr>" +
         "<tr><td>Pregunta</td><td>a / an</td><td>any</td><td>any</td></tr></table></div>" +
-        "<p><b>Excepción:</b> al ofrecer o pedir algo se usa <b>some</b> aunque sea pregunta: Would you like some coffee? Can I have some water?</p>" +
+        "<p><b>Excepción 1:</b> al ofrecer o pedir algo se usa <b>some</b> aunque sea pregunta: Would you like some coffee? Can I have some water?</p>" +
+        "<p><b>Excepción 2:</b> cuando quien pregunta ya espera o supone que la respuesta va a ser 'sí' (no es una pregunta neutral, es casi una confirmación). 'Do you have any juice?' es neutral (no sé si hay). 'Does he have some bread?' ya supone que sí tiene.</p>" +
         "<p><b>Much/many:</b> many = contable plural (How many books...?). much = incontable (How much water...?). En afirmaciones normales se prefiere <b>a lot of</b> (sirve para ambos), ya que much/many suenan formales.</p>",
       questions: [
         { type: "mc", prompt: "I have ___ books. (afirmativa)", options: ["some", "any"], answer: 0,
@@ -873,7 +874,11 @@
         { type: "mc", prompt: "How ___ water do you need? (incontable)", options: ["much", "many"], answer: 0,
           explain: "Much se usa con incontables: How much water...?" },
         { type: "mc", prompt: "En afirmaciones normales de cantidad, se prefiere...", options: ["much / many", "a lot of"], answer: 1,
-          explain: "Much/many suenan formales en afirmaciones; se prefiere a lot of, que sirve para contables e incontables." }
+          explain: "Much/many suenan formales en afirmaciones; se prefiere a lot of, que sirve para contables e incontables." },
+        { type: "mc", prompt: "Sabes que tu hermana siempre tiene café en casa y se lo confirmas: Do you have ___ coffee?", options: ["any", "some"], answer: 1,
+          explain: "Excepción 2: ya esperas/supones que la respuesta es sí, así que se usa some aunque sea pregunta." },
+        { type: "mc", prompt: "Estás en una tienda nueva y no sabes si venden leche: Do you have ___ milk?", options: ["any", "some"], answer: 0,
+          explain: "Pregunta neutral, de verdad no sabes la respuesta → any." }
       ]
     }
   ];

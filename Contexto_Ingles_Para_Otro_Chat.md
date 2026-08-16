@@ -371,9 +371,15 @@ Tabla:
 
 Truco: "SOME dice que sí, ANY dice que no (o pregunta)."
 
-Excepción: al **ofrecer o pedir algo**, se usa **some** aunque sea pregunta:
+Excepción 1: al **ofrecer o pedir algo**, se usa **some** aunque sea pregunta:
 - Would you like some coffee?
 - Can I have some water?
+
+Excepción 2: cuando quien pregunta **ya espera o supone que la respuesta va a ser "sí"** (no es una pregunta neutral, es casi una confirmación):
+- Do you have any juice? = pregunta neutral, no sé si hay o no.
+- Does he have some bread? = ya supongo/espero que sí tiene.
+
+Truco: "ANY = pregunta abierta, de verdad no sé la respuesta. SOME = ya me imagino que sí (o te lo estoy pidiendo/ofreciendo)."
 
 **Much/many** = para hablar o preguntar de **cantidad**:
 - many → contable plural (How many books...?)
