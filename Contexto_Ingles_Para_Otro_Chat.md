@@ -388,6 +388,24 @@ Truco: "ANY = pregunta abierta, de verdad no sé la respuesta. SOME = ya me imag
 
 Truco: MANY = se cuenta con los dedos. MUCH = suena a "mush" (puré, no se cuenta).
 
+## 28. I'd (I would / I had)
+**I'd** es una contracción de dos cosas distintas:
+
+- **I would** (la más común): para peticiones educadas, deseos o cosas hipotéticas.
+  - I'd like a coffee. = Quisiera un café.
+  - I'd go if I could.
+  - I'd love to help.
+- **I had** (menos común, past perfect): para algo que ya había pasado antes de otro momento.
+  - I'd finished my homework before dinner.
+
+Cómo distinguirlos: mira lo que viene después de I'd.
+- I'd + verbo base (like, go, love, help) → **would**
+- I'd + verbo en participio pasado (finished, seen, gone) → **had**
+
+Truco: "I'd + verbo normal = would. I'd + verbo 'terminado' (participio) = had."
+
+Relación: igual que it's (it is / it has) y who's (who is / who has), I'd también tiene doble significado según el contexto.
+
 ---
 
 # Trucos principales

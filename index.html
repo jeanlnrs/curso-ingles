@@ -880,6 +880,29 @@
         { type: "mc", prompt: "Estás en una tienda nueva y no sabes si venden leche: Do you have ___ milk?", options: ["any", "some"], answer: 0,
           explain: "Pregunta neutral, de verdad no sabes la respuesta → any." }
       ]
+    },
+    {
+      id: "id-would-had", num: "28", category: "Contracciones y would", title: "I'd (I would / I had)",
+      truco: "I'd + verbo normal (like, go, help) = would. I'd + verbo 'terminado' (participio: finished, seen, gone) = had.",
+      lesson: "<p><b>I'd</b> es una contracción de <b>I would</b> (la más común) o <b>I had</b> (menos común).</p>" +
+        "<p><b>I would:</b> para peticiones educadas, deseos o cosas hipotéticas. I'd like a coffee. I'd go if I could. I'd love to help.</p>" +
+        "<p><b>I had:</b> para algo que ya había pasado antes de otro momento (past perfect). I'd finished my homework before dinner.</p>" +
+        "<p>Mira lo que viene después: I'd + like/love/want/go (verbo base) → would. I'd + verbo en participio (finished, seen, gone) → had.</p>" +
+        "<p><b>Error común:</b> pensar que I'd siempre es lo mismo. En la mayoría de conversaciones cotidianas, I'd = I would, sobre todo en peticiones (I'd like...).</p>",
+      questions: [
+        { type: "mc", prompt: "I'd like a coffee. → I'd significa...", options: ["I would", "I had"], answer: 0,
+          explain: "I'd like = I would like: forma educada de pedir algo." },
+        { type: "mc", prompt: "I'd finished my homework before dinner. → I'd significa...", options: ["I would", "I had"], answer: 1,
+          explain: "Antes de un verbo en participio (finished), I'd = I had." },
+        { type: "mc", prompt: "¿Cuál es la forma más educada de pedir un café?", options: ["I want a coffee.", "I'd like a coffee."], answer: 1,
+          explain: "I'd like es más suave y educado que I want." },
+        { type: "mc", prompt: "I'd go if I could. → I'd significa...", options: ["I would", "I had"], answer: 0,
+          explain: "Va seguido de un verbo base (go), no de un participio, así que es would." },
+        { type: "mc", prompt: "¿Qué tipo de verbo sigue normalmente a I'd cuando significa I had?", options: ["verbo base (like, go, help)", "verbo en participio (finished, seen, gone)"], answer: 1,
+          explain: "I had siempre va seguido del verbo en su forma de participio pasado." },
+        { type: "fill", prompt: "Traduce: 'Me encantaría ayudar.' (usa I'd)", answer: "I'd love to help", alt: ["I would love to help"],
+          explain: "I'd love to help = I would love to help." }
+      ]
     }
   ];
 
