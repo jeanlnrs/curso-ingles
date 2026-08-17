@@ -1,0 +1,14 @@
+# Sistema operativo
+Thumbs.db
+desktop.ini
+$RECYCLE.BIN/
+.DS_Store
+
+# Editor
+.vscode/
+*.swp
+*~
+
+# Variables de entorno / secretos
+.env
+.env.local
