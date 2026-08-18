@@ -406,6 +406,46 @@ Truco: "I'd + verbo normal = would. I'd + verbo 'terminado' (participio) = had."
 
 Relación: igual que it's (it is / it has) y who's (who is / who has), I'd también tiene doble significado según el contexto.
 
+## 29. Present Progressive (afirmación, negación, preguntas)
+Se usa para acciones que están pasando **ahora mismo**.
+
+Afirmación:
+**Sujeto + to be (am/is/are) + verbo-ing**
+- I am reading.
+- She is sleeping.
+- They are playing.
+
+Negación:
+**Sujeto + to be + not + verbo-ing**
+- I'm not working.
+- She isn't sleeping.
+- They aren't playing.
+
+Preguntas sí/no:
+**To be + sujeto + verbo-ing?**
+- Is she sleeping? → Yes, she is. / No, she isn't.
+- Are they playing?
+
+Preguntas WH:
+**WH + to be + sujeto + verbo-ing?**
+- What are you doing?
+- Where is he going?
+- Why is she crying?
+- Who is Guy talking to?
+
+Reglas rápidas del -ing:
+- play → playing (normal)
+- write → writing (se quita la e)
+- run → running (se dobla la consonante final)
+
+**Truco:** "Si veo -ing, siempre hay to be (am/is/are) en algún lado — nunca uso do/does con el progressive." Es la misma lógica del tema 21 (¿veo am/is/are? → to be) y la excepción 1 de to be del tema 20, aplicada a este tiempo.
+
+Errores comunes:
+- I don't working. ❌ → I'm not working. ✅ (no se mezcla do/does con -ing)
+- She not sleeping. ❌ → She isn't sleeping. ✅ (falta el to be)
+- They isn't playing. ❌ → They aren't playing. ✅ (they va con are, no is)
+- What you are doing? ❌ → What are you doing? ✅ (el to be se mueve antes del sujeto)
+
 ---
 
 # Trucos principales
@@ -422,6 +462,7 @@ Relación: igual que it's (it is / it has) y who's (who is / who has), I'd tambi
 - **Do auxiliar:** afirmación normalmente no; pregunta y negación sí.
 - **To be vs do/does:** si el verbo es am/is/are, usa to be; si es otro verbo en presente simple, usa do/does.
 - **WH:** WH → do/does → sujeto → verbo, salvo las dos excepciones anteriores.
+- **Present Progressive:** si veo -ing, siempre hay to be (am/is/are); nunca uso do/does con él.
 
 ---
 

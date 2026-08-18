@@ -377,6 +377,31 @@
         { type: "fill", prompt: "Traduce: 'Me encantaría ayudar.' (usa I'd)", answer: "I'd love to help", alt: ["I would love to help"],
           explain: "I'd love to help = I would love to help." }
       ]
+    },
+    {
+      id: "present-progressive", num: "29", category: "Presente progresivo", title: "Present Progressive (afirmación, negación, preguntas)",
+      truco: "Si veo -ing, siempre hay to be (am/is/are) en algún lado. Nunca uso do/does con el progressive.",
+      lesson: "<p>Se usa para acciones que están pasando <b>ahora mismo</b>.</p>" +
+        "<p><b>Afirmación:</b> sujeto + to be (am/is/are) + verbo-ing. I am reading. She is sleeping. They are playing.</p>" +
+        "<p><b>Negación:</b> sujeto + to be + not + verbo-ing. I'm not working. She isn't sleeping. They aren't playing.</p>" +
+        "<p><b>Preguntas sí/no:</b> to be + sujeto + verbo-ing? Is she sleeping? Are they playing?</p>" +
+        "<p><b>Preguntas WH:</b> WH + to be + sujeto + verbo-ing? What are you doing? Where is he going? Who is Guy talking to?</p>" +
+        "<p><b>Reglas del -ing:</b> play → playing (normal). write → writing (se quita la e). run → running (se dobla la consonante).</p>" +
+        "<p><b>Error común:</b> mezclar do/does con -ing (I don't working ❌ → I'm not working ✅), u olvidar mover el to be antes del sujeto en preguntas (What you are doing? ❌ → What are you doing? ✅).</p>",
+      questions: [
+        { type: "mc", prompt: "She ___ sleeping right now.", options: ["is", "does"], answer: 0,
+          explain: "El progressive siempre usa to be, nunca do/does." },
+        { type: "mc", prompt: "Negativo de 'They are playing.'", options: ["They don't playing.", "They aren't playing."], answer: 1,
+          explain: "Se agrega not después del to be: aren't." },
+        { type: "mc", prompt: "Pregunta sí/no de 'He is working.'", options: ["Does he working?", "Is he working?"], answer: 1,
+          explain: "El to be se mueve antes del sujeto: Is he working?" },
+        { type: "mc", prompt: "'What ___ you doing?'", options: ["do", "are"], answer: 1,
+          explain: "WH + to be + sujeto + verbo-ing: What are you doing?" },
+        { type: "mc", prompt: "Forma correcta de negar 'I am working.'", options: ["I'm not working.", "I not working."], answer: 0,
+          explain: "Nunca se omite el to be en la negación." },
+        { type: "fill", prompt: "Traduce: '¿Con quién está hablando Guy?' (usa is)", answer: "Who is Guy talking to", alt: ["Who is Guy talking to?"],
+          explain: "WH (who) + is + sujeto (Guy) + verbo-ing (talking) + to al final." }
+      ]
     }
   ];
 
