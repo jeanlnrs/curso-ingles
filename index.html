@@ -402,6 +402,186 @@
         { type: "fill", prompt: "Traduce: '¿Con quién está hablando Guy?' (usa is)", answer: "Who is Guy talking to", alt: ["Who is Guy talking to?"],
           explain: "WH (who) + is + sujeto (Guy) + verbo-ing (talking) + to al final." }
       ]
+    },
+    {
+      id: "pronouns", num: "30", category: "Descripciones y posesión", title: "Pronombres personales (subject pronouns)",
+      truco: "Persona sola → he/she/it. Grupo → we/they (según si me incluye o no).",
+      lesson: "<p>Un pronombre reemplaza a un sustantivo para no repetir nombres.</p>" +
+        "<p><b>I</b> = yo mismo. <b>He</b> = un hombre. <b>She</b> = una mujer. <b>It</b> = una cosa/animal. <b>We</b> = grupo conmigo incluido. <b>They</b> = otro grupo.</p>" +
+        "<p>Singular: Maria → she. Carlos → he. The book → it.</p>" +
+        "<p>Plural: Maria & Carlos → they. My sister & I → we. The phones → they.</p>",
+      questions: [
+        { type: "mc", prompt: "'The dog is brown.' → reemplaza 'the dog'", options: ["It", "He"], answer: 0,
+          explain: "Un animal/cosa se reemplaza con it." },
+        { type: "mc", prompt: "'Luis and I are friends.' → reemplaza 'Luis and I'", options: ["They", "We"], answer: 1,
+          explain: "Grupo que me incluye a mí = we." },
+        { type: "mc", prompt: "'Maria and Carlos are here.' → reemplaza 'Maria and Carlos'", options: ["We", "They"], answer: 1,
+          explain: "Grupo que no me incluye = they." },
+        { type: "fill", prompt: "'Carlos studies.' → reemplaza Carlos con el pronombre", answer: "He", alt: ["he"],
+          explain: "Carlos es un hombre → He." }
+      ]
+    },
+    {
+      id: "short-answers", num: "31", category: "Presente simple", title: "Respuestas cortas: YES no se contrae, NO sí",
+      truco: "Un YES contraído suena raro y cortado en inglés. El NO sí se contrae porque ahí sí suena natural.",
+      lesson: "<p>Regla para to be, do/does, y have/has: <b>YES nunca se contrae. NO siempre se contrae.</b></p>" +
+        "<p>Are you okay? → Yes, I am. (nunca 'Yes, I'm') / No, I'm not.</p>" +
+        "<p>Does she work here? → Yes, she does. / No, she doesn't.</p>" +
+        "<p>Do you have a car? → Yes, I do. / No, I don't.</p>",
+      questions: [
+        { type: "mc", prompt: "Respuesta correcta a 'Are you tired?'", options: ["Yes, I'm.", "Yes, I am."], answer: 1,
+          explain: "YES nunca se contrae." },
+        { type: "mc", prompt: "Respuesta correcta a 'Does she work here?' (negativo)", options: ["No, she doesn't.", "No, she does not work here she."], answer: 0,
+          explain: "NO sí se contrae: doesn't." },
+        { type: "mc", prompt: "Respuesta correcta a 'Do they live in Panama?'", options: ["Yes, they do.", "Yes, they're."], answer: 0,
+          explain: "YES completo: 'Yes, they do.'" },
+        { type: "fill", prompt: "Traduce: 'Sí, lo soy.' (respondiendo a Are you a teacher?)", answer: "Yes, I am", alt: ["Yes I am"],
+          explain: "Yes nunca se contrae." }
+      ]
+    },
+    {
+      id: "in-on-at-place", num: "32", category: "Preposiciones", title: "Prepositions of place: IN / ON / AT",
+      truco: "IN = dentro/área grande. ON = encima de una superficie. AT = un punto exacto.",
+      lesson: "<p><b>IN</b> = dentro de algo, área amplia. I live IN Panama City. She is IN the kitchen.</p>" +
+        "<p><b>ON</b> = sobre una superficie. The book is ON the table. We live ON the 3rd floor.</p>" +
+        "<p><b>AT</b> = un punto específico. I am AT work. We meet AT Niko's.</p>" +
+        "<p><b>IN vs AT, la que más confunde:</b> IN = área amplia (una ciudad entera). AT = un punto exacto (un lugar con nombre). 'I live IN Panama City' (toda la ciudad) vs 'I am AT work' (un lugar preciso).</p>" +
+        "<p>Mismo patrón con <b>arrive</b>: arrive IN a city/country, arrive AT a specific point.</p>" +
+        "<p><b>Error común:</b> We live on Panama City ❌ → in ✅. My phone is at the table ❌ → on ✅. I have breakfast in work ❌ → at ✅.</p>",
+      questions: [
+        { type: "mc", prompt: "I live ___ Panama City.", options: ["in", "at"], answer: 0,
+          explain: "Ciudad = área amplia → in." },
+        { type: "mc", prompt: "The book is ___ the table.", options: ["in", "on"], answer: 1,
+          explain: "Superficie → on." },
+        { type: "mc", prompt: "I am ___ work every day.", options: ["at", "in"], answer: 0,
+          explain: "Punto específico → at." },
+        { type: "mc", prompt: "She is ___ the kitchen.", options: ["in", "on"], answer: 0,
+          explain: "Espacio cerrado → in." },
+        { type: "fill", prompt: "Traduce: 'Nos vemos en Niko's.' (usa meet)", answer: "We meet at Niko's", alt: ["We meet at Nikos"],
+          explain: "Lugar específico con nombre → at." }
+      ]
+    },
+    {
+      id: "possessive-advanced", num: "33", category: "Descripciones y posesión", title: "Posesión avanzada: reglas completas de 's",
+      truco: "Si la palabra ya termina en -s y es plural, solo agrego el apóstrofe ('). En los demás casos, agrego 's completo.",
+      lesson: "<p>Extiende el tema de possessive 's a todos los casos:</p>" +
+        "<p><b>Singular:</b> Maria's book, the dog's tail.</p>" +
+        "<p><b>Plural terminado en -s:</b> solo apóstrofe → the girls' room, my parents' car.</p>" +
+        "<p><b>Plural irregular (sin -s):</b> + 's → the children's toys, the men's room.</p>" +
+        "<p><b>Singular terminado en -s:</b> + 's igual (se dice doble s) → James's car, my boss's office.</p>" +
+        "<p>Con grupos o instituciones (no personas), en inglés natural se prefiere 'of/in' en vez de 's.</p>",
+      questions: [
+        { type: "mc", prompt: "El cuarto de las niñas (varias niñas)", options: ["the girls' room", "the girl's room"], answer: 0,
+          explain: "Plural terminado en -s: solo apóstrofe." },
+        { type: "mc", prompt: "Los juguetes de los niños (children, plural irregular)", options: ["the childrens' toys", "the children's toys"], answer: 1,
+          explain: "Plural irregular sin -s: se agrega 's completo." },
+        { type: "mc", prompt: "El carro de James (nombre termina en s)", options: ["James' car", "James's car"], answer: 1,
+          explain: "Singular terminado en s: igual se agrega 's." },
+        { type: "fill", prompt: "Traduce: 'el carro de mis padres' (parents, plural)", answer: "my parents' car",
+          explain: "Plural terminado en -s → solo apóstrofe." }
+      ]
+    },
+    {
+      id: "which-verb", num: "34", category: "Verbos base", title: "Which verb do I use: to be / do-does / have-has",
+      truco: "¿Quién soy o cómo estoy? → to be. ¿Una acción o costumbre? → do/does. ¿Algo que tengo? → have/has.",
+      lesson: "<p>Marco de decisión para elegir el verbo correcto:</p>" +
+        "<p><b>to be:</b> identidad, descripción, estado. Subject + am/is/are + noun/adj. I am a teacher. She is tired.</p>" +
+        "<p><b>do/does:</b> acciones, hábitos, gustos. Do/does + subject + verbo base. Do you like coffee?</p>" +
+        "<p><b>have/has:</b> posesiones, experiencias. Subject + have/has + noun. I have a car.</p>" +
+        "<p><b>Error común:</b> 'I am like coffee' ❌ (like es acción, no identidad) → 'I like coffee' ✅.</p>",
+      questions: [
+        { type: "mc", prompt: "I ___ a teacher. (identidad)", options: ["am", "do"], answer: 0,
+          explain: "Identidad → to be." },
+        { type: "mc", prompt: "She ___ like chocolate. (gusto/acción)", options: ["is", "does"], answer: 1,
+          explain: "Acción/gusto → do/does." },
+        { type: "mc", prompt: "They ___ a big house. (posesión)", options: ["have", "are"], answer: 0,
+          explain: "Posesión → have/has." },
+        { type: "mc", prompt: "He ___ very tired today. (estado)", options: ["is", "does"], answer: 0,
+          explain: "Estado → to be." },
+        { type: "fill", prompt: "Corrige el error: 'I am like coffee.'", answer: "I like coffee", alt: ["I like coffee."],
+          explain: "Like es una acción/gusto, no identidad — nunca 'am like'." }
+      ]
+    },
+    {
+      id: "would-like-have-meals", num: "35", category: "Comida y cantidad", title: "Would like, Have para comidas, 'a coffee' vs 'some coffee'",
+      truco: "SOME + incontable = la sustancia en general. A/AN + el mismo incontable = una porción servida.",
+      lesson: "<p><b>Have</b> también significa 'tomar/comer' con comidas: I have breakfast at seven. She has a sandwich for lunch.</p>" +
+        "<p><b>Would like</b> (I'd like) es la forma educada de pedir algo, más formal que want.</p>" +
+        "<p>'I want coffee.' → directo, informal, con amigos. 'I'd like some coffee, please.' → educado, formal, en restaurantes y con desconocidos.</p>" +
+        "<p><b>La regla de la porción:</b> sustantivos incontables (coffee, tea, salad, ice cream) SÍ pueden llevar A/AN cuando significan 'una porción': some coffee (café en general) vs a coffee (= una taza de café). Some water vs a water (= un vaso de agua).</p>",
+      questions: [
+        { type: "mc", prompt: "Forma más educada de pedir en un restaurante", options: ["I want a coffee.", "I'd like a coffee, please."], answer: 1,
+          explain: "Would like es más educado que want." },
+        { type: "mc", prompt: "'Can I have a coffee, please?' → 'a coffee' significa...", options: ["café en general", "una taza de café"], answer: 1,
+          explain: "A/AN + incontable = una porción servida." },
+        { type: "mc", prompt: "'I have ___ at seven every morning.' (comida)", options: ["breakfast", "am breakfast"], answer: 0,
+          explain: "Have = tomar/comer una comida." },
+        { type: "fill", prompt: "Traduce: 'Me gustaría un café, por favor.' (usa I'd)", answer: "I'd like a coffee, please", alt: ["I would like a coffee, please"],
+          explain: "I'd like + a coffee (una porción) + please." }
+      ]
+    },
+    {
+      id: "days-time-prices", num: "36", category: "Tiempo y días", title: "Days of the week + IN/AT/ON de tiempo + it's vs they're (precios)",
+      truco: "Para tiempo: IN lo grande (mes/año), ON el día, AT la hora exacta. Para precios: uno = it's, varios = they're.",
+      lesson: "<p><b>Días de la semana:</b> Monday, Tuesday, Wednesday, Thursday, Friday, Saturday, Sunday — siempre con mayúscula en inglés (a diferencia del español).</p>" +
+        "<p><b>IT'S + ON para días:</b> 'What day is it?' → 'It's Monday.' Para el día de la semana siempre se usa ON: I work ON Monday. Nunca IN, nunca AT.</p>" +
+        "<p><b>Prepositions of TIME</b> (mismas 3 palabras que el tema de lugar, pero para tiempo):</p>" +
+        "<p><b>IN</b> = meses, años, estaciones, partes del día → in August, in 2026, in the morning.</p>" +
+        "<p><b>ON</b> = días de la semana, fechas específicas → on Monday, on August 5th.</p>" +
+        "<p><b>AT</b> = horas exactas, noon/night/midnight → at 7:00, at noon, at night.</p>" +
+        "<p><b>Precios — it's vs they're:</b> un solo objeto → It's twelve dollars. Varios objetos → They're five dollars. Misma lógica que to be: uno = is, varios = are.</p>",
+      questions: [
+        { type: "mc", prompt: "My birthday is ___ August.", options: ["in", "on"], answer: 0,
+          explain: "Mes → in." },
+        { type: "mc", prompt: "The store opens ___ Monday.", options: ["on", "at"], answer: 0,
+          explain: "Día de la semana → on." },
+        { type: "mc", prompt: "The store opens ___ 9:00.", options: ["in", "at"], answer: 1,
+          explain: "Hora exacta → at." },
+        { type: "mc", prompt: "'How much are these shoes?' → respuesta", options: ["It's ten dollars.", "They're ten dollars."], answer: 1,
+          explain: "Shoes es plural → they're." },
+        { type: "fill", prompt: "Traduce: 'Trabajo los lunes.' (usa on)", answer: "I work on Monday", alt: ["I work on Mondays"],
+          explain: "Días de la semana siempre con ON, y con mayúscula." }
+      ]
+    },
+    {
+      id: "frequency-adverbs", num: "37", category: "Tiempo y días", title: "Frequency adverbs (always, usually, sometimes, rarely, never)",
+      truco: "Verbo de acción → adverbio antes. To be → adverbio después. Con auxiliar → adverbio en medio.",
+      lesson: "<p>Dicen con qué frecuencia pasa algo: <b>always</b> (siempre, 100%), <b>usually</b> (usualmente, ~80%), <b>sometimes</b> (a veces, ~50%), <b>rarely</b> (raramente, ~20%), <b>never</b> (nunca, 0%).</p>" +
+        "<p><b>Regla 1 — con verbos de acción:</b> sujeto + ADVERBIO + verbo. I always eat breakfast.</p>" +
+        "<p><b>Regla 2 — con to be:</b> sujeto + to be + ADVERBIO (orden contrario). She is always late.</p>" +
+        "<p><b>Regla 3 — con auxiliares (do/does/don't/doesn't):</b> el adverbio va entre el auxiliar y el verbo. I don't usually eat lunch. Do you always get up early?</p>" +
+        "<p><b>Never ya es negativo</b> — nunca se combina con don't/doesn't: 'I don't never go.' ❌ → 'I never go.' ✅</p>" +
+        "<p>Frecuencia con número exacto (once/twice/three times a day) va al final de la oración: I brush my teeth three times a day.</p>",
+      questions: [
+        { type: "mc", prompt: "'I ___ eat breakfast.' (verbo de acción, always)", options: ["I always eat", "I eat always"], answer: 0,
+          explain: "Con verbo de acción, el adverbio va antes." },
+        { type: "mc", prompt: "'She ___ late.' (to be, always)", options: ["always is", "is always"], answer: 1,
+          explain: "Con to be, el adverbio va después." },
+        { type: "mc", prompt: "'I don't ___ eat lunch.' (usually)", options: ["usually", "am usually"], answer: 0,
+          explain: "Con auxiliar, el adverbio va entre don't y el verbo." },
+        { type: "mc", prompt: "Forma correcta de decir 'nunca voy'", options: ["I don't never go.", "I never go."], answer: 1,
+          explain: "Never ya es negativo, no se combina con don't." },
+        { type: "fill", prompt: "Traduce: 'Ella siempre está cansada.' (to be)", answer: "She is always tired", alt: ["She's always tired"],
+          explain: "To be + adverbio después." }
+      ]
+    },
+    {
+      id: "invitations", num: "38", category: "Tiempo y días", title: "Invitaciones: Let's / Do you want to / Would you like to",
+      truco: "Let's = yo incluido. Do you want to = casual, con amigos. Would you like to = formal, más educado.",
+      lesson: "<p>Tres formas de invitar a alguien, de menos a más formal:</p>" +
+        "<p><b>Let's + verbo base</b> = 'vamos a...', tú también participas. Let's go for lunch!</p>" +
+        "<p><b>Do you want to + verbo base</b> = invitación directa e informal, con amigos. Do you want to go to the beach?</p>" +
+        "<p><b>Would you like to + verbo base</b> = invitación educada y formal, con desconocidos o gente que no conoces bien. Would you like to have dinner with me?</p>",
+      questions: [
+        { type: "mc", prompt: "Invitar a tu jefe de forma educada a tomar un café", options: ["Do you want to have a coffee?", "Would you like to have a coffee?"], answer: 1,
+          explain: "Con el jefe, forma educada: would you like to." },
+        { type: "mc", prompt: "Invitar a tu mejor amigo a nadar este fin de semana", options: ["Would you like to go swimming?", "Do you want to go swimming?"], answer: 1,
+          explain: "Con un amigo, forma casual: do you want to." },
+        { type: "mc", prompt: "Sugerir que tú y un compañero almuercen juntos, ambos van", options: ["Let's have lunch!", "Would you like to have lunch?"], answer: 0,
+          explain: "Let's incluye al que habla." },
+        { type: "fill", prompt: "Traduce: 'Vamos a estudiar juntos.' (usa Let's)", answer: "Let's study together", alt: ["Let's study together."],
+          explain: "Let's + verbo base." }
+      ]
     }
   ];
 

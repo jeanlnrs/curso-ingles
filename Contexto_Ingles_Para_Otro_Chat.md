@@ -446,6 +446,132 @@ Errores comunes:
 - They isn't playing. ❌ → They aren't playing. ✅ (they va con are, no is)
 - What you are doing? ❌ → What are you doing? ✅ (el to be se mueve antes del sujeto)
 
+## 30. Pronombres personales (subject pronouns)
+Reemplazan a un sustantivo. Sirven para no repetir nombres.
+
+| Pronombre | Reemplaza a | Ejemplo |
+|---|---|---|
+| I | yo mismo | I am a student. |
+| He | un hombre | He is Carlos. |
+| She | una mujer | She is Maria. |
+| It | una cosa/animal | It is a phone. |
+| We | grupo conmigo | We study. |
+| They | otro grupo | They listen. |
+
+Singular: Maria → she, Carlos → he, the book → it.
+Plural: Maria & Carlos → they, my sister & I → we, the phones → they.
+
+**Truco:** "Persona sola → he/she/it. Grupo → we/they (según si me incluye o no)."
+
+## 31. Respuestas cortas: por qué YES nunca se contrae y NO siempre sí
+Regla para to be, do/does, y have/has:
+
+**YES nunca se contrae. NO siempre se contrae.**
+
+- Are you okay? → Yes, I am. (NUNCA "Yes, I'm") / No, I'm not.
+- Does she work here? → Yes, she does. / No, she doesn't.
+- Do you have a car? → Yes, I do. / No, I don't.
+
+**Truco:** "Un YES contraído suena raro y cortado en inglés — por eso siempre se escribe completo. El NO sí se contrae porque ahí la contracción sí suena natural."
+
+## 32. Prepositions of place: IN / ON / AT
+Tres preposiciones de **lugar** (distinto del tema 34, que es de tiempo).
+
+- **IN** = dentro de algo, área amplia (ciudad, cuarto): I live IN Panama City. She is IN the kitchen.
+- **ON** = sobre una superficie: The book is ON the table. We live ON the 3rd floor.
+- **AT** = un punto específico: I am AT work. We meet AT Niko's.
+
+**IN vs AT, la que más confunde:** IN = área amplia (una ciudad entera). AT = un punto exacto (un lugar con nombre). "I live IN Panama City" (toda la ciudad) vs "I am AT work" (un lugar preciso).
+
+Mismo patrón con **arrive**: arrive IN a city/country, arrive AT a specific point (arrive AT the airport).
+
+**Truco:** "IN = dentro/área grande. ON = encima. AT = un punto exacto." Y el que "in" antes de "at" no se mezclan con las preposiciones de tiempo del tema 34, que usan las mismas 3 palabras pero con otro significado.
+
+Errores comunes: "We live on Panama City" ❌ → in ✅. "My phone is at the table" ❌ → on ✅. "I have breakfast in work" ❌ → at ✅.
+
+## 33. Posesión avanzada: reglas completas de 's
+Extiende el tema 12 (possessive 's) a todos los casos:
+
+- Sustantivo singular: Maria's book, the dog's tail.
+- Plural terminado en -s: solo se agrega apóstrofe, sin s → the girls' room, my parents' car.
+- Plural irregular (sin -s): + 's → the children's toys, the men's room.
+- Singular terminado en -s: + 's igual (se dice doble s) → James's car, my boss's office.
+
+**Truco:** "Si la palabra YA termina en s y es plural, solo agrego el apóstrofe ('). En todos los demás casos, agrego 's completo."
+
+Con grupos o instituciones (no personas), en inglés natural se prefiere "of/in" en vez de 's: "the students in the class" suena más natural que "the class's students".
+
+## 34. Which verb do I use: to be / do-does / have-has
+Marco de decisión para elegir el verbo correcto — conecta los temas 7, 8, 9 y 10.
+
+| Verbo | Para qué | Estructura | Ejemplo |
+|---|---|---|---|
+| **to be** | identidad, descripción, estado | subject + am/is/are + noun/adj | I am a teacher. She is tired. |
+| **do/does** | acciones, hábitos, gustos | do/does + subject + verbo base | Do you like coffee? |
+| **have/has** | posesiones, experiencias | subject + have/has + noun | I have a car. |
+
+**Truco:** "¿Estoy describiendo quién soy o cómo estoy? → to be. ¿Estoy hablando de una acción o costumbre? → do/does. ¿Estoy hablando de algo que tengo? → have/has."
+
+Error común: "I am like coffee" ❌ (like es acción, no identidad) → "I like coffee" ✅.
+
+## 35. Would like, Have para comidas, "a coffee" vs "some coffee"
+**Have** también significa "tomar/comer" con comidas: I have breakfast at seven. She has a sandwich for lunch.
+
+**Would like** (contracción: I'd like) es la forma educada de pedir algo — más formal que **want**:
+- "I want coffee." → directo, informal, con amigos.
+- "I'd like some coffee, please." → educado, formal, en restaurantes y con desconocidos.
+
+**La regla de la porción:** sustantivos incontables (coffee, tea, salad, ice cream) SÍ pueden llevar A/AN cuando significan "una porción":
+- some coffee (café en general) vs a coffee (= una taza de café)
+- some water vs a water (= un vaso de agua)
+
+**Truco:** "SOME + incontable = la sustancia en general. A/AN + el mismo incontable = una porción servida (una taza, un vaso, un plato)."
+
+## 36. Days of the week + preposiciones de tiempo (IN/AT/ON) + it's vs they're para precios
+**Días de la semana:** Monday, Tuesday, Wednesday, Thursday, Friday, Saturday, Sunday — **siempre con mayúscula** en inglés (a diferencia del español).
+
+**IT'S + ON para días:** "What day is it?" → "It's Monday." Para el día de la semana siempre se usa **ON**: I work ON Monday. Nunca IN, nunca AT.
+
+**Prepositions of TIME (mismas 3 palabras del tema 32, pero para tiempo, no lugar):**
+- **IN** = meses, años, estaciones, partes del día → in August, in 2026, in the morning.
+- **ON** = días de la semana, fechas específicas → on Monday, on August 5th.
+- **AT** = horas exactas, noon/night/midnight → at 7:00, at noon, at night.
+
+**Precios — it's vs they're:** un solo objeto → It's twelve dollars. Varios objetos → They're five dollars. Misma lógica que to be: uno = is, varios = are.
+
+**Truco:** "Para tiempo: IN lo grande (mes/año), ON el día, AT la hora exacta. Para precios: uno = it's, varios = they're — igual que is/are."
+
+## 37. Frequency adverbs (always, usually, sometimes, rarely, never)
+Dicen **con qué frecuencia** pasa algo:
+
+| Adverbio | Español | Frecuencia |
+|---|---|---|
+| always | siempre | 100% |
+| usually | usualmente | ~80% |
+| sometimes | a veces | ~50% |
+| rarely | raramente | ~20% |
+| never | nunca | 0% |
+
+**3 reglas de posición:**
+1. Con verbos de acción: sujeto + ADVERBIO + verbo → I always eat breakfast.
+2. Con to be: sujeto + to be + ADVERBIO (orden contrario) → She is always late.
+3. Con auxiliares (do/does/don't/doesn't): el adverbio va entre el auxiliar y el verbo → I don't usually eat lunch. Do you always get up early?
+
+**Never ya es negativo** — nunca se combina con don't/doesn't: ❌ "I don't never go." ✅ "I never go." (Para decir lo mismo con la estructura negativa: "I don't ever go.")
+
+Frecuencia con número exacto (once/twice/three times a day/week) va al final de la oración, no en medio: I brush my teeth three times a day.
+
+**Truco:** "Verbo de acción → adverbio antes. To be → adverbio después. Con auxiliar → adverbio en medio, pegado al verbo principal."
+
+## 38. Invitaciones: Let's / Do you want to / Would you like to
+Tres formas de invitar a alguien a hacer algo, de menos a más formal:
+
+- **Let's + verbo base** = "vamos a...", tú también participas. Let's go for lunch!
+- **Do you want to + verbo base** = invitación directa e informal, con amigos. Do you want to go to the beach?
+- **Would you like to + verbo base** = invitación educada y formal, con desconocidos o gente que no conoces bien. Would you like to have dinner with me?
+
+**Truco:** "Let's = yo incluido. Do you want to = casual, con amigos. Would you like to = formal, más educado."
+
 ---
 
 # Trucos principales
@@ -463,6 +589,14 @@ Errores comunes:
 - **To be vs do/does:** si el verbo es am/is/are, usa to be; si es otro verbo en presente simple, usa do/does.
 - **WH:** WH → do/does → sujeto → verbo, salvo las dos excepciones anteriores.
 - **Present Progressive:** si veo -ing, siempre hay to be (am/is/are); nunca uso do/does con él.
+- **Respuestas cortas:** YES nunca se contrae, NO siempre se contrae.
+- **IN/ON/AT lugar:** IN = área amplia, ON = superficie, AT = punto exacto.
+- **Posesión 's:** si la palabra ya termina en -s y es plural, solo apóstrofe.
+- **Which verb:** identidad → to be. Acción/hábito → do/does. Posesión → have/has.
+- **A/some + incontable:** some = la sustancia, a/an = una porción servida.
+- **IN/ON/AT tiempo:** IN lo grande (mes/año), ON el día, AT la hora exacta.
+- **Frequency adverbs:** verbo de acción → adverbio antes; to be → adverbio después; auxiliar → adverbio en medio.
+- **Invitaciones:** Let's (incluido) / Do you want to (casual) / Would you like to (formal).
 
 ---
 
