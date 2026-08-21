@@ -12,3 +12,7 @@ $RECYCLE.BIN/
 # Variables de entorno / secretos
 .env
 .env.local
+
+# Carpetas
+clases/
+*.pdf
