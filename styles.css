@@ -1,61 +1,61 @@
 :root {
-  --board: #FAFAF9;
+  --board: #FAFAFA;
   --surface: #FFFFFF;
-  --surface-2: #F2F2F0;
+  --surface-2: #F1F1F0;
   --ink: #1C1C1A;
   --ink-soft: #75756F;
-  --accent: #2F6F5E;
+  --accent: #1C1C1A;
   --accent-ink: #FFFFFF;
-  --accent-2: #B25A1E;
-  --line: #E6E6E2;
+  --accent-2: #55554F;
+  --line: #E4E4E2;
   --correct: #1F7A46;
   --correct-bg: #EAF6EE;
   --incorrect: #B3302A;
   --incorrect-bg: #FBEAE8;
-  --truco-bg: #FBF3E7;
-  --truco-border: #E0A959;
+  --truco-bg: #F1F1F0;
+  --truco-border: #B7B7B0;
   --shadow: rgba(20, 20, 18, 0.06);
   color-scheme: light;
 }
 
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme="light"]) {
-    --board: #14201C;
-    --surface: #1B2B25;
-    --surface-2: #20342C;
+    --board: #17181A;
+    --surface: #1F2023;
+    --surface-2: #26272A;
     --ink: #F1F1EC;
-    --ink-soft: #A6B3AC;
-    --accent: #6FBFA3;
-    --accent-ink: #0F1A16;
-    --accent-2: #E8A46B;
-    --line: #2C3E36;
+    --ink-soft: #A2A29C;
+    --accent: #F1F1EC;
+    --accent-ink: #17181A;
+    --accent-2: #C4C4BE;
+    --line: #34353A;
     --correct: #8FD9A8;
     --correct-bg: rgba(143, 217, 168, 0.12);
     --incorrect: #F0908A;
     --incorrect-bg: rgba(240, 144, 138, 0.14);
-    --truco-bg: rgba(232, 164, 107, 0.1);
-    --truco-border: #E8A46B;
+    --truco-bg: rgba(255, 255, 255, 0.06);
+    --truco-border: #55565A;
     --shadow: rgba(0, 0, 0, 0.3);
     color-scheme: dark;
   }
 }
 
 :root[data-theme="dark"] {
-  --board: #14201C;
-  --surface: #1B2B25;
-  --surface-2: #20342C;
+  --board: #17181A;
+  --surface: #1F2023;
+  --surface-2: #26272A;
   --ink: #F1F1EC;
-  --ink-soft: #A6B3AC;
-  --accent: #6FBFA3;
-  --accent-ink: #0F1A16;
-  --accent-2: #E8A46B;
-  --line: #2C3E36;
+  --ink-soft: #A2A29C;
+  --accent: #F1F1EC;
+  --accent-ink: #17181A;
+  --accent-2: #C4C4BE;
+  --line: #34353A;
   --correct: #8FD9A8;
   --correct-bg: rgba(143, 217, 168, 0.12);
   --incorrect: #F0908A;
   --incorrect-bg: rgba(240, 144, 138, 0.14);
-  --truco-bg: rgba(232, 164, 107, 0.1);
-  --truco-border: #E8A46B;
+  --truco-bg: rgba(255, 255, 255, 0.06);
+  --truco-border: #55565A;
   --shadow: rgba(0, 0, 0, 0.3);
   color-scheme: dark;
 }
