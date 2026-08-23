@@ -590,6 +590,36 @@
         { type: "fill", prompt: "Traduce: 'Vamos a estudiar juntos.' (usa Let's)", answer: "Let's study together", alt: ["Let's study together."],
           explain: "Let's + verbo base." }
       ]
+    },
+    {
+      id: "formulas-summary", num: "39", category: "Repaso general", title: "Resumen: fórmulas para armar oraciones",
+      truco: "Antes de armar cualquier oración, pregúntate: ¿qué tipo de verbo es (to be, have, acción, -ing)? y ¿es afirmación, negación o pregunta? Con esas dos respuestas, la fórmula sale sola.",
+      lesson: "<p><b>Verbos base:</b></p>" +
+        "<div class=\"table-scroll\"><table class=\"lesson-table\"><tr><th></th><th>Afirmación</th><th>Negación</th><th>Pregunta</th></tr>" +
+        "<tr><td>To be</td><td>Sujeto + am/is/are + compl.</td><td>Sujeto + am/is/are + not + compl.</td><td>Am/Is/Are + sujeto + compl.?</td></tr>" +
+        "<tr><td>Have/Has</td><td>Sujeto + have/has + sustantivo</td><td>Sujeto + don't/doesn't + have + sustantivo</td><td>Do/Does + sujeto + have + sustantivo?</td></tr>" +
+        "<tr><td>Present Simple</td><td>Sujeto + verbo (+s si he/she/it)</td><td>Sujeto + don't/doesn't + verbo base</td><td>Do/Does + sujeto + verbo base?</td></tr>" +
+        "<tr><td>Present Progressive</td><td>Sujeto + am/is/are + verbo-ing</td><td>Sujeto + am/is/are + not + verbo-ing</td><td>Am/Is/Are + sujeto + verbo-ing?</td></tr>" +
+        "</table></div>" +
+        "<p><b>Preguntas WH:</b> con verbo normal, WH + do/does + sujeto + verbo base? Con to be, WH + am/is/are + sujeto? Con to be + progressive, WH + am/is/are + sujeto + verbo-ing? Who como sujeto (excepción, sin do/does): Who + verbo (+s)? Posesión: Whose + sustantivo + is/are + this/that/these/those?</p>" +
+        "<p><b>Hay / existencia:</b> There is/are + sustantivo. Negación: There isn't/aren't + sustantivo. Pregunta: Is/Are there + sustantivo?</p>" +
+        "<p><b>Posesión:</b> Sustantivo + 's + cosa poseída (Maria's book). Plural en -s: solo apóstrofe (the girls' room).</p>" +
+        "<p><b>Frequency adverbs:</b> con verbo de acción, sujeto + adverbio + verbo. Con to be, sujeto + to be + adverbio. Con auxiliar, sujeto + auxiliar + adverbio + verbo.</p>" +
+        "<p><b>Peticiones y ofertas:</b> I'd like + sustantivo/to + verbo (educado) vs I want (directo). Let's + verbo base (incluye al que habla). Do you want to + verbo base? (casual). Would you like to + verbo base? (formal).</p>",
+      questions: [
+        { type: "mc", prompt: "Fórmula de negación de to be", options: ["Sujeto + am/is/are + not + complemento", "Sujeto + don't/doesn't + verbo base"], answer: 0,
+          explain: "To be niega agregando not después del verbo." },
+        { type: "mc", prompt: "Fórmula de pregunta de Present Simple", options: ["Am/Is/Are + sujeto + verbo?", "Do/Does + sujeto + verbo base?"], answer: 1,
+          explain: "Present Simple usa do/does como auxiliar de pregunta." },
+        { type: "mc", prompt: "'What are you doing?' sigue la fórmula de...", options: ["WH + do/does + sujeto + verbo base", "WH + am/is/are + sujeto + verbo-ing"], answer: 1,
+          explain: "Present Progressive: WH + to be + sujeto + verbo-ing." },
+        { type: "mc", prompt: "Fórmula para decir que algo existe", options: ["There is/are + sustantivo", "It is/are + sustantivo"], answer: 0,
+          explain: "There is/are indica existencia." },
+        { type: "mc", prompt: "Invitación formal, con desconocidos", options: ["Do you want to...?", "Would you like to...?"], answer: 1,
+          explain: "Would you like to es la forma educada/formal." },
+        { type: "fill", prompt: "Completa la fórmula: Present Simple negativo → Sujeto + ___ + verbo base", answer: "don't/doesn't", alt: ["dont/doesnt", "don't or doesn't"],
+          explain: "Sujeto + don't/doesn't + verbo base." }
+      ]
     }
   ];
 

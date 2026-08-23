@@ -572,6 +572,34 @@ Tres formas de invitar a alguien a hacer algo, de menos a más formal:
 
 **Truco:** "Let's = yo incluido. Do you want to = casual, con amigos. Would you like to = formal, más educado."
 
+## 39. Resumen: fórmulas para armar oraciones
+Repaso general que junta las fórmulas de todos los tiempos y estructuras vistas.
+
+**Verbos base:**
+| | Afirmación | Negación | Pregunta |
+|---|---|---|---|
+| To be | Sujeto + am/is/are + complemento | Sujeto + am/is/are + not + complemento | Am/Is/Are + sujeto + complemento? |
+| Have/Has | Sujeto + have/has + sustantivo | Sujeto + don't/doesn't + have + sustantivo | Do/Does + sujeto + have + sustantivo? |
+| Present Simple | Sujeto + verbo (+s si he/she/it) | Sujeto + don't/doesn't + verbo base | Do/Does + sujeto + verbo base? |
+| Present Progressive | Sujeto + am/is/are + verbo-ing | Sujeto + am/is/are + not + verbo-ing | Am/Is/Are + sujeto + verbo-ing? |
+
+**Preguntas WH:**
+- Con verbo normal: WH + do/does + sujeto + verbo base?
+- Con to be: WH + am/is/are + sujeto?
+- Con to be + progressive: WH + am/is/are + sujeto + verbo-ing?
+- Who como sujeto (excepción, sin do/does): Who + verbo (+s)?
+- Posesión: Whose + sustantivo + is/are + this/that/these/those?
+
+**Hay / existencia:** There is/are + sustantivo. Negación: There isn't/aren't + sustantivo. Pregunta: Is/Are there + sustantivo?
+
+**Posesión:** Sustantivo + 's + cosa poseída (Maria's book). Plural en -s: solo apóstrofe (the girls' room).
+
+**Frequency adverbs:** con verbo de acción, sujeto + adverbio + verbo. Con to be, sujeto + to be + adverbio. Con auxiliar, sujeto + auxiliar + adverbio + verbo.
+
+**Peticiones y ofertas:** I'd like + sustantivo/to + verbo (educado) vs I want (directo). Let's + verbo base (incluye al que habla). Do you want to + verbo base? (casual). Would you like to + verbo base? (formal).
+
+**Truco:** "Antes de armar cualquier oración, pregúntate: ¿qué tipo de verbo es (to be, have, acción, -ing)? y ¿es afirmación, negación o pregunta? Con esas dos respuestas, la fórmula sale sola."
+
 ---
 
 # Trucos principales
