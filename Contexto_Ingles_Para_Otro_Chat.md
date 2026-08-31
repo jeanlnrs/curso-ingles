@@ -600,6 +600,72 @@ Repaso general que junta las fórmulas de todos los tiempos y estructuras vistas
 
 **Truco:** "Antes de armar cualquier oración, pregúntate: ¿qué tipo de verbo es (to be, have, acción, -ing)? y ¿es afirmación, negación o pregunta? Con esas dos respuestas, la fórmula sale sola."
 
+## 40. Going to — planes y predicciones
+Se usa para dos cosas distintas, con la misma estructura:
+
+1. **Plan/intención** (decidido ANTES de hablar): I'm going to study tonight. We're going to go shopping.
+2. **Predicción** (basada en evidencia que ves AHORA): It's going to rain tomorrow. Look at those clouds!
+
+**Por qué se parece al present progressive:** "going to" viene de movimiento literal ("I am going to the store" = caminando hacia allá ahora mismo). Con el tiempo, la misma estructura pasó a describir planes: si tu plan ya está decidido — ya "en marcha" en tu mente — usas la misma forma, aunque la acción pase después. Lo que es PRESENTE es tu decisión. Lo que es FUTURO es la acción misma. (En español pasa lo mismo: "Voy a estudiar" usa presente —"voy"— para hablar de algo futuro.)
+
+**Fórmula: sujeto + am/is/are + going to + verbo base**
+
+Afirmación: I'm going to study tonight. She's going to wear a jacket.
+Negación: I'm not going to study tonight. She isn't going to wear a hat.
+Pregunta: Are you going to study tonight? What are they going to do?
+
+**Truco:** "Going to = ya lo decidí o ya lo veo venir. Will (tema 41) = lo decido en este momento."
+
+## 41. Can — habilidad, negación, y "can" con verbos de percepción
+**CAN = poder/saber** — algo que eres capaz de hacer.
+
+**Fórmula: sujeto + can + verbo base. Nunca cambia. Nunca 's'. Nunca 'to'.**
+- She can fix computers. (no "She cans" ❌, no "can to fix" ❌)
+
+Negación: **can't** (conversación) o **cannot** (formal/escrito, una sola palabra) — I can't speak Japanese. I cannot attend the meeting.
+
+Pregunta: **Can** va primero — Can you send a text message? → Yes, I can. / No, I can't.
+
+**Caso especial — CAN + verbos de percepción:** verbos como hear, see, smell, taste, feel, understand casi nunca usan -ing (aunque hables de "ahora mismo"). Para estos, CAN llena el espacio:
+- ❌ I am hearing the music. → ✅ I can hear the music.
+- ❌ I am understanding you. → ✅ I can understand you now.
+
+**Truco:** "Can es la 'super muleta': ability (I can swim), y también reemplaza al -ing con verbos que no lo aceptan (hear, see, smell, taste, feel, understand)."
+
+## 42. Will — predicciones, promesas, decisiones instantáneas
+**WILL tiene tres usos distintos**, el contexto dice cuál:
+
+1. **Predicción** (lo que crees que pasará): I think it will rain tomorrow. Palabras señal: I think, I believe, probably, maybe.
+2. **Promesa** (un compromiso con alguien): I'll call you later. I won't tell anyone.
+3. **Decisión instantánea** (decides en el momento de hablar, sin plan previo): I'll take it! (en una tienda) The phone is ringing — I'll get it!
+
+**Fórmula: sujeto + will + verbo base. Igual para todos los sujetos. Sin S. Sin TO.**
+Contracción afirmativa: I'll, you'll, he'll, she'll, we'll, they'll. Negativo: **won't** (= will + not, contracción irregular).
+
+**Will vs Going To:**
+- Para **predicciones**, son intercambiables: "I think it will rain" = "I think it's going to rain".
+- Solo **will** funciona para decisiones instantáneas: "I'll take it!" (going to necesitaría un plan de antes, no encaja aquí).
+- Se prefiere **going to** cuando ya lo planeaste antes: "I'm going to study tonight" (will sonaría raro).
+- Se prefiere **will** para promesas espontáneas: "I'll help you."
+
+**Truco:** "Will = lo decido AHORA (o predigo/prometo). Going to = ya lo tenía decidido o ya lo veo venir."
+
+## 43. Tres formas de hablar del futuro (comparación)
+Además de will y going to, el **present simple** y el **present progressive** también se usan para el futuro — cada uno con un trabajo distinto:
+
+| Forma | Uso | Ejemplo |
+|---|---|---|
+| Present Simple | Algo **programado**, un horario fijo (no personal) | The train leaves at 9:00 tomorrow. |
+| Present Progressive | Un plan o **arreglo** ya organizado con alguien | I'm having dinner with my sister tonight. |
+| Going to | Un plan o **intención**, decidido pero quizás menos específico | We're going to watch a movie this weekend. |
+
+Ejemplos comparados:
+- The museum opens at 10 on Sundays. (horario fijo → Simple)
+- She's meeting her boss at 3pm. (arreglo con alguien → Progressive)
+- He's going to call you later. (intención → Going to)
+
+**Truco:** "¿Es un horario que no depende de mí (tren, tienda, cine)? → Simple. ¿Ya quedé con alguien específico? → Progressive. ¿Es mi plan/intención en general? → Going to."
+
 ---
 
 # Trucos principales
@@ -625,6 +691,10 @@ Repaso general que junta las fórmulas de todos los tiempos y estructuras vistas
 - **IN/ON/AT tiempo:** IN lo grande (mes/año), ON el día, AT la hora exacta.
 - **Frequency adverbs:** verbo de acción → adverbio antes; to be → adverbio después; auxiliar → adverbio en medio.
 - **Invitaciones:** Let's (incluido) / Do you want to (casual) / Would you like to (formal).
+- **Going to:** ya lo decidí o ya lo veo venir (plan o predicción con evidencia).
+- **Can:** ability + reemplaza al -ing con hear/see/smell/taste/feel/understand.
+- **Will:** lo decido ahora, predigo, o prometo — nunca S, nunca TO, negativo won't.
+- **3 futuros:** horario fijo → Simple. Arreglo con alguien → Progressive. Plan/intención → Going to.
 
 ---
 

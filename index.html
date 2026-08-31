@@ -620,6 +620,94 @@
         { type: "fill", prompt: "Completa la fórmula: Present Simple negativo → Sujeto + ___ + verbo base", answer: "don't/doesn't", alt: ["dont/doesnt", "don't or doesn't"],
           explain: "Sujeto + don't/doesn't + verbo base." }
       ]
+    },
+    {
+      id: "going-to", num: "40", category: "Futuro", title: "Going to — planes y predicciones",
+      truco: "Going to = ya lo decidí o ya lo veo venir. Will (tema 41) = lo decido en este momento.",
+      lesson: "<p>Se usa para dos cosas, con la misma estructura:</p>" +
+        "<p><b>1. Plan/intención</b> (decidido ANTES de hablar): I'm going to study tonight. We're going to go shopping.</p>" +
+        "<p><b>2. Predicción</b> (basada en evidencia que ves AHORA): It's going to rain tomorrow. Look at those clouds!</p>" +
+        "<p><b>Por qué se parece al present progressive:</b> 'going to' viene de movimiento literal (I am going to the store = caminando ahora). Si tu plan ya está decidido — ya 'en marcha' en tu mente — usas la misma forma, aunque la acción pase después. Lo que es PRESENTE es tu decisión; lo FUTURO es la acción misma. En español pasa igual: 'Voy a estudiar' usa presente (voy) para algo futuro.</p>" +
+        "<p><b>Fórmula:</b> sujeto + am/is/are + going to + verbo base.</p>" +
+        "<p>Afirmación: I'm going to study tonight. Negación: I'm not going to study tonight. Pregunta: Are you going to study tonight? What are they going to do?</p>",
+      questions: [
+        { type: "mc", prompt: "I ___ study tonight. (plan ya decidido)", options: ["am going to", "will"], answer: 0,
+          explain: "Plan decidido antes de hablar → going to." },
+        { type: "mc", prompt: "Look at those clouds! It ___ rain.", options: ["is going to", "do"], answer: 0,
+          explain: "Predicción con evidencia visible ahora → going to." },
+        { type: "mc", prompt: "Negativo de 'She's going to wear a hat.'", options: ["She isn't going to wear a hat.", "She don't going to wear a hat."], answer: 0,
+          explain: "Sujeto + am/is/are + not + going to + verbo." },
+        { type: "mc", prompt: "Pregunta de 'They are going to have a party.'", options: ["Are they going to have a party?", "Do they going to have a party?"], answer: 0,
+          explain: "Am/is/are + sujeto + going to + verbo?" },
+        { type: "fill", prompt: "Traduce: 'Va a llover mañana.' (usa going to)", answer: "It's going to rain tomorrow", alt: ["It is going to rain tomorrow"],
+          explain: "It's going to + verbo base." }
+      ]
+    },
+    {
+      id: "can", num: "41", category: "Futuro", title: "Can — habilidad y can con verbos de percepción",
+      truco: "Can es la 'super muleta': ability (I can swim), y también reemplaza al -ing con verbos que no lo aceptan (hear, see, smell, taste, feel, understand).",
+      lesson: "<p><b>CAN = poder/saber</b> — algo que eres capaz de hacer.</p>" +
+        "<p><b>Fórmula:</b> sujeto + can + verbo base. Nunca cambia. Nunca 's'. Nunca 'to'. She can fix computers (no 'She cans' ❌, no 'can to fix' ❌).</p>" +
+        "<p><b>Negación:</b> can't (conversación) o cannot (formal/escrito, una sola palabra). I can't speak Japanese. I cannot attend the meeting.</p>" +
+        "<p><b>Pregunta:</b> Can va primero. Can you send a text message? → Yes, I can. / No, I can't.</p>" +
+        "<p><b>Caso especial — CAN + verbos de percepción:</b> hear, see, smell, taste, feel, understand casi nunca usan -ing, aunque hables de 'ahora mismo'. Para estos, CAN llena el espacio: 'I am hearing the music' ❌ → 'I can hear the music' ✅. 'I am understanding you' ❌ → 'I can understand you now' ✅.</p>",
+      questions: [
+        { type: "mc", prompt: "She ___ fix computers. (habilidad)", options: ["can", "cans"], answer: 0,
+          explain: "Can nunca cambia con el sujeto." },
+        { type: "mc", prompt: "Forma correcta: 'no puedo nadar'", options: ["I can't swim.", "I can't to swim."], answer: 0,
+          explain: "Nunca 'to' después de can/can't." },
+        { type: "mc", prompt: "'Ahora mismo escucho la música' (right now)", options: ["I am hearing the music.", "I can hear the music."], answer: 1,
+          explain: "Hear casi nunca usa -ing; can llena el espacio." },
+        { type: "mc", prompt: "Pregunta correcta para 'they can fix computers'", options: ["Can they fix computers?", "Do they can fix computers?"], answer: 0,
+          explain: "Can va primero, sin do/does." },
+        { type: "fill", prompt: "Traduce: 'Puedo entenderte ahora.' (usa can)", answer: "I can understand you now", alt: ["I can understand you now."],
+          explain: "Understand casi nunca usa -ing; can + verbo base." }
+      ]
+    },
+    {
+      id: "will", num: "42", category: "Futuro", title: "Will — predicciones, promesas, decisiones instantáneas",
+      truco: "Will = lo decido AHORA (o predigo/prometo). Going to = ya lo tenía decidido o ya lo veo venir.",
+      lesson: "<p><b>WILL tiene tres usos</b>, el contexto dice cuál:</p>" +
+        "<p><b>1. Predicción</b> (lo que crees que pasará): I think it will rain tomorrow. Palabras señal: I think, I believe, probably, maybe.</p>" +
+        "<p><b>2. Promesa</b> (compromiso con alguien): I'll call you later. I won't tell anyone.</p>" +
+        "<p><b>3. Decisión instantánea</b> (decides en el momento, sin plan previo): I'll take it! The phone is ringing — I'll get it!</p>" +
+        "<p><b>Fórmula:</b> sujeto + will + verbo base. Igual para todos los sujetos. Sin S. Sin TO. Contracción: I'll, you'll, he'll, she'll, we'll, they'll. Negativo: <b>won't</b> (= will + not, irregular).</p>" +
+        "<p><b>Will vs Going To:</b> para predicciones son intercambiables ('I think it will rain' = 'I think it's going to rain'). Solo will funciona para decisiones instantáneas ('I'll take it!' — going to necesitaría un plan de antes). Se prefiere going to cuando ya lo planeaste antes ('I'm going to study tonight'). Se prefiere will para promesas espontáneas ('I'll help you').</p>",
+      questions: [
+        { type: "mc", prompt: "'The phone is ringing... I ___ get it!' (decisión instantánea)", options: ["will", "am going to"], answer: 0,
+          explain: "Decisión en el momento → will, no going to." },
+        { type: "mc", prompt: "Negativo de 'I will tell anyone.'", options: ["I won't tell anyone.", "I willn't tell anyone."], answer: 0,
+          explain: "Won't es la contracción correcta (irregular)." },
+        { type: "mc", prompt: "'I think it ___ rain tomorrow.' (predicción)", options: ["will", "am"], answer: 0,
+          explain: "I think + will = predicción." },
+        { type: "mc", prompt: "Promesa: 'Te lo prometo, no voy a decir nada.'", options: ["I promise I won't say anything.", "I promise I don't say anything."], answer: 0,
+          explain: "Promesa = will/won't." },
+        { type: "fill", prompt: "Traduce: 'Te ayudaré.' (promesa espontánea, usa 'll)", answer: "I'll help you", alt: ["I will help you"],
+          explain: "Will para promesas/decisiones espontáneas." }
+      ]
+    },
+    {
+      id: "three-futures", num: "43", category: "Futuro", title: "Tres formas de hablar del futuro (comparación)",
+      truco: "¿Horario que no depende de mí? → Simple. ¿Ya quedé con alguien? → Progressive. ¿Mi plan/intención en general? → Going to.",
+      lesson: "<p>Además de will y going to, el <b>present simple</b> y el <b>present progressive</b> también se usan para el futuro — cada uno con un trabajo distinto:</p>" +
+        "<div class=\"table-scroll\"><table class=\"lesson-table\"><tr><th>Forma</th><th>Uso</th><th>Ejemplo</th></tr>" +
+        "<tr><td>Present Simple</td><td>Algo programado, horario fijo (no personal)</td><td>The train leaves at 9:00 tomorrow.</td></tr>" +
+        "<tr><td>Present Progressive</td><td>Un plan o arreglo ya organizado con alguien</td><td>I'm having dinner with my sister tonight.</td></tr>" +
+        "<tr><td>Going to</td><td>Un plan o intención, quizás menos específico</td><td>We're going to watch a movie this weekend.</td></tr>" +
+        "</table></div>" +
+        "<p>Más ejemplos: The museum opens at 10 on Sundays (horario fijo → Simple). She's meeting her boss at 3pm (arreglo con alguien → Progressive). He's going to call you later (intención → Going to).</p>",
+      questions: [
+        { type: "mc", prompt: "'The train leaves at 9:00 tomorrow.' — ¿qué forma es?", options: ["Present Simple (horario)", "Going to (intención)"], answer: 0,
+          explain: "Horario fijo, no depende de la persona → Present Simple." },
+        { type: "mc", prompt: "'I'm having dinner with my sister tonight.' — ¿qué forma es?", options: ["Present Progressive (arreglo)", "Present Simple (horario)"], answer: 0,
+          explain: "Arreglo ya organizado con alguien → Present Progressive." },
+        { type: "mc", prompt: "'We're going to watch a movie this weekend.' — ¿qué forma es?", options: ["Going to (intención)", "Present Simple (horario)"], answer: 0,
+          explain: "Plan/intención general → Going to." },
+        { type: "mc", prompt: "'The museum opens at 10 on Sundays.' — ¿qué forma es?", options: ["Present Simple (horario)", "Present Progressive (arreglo)"], answer: 0,
+          explain: "Horario fijo del museo → Present Simple." },
+        { type: "fill", prompt: "Traduce: 'Me reúno con mi jefe a las 3.' (arreglo con alguien, usa Progressive)", answer: "I'm meeting my boss at 3", alt: ["I am meeting my boss at 3"],
+          explain: "Arreglo con alguien específico → Present Progressive." }
+      ]
     }
   ];
 
