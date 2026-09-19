@@ -708,6 +708,174 @@
         { type: "fill", prompt: "Traduce: 'Me reúno con mi jefe a las 3.' (arreglo con alguien, usa Progressive)", answer: "I'm meeting my boss at 3", alt: ["I am meeting my boss at 3"],
           explain: "Arreglo con alguien específico → Present Progressive." }
       ]
+    },
+    {
+      id: "was-were", num: "44", category: "Pasado simple", title: "Was / Were (pasado de to be)",
+      truco: "La misma lógica de IS/ARE pero en pasado. I/He/She/It → was. You/We/They → were.",
+      lesson: "<p>WAS y WERE son el pasado de TO BE.</p>" +
+        "<div class=\"table-scroll\"><table class=\"lesson-table\"><tr><th>Pronombre</th><th>Presente</th><th>Pasado</th></tr>" +
+        "<tr><td>I</td><td>am</td><td>was</td></tr>" +
+        "<tr><td>He / She / It</td><td>is</td><td>was</td></tr>" +
+        "<tr><td>You / We / They</td><td>are</td><td>were</td></tr>" +
+        "</table></div>" +
+        "<p><b>Afirmación:</b> I was tired. She was at work. They were happy.</p>" +
+        "<p><b>Negación:</b> I wasn't home. He wasn't ready. They weren't here.</p>" +
+        "<p><b>Pregunta:</b> Was she at school? Were they on time?</p>" +
+        "<p><b>Palabras señal del pasado:</b> yesterday, last night, last week, last year, in 2020, ago, this morning.</p>" +
+        "<p><b>Error común:</b> 'They was happy' ❌ → 'They were happy' ✅. No existe contracción positiva ('I was' nunca se contrae).</p>",
+      questions: [
+        { type: "fill", prompt: "I ___ very tired yesterday.", answer: "was", explain: "I → was (pasado de am)." },
+        { type: "fill", prompt: "They ___ at the party last night.", answer: "were", explain: "They → were (pasado de are)." },
+        { type: "mc", prompt: "She ___ at school this morning.", options: ["was", "were"], answer: 0,
+          explain: "She (singular) → was." },
+        { type: "mc", prompt: "We ___ ready for the class last Monday.", options: ["was", "were"], answer: 1,
+          explain: "We → were." },
+        { type: "mc", prompt: "Negativo: 'He ___ at work yesterday.'", options: ["wasn't", "weren't"], answer: 0,
+          explain: "He (singular) → wasn't." },
+        { type: "mc", prompt: "Negativo: 'They ___ happy with the results.'", options: ["wasn't", "weren't"], answer: 1,
+          explain: "They (plural) → weren't." },
+        { type: "mc", prompt: "Pregunta: '___ you at home last night?'", options: ["Was", "Were"], answer: 1,
+          explain: "You → Were: Were you at home last night?" },
+        { type: "fill", prompt: "Traduce: '¿Dónde estaba ella ayer?' (WH + was)", answer: "Where was she yesterday", alt: ["Where was she yesterday?"],
+          explain: "WH (Where) + was + sujeto (she): Where was she yesterday?" }
+      ]
+    },
+    {
+      id: "three-tenses", num: "45", category: "Pasado simple", title: "Los 3 tiempos de TO BE: am/is/are — was/were — will be",
+      truco: "Mismo sujeto, solo cambia el verbo según el tiempo: am/is/are (ahora), was/were (antes), will be (después).",
+      lesson: "<p>TO BE tiene una forma para cada tiempo:</p>" +
+        "<div class=\"table-scroll\"><table class=\"lesson-table\"><tr><th>Tiempo</th><th>Forma</th><th>Ejemplo</th></tr>" +
+        "<tr><td>Presente</td><td>am / is / are</td><td>I am a student. She is tired.</td></tr>" +
+        "<tr><td>Pasado</td><td>was / were</td><td>I was a student. She was tired.</td></tr>" +
+        "<tr><td>Futuro</td><td>will be</td><td>I will be ready. She will be here.</td></tr>" +
+        "</table></div>" +
+        "<p><b>Vocabulario de transporte:</b> car, bus, train, subway, airplane, motorcycle, bicycle, boat.</p>" +
+        "<p>Preposición: <b>by</b> + transporte (by bus, by car). A pie: <b>on foot</b>.</p>" +
+        "<p><b>Frases útiles:</b> Me too! / Me neither! / Really? / I think so. / I don't think so.</p>",
+      questions: [
+        { type: "mc", prompt: "Presente: 'She ___ a teacher.'", options: ["is", "was"], answer: 0, explain: "Presente → is." },
+        { type: "mc", prompt: "Pasado: 'She ___ a teacher (last year).'", options: ["is", "was"], answer: 1, explain: "Pasado → was." },
+        { type: "fill", prompt: "Futuro: 'She ___ ready tomorrow.' (usa will be)", answer: "will be", explain: "Futuro con will → will be." },
+        { type: "mc", prompt: "Pasado: 'They ___ at the office yesterday.'", options: ["are", "were"], answer: 1, explain: "They + pasado → were." },
+        { type: "mc", prompt: "¿Cómo se dice 'voy en autobús'?", options: ["I go by bus.", "I go in bus."], answer: 0,
+          explain: "Transporte = by: I go by bus. Nunca 'in bus'." },
+        { type: "mc", prompt: "'A pie' en inglés:", options: ["by foot", "on foot"], answer: 1,
+          explain: "A pie = on foot (no 'by foot')." },
+        { type: "mc", prompt: "Tu amigo dice: 'I was tired yesterday.' Tú también. Respondes:", options: ["Me too!", "Me neither!"], answer: 0,
+          explain: "Me too = yo también (afirmativo). Me neither = yo tampoco (negativo)." },
+        { type: "fill", prompt: "Traduce: 'Estaban en casa anoche.' (They, pasado)", answer: "They were at home last night", alt: ["They were home last night"],
+          explain: "They + pasado → were." }
+      ]
+    },
+    {
+      id: "pronunciation", num: "46", category: "Pronunciación", title: "Pronunciación: familias de sonidos clave",
+      truco: "Las letras en inglés no siempre suenan como se escriben. Aprende las familias: -ture suena 'cher', -ough tiene 7 sonidos distintos.",
+      lesson: "<p>Algunos grupos de letras tienen sonidos fijos que vale la pena memorizar:</p>" +
+        "<div class=\"table-scroll\"><table class=\"lesson-table\"><tr><th>Grupo</th><th>Sonido</th><th>Ejemplos</th></tr>" +
+        "<tr><td>-ture</td><td>'cher'</td><td>picture, future, nature, adventure</td></tr>" +
+        "<tr><td>-ire</td><td>'aier'</td><td>fire, hire, tire, inspire</td></tr>" +
+        "<tr><td>oo (largo)</td><td>'uu'</td><td>food, school, cool, moon</td></tr>" +
+        "<tr><td>oo (corto)</td><td>'u'</td><td>book, look, cook, good</td></tr>" +
+        "<tr><td>ph</td><td>'f'</td><td>phone, photo, alphabet</td></tr>" +
+        "<tr><td>wh</td><td>'w' o 'j'</td><td>what, where (w); who, whole (j)</td></tr>" +
+        "<tr><td>ch</td><td>'ch' o 'k'</td><td>chair, check (ch); school, echo (k)</td></tr>" +
+        "<tr><td>dge</td><td>'dch'</td><td>bridge, fridge, judge, edge</td></tr>" +
+        "</table></div>" +
+        "<p><b>-OUGH tiene 7 sonidos diferentes:</b> through (uu) · though (ou) · thought (ot) · tough (af) · cough (of) · rough (af) · enough (inaf)</p>" +
+        "<p><b>Abreviaciones comunes:</b> Mr. = Mister, Mrs. = Missus (casada), Ms. = Miz (neutral), Dr. = Doctor, ASAP = As Soon As Possible.</p>",
+      questions: [
+        { type: "mc", prompt: "¿Cómo suena la terminación -ture en 'picture'?", options: ["'ture' como en español", "'cher'"], answer: 1,
+          explain: "-ture siempre suena 'cher': pic-cher, fu-cher, na-cher." },
+        { type: "mc", prompt: "'ph' en 'phone' suena como...", options: ["p", "f"], answer: 1,
+          explain: "ph siempre suena 'f': phone, photo, alphabet." },
+        { type: "mc", prompt: "¿Cuál 'oo' suena diferente al resto?", options: ["food", "book", "school", "moon"], answer: 1,
+          explain: "book tiene sonido corto ('u'). food/school/moon tienen sonido largo ('uu')." },
+        { type: "mc", prompt: "'wh' en 'who' suena como...", options: ["w (like 'what')", "j (like 'you')"], answer: 1,
+          explain: "En 'who' y 'whole', la w es muda y suena 'j': juu." },
+        { type: "mc", prompt: "'ch' en 'school' suena como...", options: ["ch (como 'chair')", "k (como 'cool')"], answer: 1,
+          explain: "En school y echo, ch suena como 'k'." },
+        { type: "mc", prompt: "Mrs. se pronuncia como...", options: ["Missis", "Missus"], answer: 1,
+          explain: "Mrs. = Missus. Se usa para mujeres casadas." },
+        { type: "mc", prompt: "'though' rima con...", options: ["go", "off"], answer: 0,
+          explain: "though suena 'dou', rima con go/show/know." }
+      ]
+    },
+    {
+      id: "common-errors", num: "47", category: "Repaso general", title: "Final Recap: 10 errores comunes del curso A1",
+      truco: "Los errores más frecuentes tienen un patrón: confundir IS/ARE, olvidar la -s en 3ra persona, y mezclar tiempos verbales.",
+      lesson: "<p>Los 10 errores más comunes que aparecieron en el curso — corrección y explicación:</p>" +
+        "<div class=\"table-scroll\"><table class=\"lesson-table\"><tr><th>❌ Error</th><th>✅ Correcto</th><th>¿Por qué?</th></tr>" +
+        "<tr><td>He cans swim</td><td>He can swim</td><td>Can nunca lleva -s</td></tr>" +
+        "<tr><td>She don't like it</td><td>She doesn't like it</td><td>He/She/It → doesn't</td></tr>" +
+        "<tr><td>They was happy</td><td>They were happy</td><td>They → were (plural)</td></tr>" +
+        "<tr><td>There is many buses</td><td>There are many buses</td><td>Buses es plural → there are</td></tr>" +
+        "<tr><td>I go in bus</td><td>I go by bus</td><td>Transporte → by</td></tr>" +
+        "<tr><td>I can to swim</td><td>I can swim</td><td>Después de can, verbo base sin 'to'</td></tr>" +
+        "<tr><td>I am like coffee</td><td>I like coffee</td><td>Like es acción, no identidad</td></tr>" +
+        "<tr><td>Does she plays?</td><td>Does she play?</td><td>Después de does, verbo base sin -s</td></tr>" +
+        "<tr><td>What you are doing?</td><td>What are you doing?</td><td>To be va antes del sujeto en preguntas</td></tr>" +
+        "<tr><td>I don't never go</td><td>I never go</td><td>Never ya es negativo</td></tr>" +
+        "</table></div>",
+      questions: [
+        { type: "mc", prompt: "¿Cuál está bien escrita?", options: ["He cans swim.", "He can swim."], answer: 1,
+          explain: "Can nunca lleva -s, para ningún sujeto." },
+        { type: "mc", prompt: "¿Cuál está bien escrita?", options: ["She don't like it.", "She doesn't like it."], answer: 1,
+          explain: "He/She/It → doesn't (no don't)." },
+        { type: "mc", prompt: "¿Cuál está bien escrita?", options: ["They was happy.", "They were happy."], answer: 1,
+          explain: "They (plural) → were, nunca was." },
+        { type: "mc", prompt: "¿Cuál está bien escrita?", options: ["There is many buses.", "There are many buses."], answer: 1,
+          explain: "Buses es plural → There are." },
+        { type: "mc", prompt: "¿Cuál está bien escrita?", options: ["I go in bus.", "I go by bus."], answer: 1,
+          explain: "Transporte → by: by bus, by car, by train." },
+        { type: "mc", prompt: "¿Cuál está bien escrita?", options: ["I can to swim.", "I can swim."], answer: 1,
+          explain: "Después de can, verbo base directo sin 'to'." },
+        { type: "mc", prompt: "¿Cuál está bien escrita?", options: ["Does she plays soccer?", "Does she play soccer?"], answer: 1,
+          explain: "Después de does, el verbo vuelve a su forma base: play, no plays." },
+        { type: "mc", prompt: "¿Cuál está bien escrita?", options: ["What you are doing?", "What are you doing?"], answer: 1,
+          explain: "En preguntas, to be se mueve antes del sujeto." },
+        { type: "mc", prompt: "¿Cuál está bien escrita?", options: ["I don't never go.", "I never go."], answer: 1,
+          explain: "Never ya es negativo, no se puede combinar con don't." },
+        { type: "fill", prompt: "Corrige: 'I am like coffee.'", answer: "I like coffee", alt: ["I like coffee."],
+          explain: "Like es una acción/gusto. Nunca se usa am/is/are con like." }
+      ]
+    },
+    {
+      id: "progressive-vs-simple-do", num: "48", category: "Presente progresivo", title: "Do/Does vs am/is/are: cuándo usar cada auxiliar",
+      truco: "¿Ves -ing? El auxiliar es am/is/are. ¿Ves verbo base? El auxiliar es do/does. Nunca se mezclan.",
+      lesson: "<p>El error más común es mezclar do/does con el Present Progressive. La regla es simple:</p>" +
+        "<div class=\"table-scroll\"><table class=\"lesson-table\"><tr><th>Tiempo</th><th>Auxiliar</th><th>Verbo</th><th>Ejemplo</th></tr>" +
+        "<tr><td>Present Simple</td><td>do / does</td><td>base (sin -ing)</td><td>She doesn't work here.</td></tr>" +
+        "<tr><td>Present Progressive</td><td>am / is / are</td><td>verbo + -ing</td><td>She isn't working right now.</td></tr>" +
+        "</table></div>" +
+        "<p><b>Negación:</b></p>" +
+        "<p>Simple → sujeto + don't/doesn't + verbo base: 'I <b>don't</b> eat meat.'</p>" +
+        "<p>Progressive → sujeto + am/is/are + not + verbo-ing: 'I<b>'m not</b> eating right now.'</p>" +
+        "<p><b>Pregunta:</b></p>" +
+        "<p>Simple → do/does + sujeto + verbo base: '<b>Does</b> she work here?'</p>" +
+        "<p>Progressive → am/is/are + sujeto + verbo-ing: '<b>Is</b> she working right now?'</p>" +
+        "<p><b>Recuerda:</b> to be y can nunca necesitan do/does. Cuando ya hay un auxiliar propio, do/does no entra.</p>",
+      questions: [
+        { type: "mc", prompt: "Negativo: 'She ___ working right now.'", options: ["doesn't", "isn't"], answer: 1,
+          explain: "Progressive → auxiliar es to be: She isn't working." },
+        { type: "mc", prompt: "Negativo: 'She ___ work on Sundays.'", options: ["doesn't", "isn't"], answer: 0,
+          explain: "Simple (hábito) → auxiliar es do/does: She doesn't work." },
+        { type: "mc", prompt: "Pregunta: '___ she eating lunch?'", options: ["Does", "Is"], answer: 1,
+          explain: "eating tiene -ing → auxiliar es to be: Is she eating?" },
+        { type: "mc", prompt: "Pregunta: '___ she eat lunch at noon?'", options: ["Does", "Is"], answer: 0,
+          explain: "eat sin -ing, hábito → auxiliar es do/does: Does she eat?" },
+        { type: "mc", prompt: "¿Cuál está bien formada?", options: ["I don't studying.", "I'm not studying."], answer: 1,
+          explain: "Con -ing nunca se usa don't — se usa am/is/are + not." },
+        { type: "mc", prompt: "¿Cuál está bien formada?", options: ["Do you eating?", "Are you eating?"], answer: 1,
+          explain: "Con -ing la pregunta se forma moviendo to be, no usando do." },
+        { type: "mc", prompt: "'Right now' en una oración es señal de...", options: ["Present Simple → do/does", "Present Progressive → am/is/are"], answer: 1,
+          explain: "Right now = ahora mismo → Progressive → auxiliar am/is/are." },
+        { type: "mc", prompt: "'Every day' en una oración es señal de...", options: ["Present Simple → do/does", "Present Progressive → am/is/are"], answer: 0,
+          explain: "Every day = rutina → Simple → auxiliar do/does." },
+        { type: "fill", prompt: "Corrige: 'Does she working?'", answer: "Is she working", alt: ["Is she working?"],
+          explain: "Working tiene -ing → to be es el auxiliar: Is she working?" },
+        { type: "fill", prompt: "Corrige: 'I am not work today.'", answer: "I am not working today", alt: ["I'm not working today"],
+          explain: "Con to be como auxiliar, el verbo necesita -ing: I'm not working." }
+      ]
     }
   ];
 
