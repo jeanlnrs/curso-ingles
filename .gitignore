@@ -16,3 +16,4 @@ $RECYCLE.BIN/
 # Carpetas
 clases/
 *.pdf
+.playwright-mcp/
