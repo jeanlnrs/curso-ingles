@@ -871,9 +871,9 @@
           explain: "Right now = ahora mismo → Progressive → auxiliar am/is/are." },
         { type: "mc", prompt: "'Every day' en una oración es señal de...", options: ["Present Simple → do/does", "Present Progressive → am/is/are"], answer: 0,
           explain: "Every day = rutina → Simple → auxiliar do/does." },
-        { type: "fill", prompt: "Corrige: 'Does she working?'", answer: "Is she working", alt: ["Is she working?"],
-          explain: "Working tiene -ing → to be es el auxiliar: Is she working?" },
-        { type: "fill", prompt: "Corrige: 'I am not work today.'", answer: "I am not working today", alt: ["I'm not working today"],
+        { type: "mc", prompt: "'Does she working?' tiene un error. El verbo tiene -ing, entonces el auxiliar correcto es...", options: ["Does she work?", "Is she working?"], answer: 1,
+          explain: "Working tiene -ing → el auxiliar debe ser to be: Is she working? (Does she work? es Present Simple, un tiempo diferente)." },
+        { type: "fill", prompt: "Corrige: 'I am not work today.' (mantén to be, agrega -ing al verbo)", answer: "I am not working today", alt: ["I'm not working today"],
           explain: "Con to be como auxiliar, el verbo necesita -ing: I'm not working." }
       ]
     }
