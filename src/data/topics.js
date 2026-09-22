@@ -496,14 +496,21 @@ export const TOPICS = [
     },
     {
       id: "days-time-prices", num: "36", category: "Tiempo y días", title: "Days of the week + IN/AT/ON de tiempo + it's vs they're (precios)",
-      truco: "Para tiempo: IN lo grande (mes/año), ON el día, AT la hora exacta. Para precios: uno = it's, varios = they're.",
+      truco: "Primero pregúntate: ¿lugar o tiempo? Luego, en ambos casos: IN lo grande, ON la superficie/día, AT el punto exacto/hora. Para precios: uno = it's, varios = they're.",
       lesson: "<p><b>Días de la semana:</b> Monday, Tuesday, Wednesday, Thursday, Friday, Saturday, Sunday — siempre con mayúscula en inglés (a diferencia del español).</p>" +
         "<p><b>IT'S + ON para días:</b> 'What day is it?' → 'It's Monday.' Para el día de la semana siempre se usa ON: I work ON Monday. Nunca IN, nunca AT.</p>" +
         "<p><b>Prepositions of TIME</b> (mismas 3 palabras que el tema de lugar, pero para tiempo):</p>" +
         "<p><b>IN</b> = meses, años, estaciones, partes del día → in August, in 2026, in the morning.</p>" +
         "<p><b>ON</b> = días de la semana, fechas específicas → on Monday, on August 5th.</p>" +
         "<p><b>AT</b> = horas exactas, noon/night/midnight → at 7:00, at noon, at night.</p>" +
-        "<p><b>Precios — it's vs they're:</b> un solo objeto → It's twelve dollars. Varios objetos → They're five dollars. Misma lógica que to be: uno = is, varios = are.</p>",
+        "<p><b>Precios — it's vs they're:</b> un solo objeto → It's twelve dollars. Varios objetos → They're five dollars. Misma lógica que to be: uno = is, varios = are.</p>" +
+        "<p><b>LUGAR vs TIEMPO, lado a lado:</b> IN/ON/AT sirven para dos cosas distintas — dónde (tema 32) y cuándo (este tema). Antes de elegir la palabra, pregúntate primero '¿esto habla de un lugar o de un momento?'.</p>" +
+        "<div class=\"table-scroll\"><table class=\"lesson-table\"><tr><th></th><th>LUGAR (¿dónde?)</th><th>TIEMPO (¿cuándo?)</th></tr>" +
+        "<tr><td>IN</td><td>área amplia, dentro de algo → in Panama City, in the kitchen</td><td>lo grande → in August, in 2026, in the morning</td></tr>" +
+        "<tr><td>ON</td><td>sobre una superficie → on the table, on the 3rd floor</td><td>el día → on Monday, on August 5th</td></tr>" +
+        "<tr><td>AT</td><td>un punto específico con nombre → at work, at Niko's</td><td>la hora exacta → at 7:00, at noon</td></tr>" +
+        "</table></div>" +
+        "<p><b>La misma idea en las dos tablas:</b> IN siempre es lo más grande/amplio (una ciudad entera / un mes entero). ON siempre es una superficie o línea (una superficie física / un día en el calendario). AT siempre es el punto exacto (una dirección precisa / una hora precisa).</p>",
       questions: [
         { type: "mc", prompt: "My birthday is ___ August.", options: ["in", "on"], answer: 0,
           explain: "Mes → in." },
@@ -514,7 +521,13 @@ export const TOPICS = [
         { type: "mc", prompt: "'How much are these shoes?' → respuesta", options: ["It's ten dollars.", "They're ten dollars."], answer: 1,
           explain: "Shoes es plural → they're." },
         { type: "fill", prompt: "Traduce: 'Trabajo los lunes.' (usa on)", answer: "I work on Monday", alt: ["I work on Mondays"],
-          explain: "Días de la semana siempre con ON, y con mayúscula." }
+          explain: "Días de la semana siempre con ON, y con mayúscula." },
+        { type: "mc", prompt: "We do not have classes ___ Saturdays or Sundays.", options: ["in", "on", "at"], answer: 1,
+          explain: "Días de la semana → siempre on, sin excepción." },
+        { type: "mc", prompt: "Our live English class starts ___ 7:00 PM.", options: ["in", "on", "at"], answer: 2,
+          explain: "Hora exacta → at. Es tiempo, no lugar, así que no aplica la tabla de lugar." },
+        { type: "mc", prompt: "I live ___ Panama City, but I work ___ 7:00 AM.", options: ["in / at (lugar / tiempo)", "on / in (lugar / tiempo)"], answer: 0,
+          explain: "Panama City es un lugar amplio → in. 7:00 AM es una hora exacta → at. Cada in/at responde una pregunta distinta: dónde y cuándo." }
       ]
     },
     {
