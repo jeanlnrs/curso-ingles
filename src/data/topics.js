@@ -1,0 +1,846 @@
+export const TOPICS = [
+    {
+      id: "nouns", num: "1-2", category: "Sustantivos y artículos", title: "Nouns y plurales",
+      truco: "Regla general: suma -s. Con -s/-x/-ch/-sh suma -es. Consonante+y → -ies. Y ojo con los irregulares: man→men, child→children, foot→feet.",
+      lesson: "<p><b>Noun</b> = sustantivo. Nombra personas, animales, lugares, cosas o ideas: book, dog, teacher, school.</p>" +
+        "<p><b>Plural:</b> regla general +s (book → books). Terminadas en -s/-x/-ch/-sh suman -es (bus → buses). Consonante + y → -ies (baby → babies).</p>" +
+        "<p><b>Irregulares:</b> man→men, woman→women, child→children, person→people, foot→feet, tooth→teeth, mouse→mice.</p>" +
+        "<p><b>Error común:</b> escribir 'mouses' o 'childs' — son irregulares, no llevan -s.</p>",
+      questions: [
+        { type: "mc", prompt: "¿Cuál de estas palabras es un noun (sustantivo)?", options: ["run", "teacher", "quickly", "blue"], answer: 1,
+          explain: "Teacher nombra a una persona: es un noun. Run es un verbo, quickly un adverbio y blue aquí sería un adjetivo." },
+        { type: "fill", prompt: "Escribe el plural de <b>book</b>.", answer: "books",
+          explain: "Regla general: se agrega -s. book → books." },
+        { type: "fill", prompt: "Escribe el plural de <b>bus</b>.", answer: "buses",
+          explain: "Palabras terminadas en -s, -x, -ch, -sh suman -es: bus → buses." },
+        { type: "fill", prompt: "Escribe el plural de <b>baby</b>.", answer: "babies",
+          explain: "Consonante + y → se cambia la y por -ies: baby → babies." },
+        { type: "mc", prompt: "¿Cuál es el plural irregular de <b>child</b>?", options: ["childs", "children", "childes", "childrens"], answer: 1,
+          explain: "child → children es irregular; no sigue la regla de agregar -s." },
+        { type: "mc", prompt: "¿Cuál es el plural de <b>foot</b>?", options: ["foots", "feets", "feet", "footes"], answer: 2,
+          explain: "foot → feet, igual que tooth → teeth y mouse → mice: son irregulares." }
+      ]
+    },
+    {
+      id: "article", num: "3-4", category: "Sustantivos y artículos", title: "A / An",
+      truco: "Escucha el sonido, no mires la letra. Si la palabra empieza con sonido de vocal, usa an (incluso si la letra es consonante, como en 'an hour').",
+      lesson: "<p>Se elige según el <b>sonido</b> con el que empieza la palabra, no la letra.</p>" +
+        "<p>a book, a university (suena 'yu'), an apple, an umbrella, an hour (la h es muda).</p>" +
+        "<p><b>Error común:</b> decir 'a hour' — aunque hour empieza con consonante (h) por escrito, suena como vocal, así que es <b>an hour</b>.</p>",
+      questions: [
+        { type: "mc", prompt: "___ apple", options: ["a", "an"], answer: 1, explain: "Apple empieza con sonido de vocal → an apple." },
+        { type: "mc", prompt: "___ university", options: ["a", "an"], answer: 0, explain: "University suena como 'yu-niversity' (sonido de consonante) → a university." },
+        { type: "mc", prompt: "___ hour", options: ["a", "an"], answer: 1, explain: "La h es muda, se escucha 'our' (vocal) → an hour." },
+        { type: "mc", prompt: "___ book", options: ["a", "an"], answer: 0, explain: "Book empieza con sonido de consonante → a book." },
+        { type: "mc", prompt: "___ umbrella", options: ["a", "an"], answer: 1, explain: "Umbrella empieza con sonido de vocal → an umbrella." }
+      ]
+    },
+    {
+      id: "adjectives", num: "5", category: "Descripciones y posesión", title: "Adjectives",
+      truco: "Los adjectives describen sustantivos (happy, big, old). Los purpose adjectives dicen para qué sirve algo: coffee cup = taza para café.",
+      lesson: "<p><b>Adjective</b> = describe un sustantivo: happy, big, beautiful, old, new.</p>" +
+        "<p><b>Purpose adjectives</b> indican para qué sirve algo: coffee cup (taza para café), tennis ball, sleeping bag, running shoes.</p>" +
+        "<p>Van siempre <b>antes</b> del sustantivo: a big dog, no 'a dog big'.</p>",
+      questions: [
+        { type: "mc", prompt: "En 'the big dog', ¿cuál palabra es el adjective?", options: ["the", "big", "dog"], answer: 1,
+          explain: "Big describe a dog: es el adjective." },
+        { type: "mc", prompt: "¿Qué significa <b>coffee cup</b>?", options: ["café con leche", "taza para café", "café frío"], answer: 1,
+          explain: "Es un purpose adjective: indica para qué sirve la taza (para café)." },
+        { type: "mc", prompt: "¿Cómo se dice 'bolsa para dormir'?", options: ["tennis ball", "coffee cup", "sleeping bag", "running shoes"], answer: 2,
+          explain: "sleeping bag = bolsa para dormir (purpose adjective: sleeping + bag)." },
+        { type: "fill", prompt: "Escribe un adjective que signifique 'feliz'.", answer: "happy",
+          explain: "happy = feliz. También podrías haber pensado en glad, aunque happy es el más común." },
+        { type: "mc", prompt: "'running shoes' significa...", options: ["zapatos para correr", "zapatos viejos", "zapatos de fiesta"], answer: 0,
+          explain: "running shoes = zapatos para correr: running indica el propósito de los shoes." }
+      ]
+    },
+    {
+      id: "possessive-adj", num: "6", category: "Descripciones y posesión", title: "Possessive adjectives",
+      truco: "its = posesión ('the dog wags its tail'). it's = it is / it has ('it's raining').",
+      lesson: "<p>Cada pronombre tiene su propio adjetivo posesivo:</p>" +
+        "<div class=\"table-scroll\"><table class=\"lesson-table\"><tr><th>Pronombre</th><th>Adjetivo</th></tr>" +
+        "<tr><td>I</td><td>my</td></tr><tr><td>You</td><td>your</td></tr><tr><td>He</td><td>his</td></tr>" +
+        "<tr><td>She</td><td>her</td></tr><tr><td>It</td><td>its</td></tr><tr><td>We</td><td>our</td></tr>" +
+        "<tr><td>They</td><td>their</td></tr></table></div>" +
+        "<p><b>its</b> = posesión (the dog wags its tail). <b>it's</b> = it is / it has (it's raining).</p>" +
+        "<p><b>Error común:</b> confundir its/it's — its nunca lleva apóstrofo cuando indica posesión.</p>",
+      questions: [
+        { type: "fill", prompt: "She → ___ (possessive adjective)", answer: "her", explain: "She → her: her book, her dog." },
+        { type: "fill", prompt: "They → ___ (possessive adjective)", answer: "their", explain: "They → their: their house." },
+        { type: "fill", prompt: "It → ___ (possessive adjective)", answer: "its", explain: "It → its: its tail." },
+        { type: "mc", prompt: "¿Cuál oración es correcta?", options: ["The dog wags it's tail.", "The dog wags its tail."], answer: 1,
+          explain: "its = posesión (de eso/de él/ella para cosas y animales), sin apóstrofo." },
+        { type: "mc", prompt: "En 'It's raining', it's significa...", options: ["it is", "posesión (its)"], answer: 0,
+          explain: "it's siempre es it is / it has. Para posesión se usa its, sin apóstrofo." }
+      ]
+    },
+    {
+      id: "tobe", num: "7", category: "Verbos base", title: "To be",
+      truco: "Uno = is. Varios = are. I siempre es am.",
+      lesson: "<p>I → am. He/She/It → is. You/We/They → are.</p>" +
+        "<p>I am happy. She is a teacher. They are students. We are friends.</p>" +
+        "<p><b>Error común:</b> decir 'I is' o 'She are' — cada pronombre tiene su propia forma, no se mezclan.</p>",
+      questions: [
+        { type: "fill", prompt: "I ___ happy.", answer: "am", explain: "Con I siempre usamos am." },
+        { type: "fill", prompt: "She ___ a teacher.", answer: "is", explain: "He/She/It → is (uno)." },
+        { type: "fill", prompt: "They ___ students.", answer: "are", explain: "You/We/They → are (varios)." },
+        { type: "fill", prompt: "We ___ friends.", answer: "are", explain: "We → are." },
+        { type: "mc", prompt: "¿Qué forma de to be usamos con 'the books' (varios)?", options: ["is", "are", "am"], answer: 1,
+          explain: "Varios elementos → are: the books are new." }
+      ]
+    },
+    {
+      id: "havehas", num: "8", category: "Verbos base", title: "Have / Has",
+      truco: "He/She/It → has. Todo lo demás (I/You/We/They) → have.",
+      lesson: "<p>He/She/It → has. Todo lo demás (I/You/We/They) → have.</p>" +
+        "<p>I have a car. She has a dog. They have two cats.</p>" +
+        "<p><b>Error común:</b> decir 'She have a dog' — con he/she/it siempre es has.</p>",
+      questions: [
+        { type: "fill", prompt: "I ___ a car.", answer: "have", explain: "I → have." },
+        { type: "fill", prompt: "She ___ a dog.", answer: "has", explain: "She → has (He/She/It son los 'especiales')." },
+        { type: "fill", prompt: "They ___ two cats.", answer: "have", explain: "They → have." },
+        { type: "mc", prompt: "¿Qué forma usamos con He/She/It?", options: ["have", "has"], answer: 1,
+          explain: "He/She/It → has: she has, he has, it has." }
+      ]
+    },
+    {
+      id: "presentsimple", num: "9-10", category: "Presente simple", title: "Present Simple",
+      truco: "La S viaja: en afirmación va en el verbo (plays); en pregunta y negación se va al auxiliar (does) y el verbo vuelve a su forma base (play).",
+      lesson: "<p><b>Afirmación:</b> I play. She plays (se agrega -s con he/she/it).</p>" +
+        "<p><b>Negación:</b> I don't play. She doesn't play.</p>" +
+        "<p><b>Pregunta:</b> Do you play? Does she play?</p>" +
+        "<p>La -s de 'plays' se traslada al auxiliar en pregunta y negación (does), por eso el verbo vuelve a su forma base.</p>" +
+        "<p><b>Error común:</b> decir 'Does she plays?' — después de does, el verbo va sin -s: Does she play?</p>",
+      questions: [
+        { type: "mc", prompt: "¿Cuál afirmación es correcta?", options: ["She play.", "She plays."], answer: 1,
+          explain: "Con he/she/it, el verbo suma -s en afirmación: she plays." },
+        { type: "fill", prompt: "Negación: I ___ play soccer. (contracción)", answer: "don't", alt: ["do not"],
+          explain: "I/You/We/They → don't + verbo base." },
+        { type: "fill", prompt: "Negación: She ___ play soccer. (contracción)", answer: "doesn't", alt: ["does not"],
+          explain: "He/She/It → doesn't + verbo base (sin -s, porque la S ya está en doesn't)." },
+        { type: "mc", prompt: "¿Cuál pregunta es correcta con 'you'?", options: ["Do you play?", "Does you play?"], answer: 0,
+          explain: "You → Do: Do you play?" },
+        { type: "mc", prompt: "¿Cuál pregunta es correcta con 'she'?", options: ["Do she play?", "Does she play?"], answer: 1,
+          explain: "She → Does: Does she play?" },
+        { type: "fill", prompt: "She doesn't ___ (play/plays) soccer.", answer: "play",
+          explain: "Truco 'la S viaja': la S ya está en doesn't, así que el verbo vuelve a su forma base: play." }
+      ]
+    },
+    {
+      id: "havedodoes", num: "11, 16, 17", category: "Presente simple", title: "Have con do/does",
+      truco: "Después de do/does/don't/doesn't siempre usamos have (nunca has), aunque el sujeto sea he/she/it.",
+      lesson: "<p>Cuando have significa 'tener', usa do/does como cualquier otro verbo:</p>" +
+        "<p>I have a car. Do you have a car? I don't have a car.</p>" +
+        "<p>She has a dog. Does she have a dog? She doesn't have a dog.</p>" +
+        "<p><b>Error común:</b> decir 'Does she has a dog?' o 'I don't has a car' — después de do/does/don't/doesn't siempre va <b>have</b>, nunca has, aunque el sujeto sea he/she/it.</p>",
+      questions: [
+        { type: "mc", prompt: "That's nice. I ___ two cats.", options: ["do", "have"], answer: 1,
+          explain: "Es una afirmación normal; have es el verbo principal. 'I do two cats' no tiene sentido." },
+        { type: "mc", prompt: "___ you have a car?", options: ["Do", "Does", "Have"], answer: 0,
+          explain: "You → Do: Do you have a car?" },
+        { type: "fill", prompt: "___ she have a dog? (auxiliar)", answer: "Does", alt: ["does"],
+          explain: "She → Does: Does she have a dog?" },
+        { type: "mc", prompt: "I don't ___ a car.", options: ["has", "have"], answer: 1,
+          explain: "Después de don't/doesn't siempre va have, nunca has." },
+        { type: "mc", prompt: "¿Cuál es correcta?", options: ["She doesn't has a dog.", "She doesn't have a dog."], answer: 1,
+          explain: "Con doesn't el verbo vuelve a su forma base: have, no has." }
+      ]
+    },
+    {
+      id: "possessive-s", num: "12", category: "Descripciones y posesión", title: "Possessive 's",
+      truco: "Si en español puedes decir 'de alguien', normalmente puedes usar 's en inglés: el libro de John → John's book.",
+      lesson: "<p>Para indicar de quién es algo: dueño + 's + cosa.</p>" +
+        "<p>John's book, Maria's car, the teacher's desk.</p>" +
+        "<p><b>Error común:</b> escribir 'the book's John' — el dueño siempre va primero.</p>",
+      questions: [
+        { type: "fill", prompt: "Traduce: 'el libro de John' (usa 's)", answer: "John's book",
+          explain: "John's book: dueño + 's + cosa." },
+        { type: "fill", prompt: "Traduce: 'el carro de María' (usa 's)", answer: "Maria's car",
+          explain: "Maria's car: dueño + 's + cosa." },
+        { type: "mc", prompt: "¿Cuál está bien formada?", options: ["the desk's teacher", "the teacher's desk"], answer: 1,
+          explain: "El dueño va primero: the teacher's desk = el escritorio del profesor." },
+        { type: "mc", prompt: "'The dog's toy' significa...", options: ["el juguete del perro", "el perro del juguete"], answer: 0,
+          explain: "El dueño (dog) va antes de 's, seguido de lo que posee (toy)." }
+      ]
+    },
+    {
+      id: "whose-whos", num: "13", category: "Descripciones y posesión", title: "Whose / Who's",
+      truco: "whose = ¿de quién? (pregunta por el dueño). who's = who is / who has.",
+      lesson: "<p><b>whose</b> = ¿de quién? (pregunta por el dueño). <b>who's</b> = who is / who has (contracción).</p>" +
+        "<p>Whose book is this? → It's John's. Who's your teacher? → He's Mr. Smith.</p>" +
+        "<p><b>Error común:</b> confundir whose/who's — se escuchan igual pero significan cosas distintas.</p>",
+      questions: [
+        { type: "mc", prompt: "___ book is this?", options: ["Whose", "Who's"], answer: 0,
+          explain: "Pregunta por el dueño del libro → Whose book is this?" },
+        { type: "mc", prompt: "___ your teacher?", options: ["Whose", "Who's"], answer: 1,
+          explain: "Who's = who is → Who's your teacher? = ¿Quién es tu profesor?" },
+        { type: "mc", prompt: "'Whose' pregunta por...", options: ["el dueño de algo", "who is / who has"], answer: 0,
+          explain: "whose = ¿de quién? (dueño). who's es la contracción de who is / who has." },
+        { type: "mc", prompt: "'Who's coming to the party?' significa...", options: ["¿De quién es la fiesta?", "¿Quién viene a la fiesta?"], answer: 1,
+          explain: "Who's = who is, así que pregunta quién viene, no de quién es algo." }
+      ]
+    },
+    {
+      id: "demonstratives", num: "14", category: "Demostrativos y hay", title: "This / That / These / Those",
+      truco: "Primero pregúntate: ¿uno o varios? y ¿cerca o lejos? this=uno/cerca, that=uno/lejos, these=varios/cerca, those=varios/lejos.",
+      lesson: "<p>Se eligen según dos preguntas: ¿uno o varios? y ¿cerca o lejos?</p>" +
+        "<div class=\"table-scroll\"><table class=\"lesson-table\"><tr><th></th><th>Cerca</th><th>Lejos</th></tr>" +
+        "<tr><td>Singular</td><td>this</td><td>that</td></tr><tr><td>Plural</td><td>these</td><td>those</td></tr></table></div>" +
+        "<p>This is my book (aquí). That is your car (allá). These are my keys (aquí, varias). Those are your shoes (allá, varias).</p>",
+      questions: [
+        { type: "mc", prompt: "Un libro que tienes en la mano (cerca, uno solo):", options: ["this", "that", "these", "those"], answer: 0,
+          explain: "Singular + cerca = this." },
+        { type: "mc", prompt: "Varios libros al otro lado del salón (lejos, varios):", options: ["this", "that", "these", "those"], answer: 3,
+          explain: "Plural + lejos = those." },
+        { type: "mc", prompt: "Un carro estacionado al final de la calle (lejos, uno):", options: ["this", "that", "these", "those"], answer: 1,
+          explain: "Singular + lejos = that." },
+        { type: "mc", prompt: "Las llaves que tienes en tu mano ahora mismo (cerca, varias):", options: ["this", "that", "these", "those"], answer: 2,
+          explain: "Plural + cerca = these." }
+      ]
+    },
+    {
+      id: "thereisare", num: "15", category: "Demostrativos y hay", title: "There is / There are",
+      truco: "Igual que is/are: there is = hay uno; there are = hay varios.",
+      lesson: "<p>Ambos significan 'hay'. There is → uno. There are → varios.</p>" +
+        "<p>There is a book. There are two books.</p>" +
+        "<p>Negativo: There isn't a dog. There aren't any books.</p>" +
+        "<p>Pregunta: Is there a bank? Are there any restaurants?</p>" +
+        "<p><b>Error común:</b> decir 'There is two books' — con plural siempre es there are.</p>",
+      questions: [
+        { type: "fill", prompt: "___ a book on the table. (hay, uno)", answer: "There is", alt: ["there is"],
+          explain: "Uno solo → There is a book on the table." },
+        { type: "fill", prompt: "___ two books on the table. (hay, varios)", answer: "There are", alt: ["there are"],
+          explain: "Varios → There are two books on the table." },
+        { type: "mc", prompt: "Negativo: There ___ a dog.", options: ["isn't", "aren't"], answer: 0,
+          explain: "Uno → there isn't a dog." },
+        { type: "mc", prompt: "Pregunta: ___ a bank near here?", options: ["Is there", "Are there"], answer: 0,
+          explain: "Uno (a bank) → Is there a bank near here?" },
+        { type: "mc", prompt: "Pregunta: ___ any restaurants?", options: ["Is there", "Are there"], answer: 1,
+          explain: "Varios (restaurants) → Are there any restaurants?" }
+      ]
+    },
+    {
+      id: "wh-dodoes", num: "18-19, 23-24", category: "WH questions", title: "WH questions con do/does",
+      truco: "El tren de la pregunta: WH → DO/DOES → SUJETO → VERBO.",
+      lesson: "<p>Palabras WH: What (qué), Where (dónde), When (cuándo), Who (quién), Why (por qué), Which (cuál), Whose (de quién), How (cómo).</p>" +
+        "<p>Con verbos normales: <b>WH + do/does + sujeto + verbo</b>.</p>" +
+        "<p>Where does John live? What do you eat? Who does Guy live with? (con → who ... with, la preposición queda al final).</p>" +
+        "<p><b>Error común:</b> olvidar el auxiliar: 'Where John lives?' en vez de 'Where does John live?'.</p>",
+      questions: [
+        { type: "mc", prompt: "¿Cuál es el orden correcto para preguntas WH con verbos normales?", options: ["WH + sujeto + do/does + verbo", "WH + do/does + sujeto + verbo"], answer: 1,
+          explain: "El orden es WH + do/does + sujeto + verbo, como en Where does John live?" },
+        { type: "fill", prompt: "Where ___ John live?", answer: "does", explain: "John (he) → does: Where does John live?" },
+        { type: "fill", prompt: "What ___ you eat?", answer: "do", explain: "You → do: What do you eat?" },
+        { type: "mc", prompt: "'Who does Guy live with?' significa...", options: ["¿Con quién vive Guy?", "¿Quién vive con Guy?"], answer: 0,
+          explain: "Aquí Guy es el sujeto y who reemplaza al complemento (with who → who ... with)." },
+        { type: "mc", prompt: "'What questions does Guy ask?' sigue el patrón...", options: ["WH + verbo + sujeto", "WH + do/does + sujeto + verbo"], answer: 1,
+          explain: "What questions (WH) + does + Guy (sujeto) + ask (verbo)." }
+      ]
+    },
+    {
+      id: "wh-exceptions", num: "20-22", category: "WH questions", title: "Excepciones: to be y who sujeto",
+      truco: "¿Veo am/is/are? Si sí, usa to be (sin do/does). Si who es el sujeto de la oración, tampoco se usa do/does.",
+      lesson: "<p>No siempre hay do/does en preguntas WH. Dos excepciones:</p>" +
+        "<p><b>1. Verbo to be:</b> Where is John? Who is your teacher? Why are they happy?</p>" +
+        "<p><b>2. Who es el sujeto:</b> Who lives with Guy? Who plays soccer? (no se usa does porque who ya es quien hace la acción).</p>" +
+        "<p>Valerie is asleep (estado) vs Valerie is sleeping (acción) — ninguna lleva do, porque el verbo principal es is.</p>",
+      questions: [
+        { type: "mc", prompt: "Where ___ John?", options: ["is", "does"], answer: 0,
+          explain: "El verbo principal es to be (is), así que no se usa does: Where is John?" },
+        { type: "mc", prompt: "Who ___ your teacher?", options: ["is", "does"], answer: 0,
+          explain: "Otra vez to be: Who is your teacher?" },
+        { type: "mc", prompt: "Why ___ they happy?", options: ["are", "do"], answer: 0,
+          explain: "To be con they → are: Why are they happy?" },
+        { type: "mc", prompt: "¿Cuál pregunta está bien formada cuando who ES el sujeto?", options: ["Who does play soccer?", "Who plays soccer?"], answer: 1,
+          explain: "Si who es el sujeto, no se usa do/does: Who plays soccer? (igual que 'Guy plays soccer')." },
+        { type: "mc", prompt: "¿Cuál oración significa 'está durmiendo' (acción en curso)?", options: ["Valerie is asleep.", "Valerie is sleeping."], answer: 1,
+          explain: "is asleep = está dormida (estado). is sleeping = está durmiendo (acción)." }
+      ]
+    },
+    {
+      id: "wordorder", num: "25", category: "WH questions", title: "Orden de palabras: inglés vs español",
+      truco: "No traduzcas palabra por palabra: en inglés el orden de las preguntas es rígido (auxiliar antes del sujeto).",
+      lesson: "<p>En español el orden es flexible en preguntas: '¿Juan vive aquí?' o '¿Vive Juan aquí?' funcionan igual.</p>" +
+        "<p>En inglés el orden es rígido: siempre auxiliar + sujeto + verbo. Does John live here? — nunca 'Lives John here?'.</p>" +
+        "<p><b>Consejo:</b> no traduzcas palabra por palabra; piensa directamente en la estructura inglesa.</p>",
+      questions: [
+        { type: "mc", prompt: "¿Cuál es la pregunta correcta en inglés?", options: ["Lives John here?", "Does John live here?"], answer: 1,
+          explain: "El español permite '¿Vive Juan aquí?', pero el inglés necesita el auxiliar does: Does John live here?" },
+        { type: "mc", prompt: "El orden básico de una oración afirmativa en inglés es...", options: ["Sujeto + verbo + complemento", "Verbo + sujeto + complemento"], answer: 0,
+          explain: "Igual que en español: Juan vive en Bogotá → John lives in Bogotá." },
+        { type: "mc", prompt: "En español se puede decir '¿Vive Juan aquí?' o '¿Juan vive aquí?'. En inglés...", options: ["hay la misma flexibilidad", "el orden es más rígido: siempre auxiliar + sujeto + verbo"], answer: 1,
+          explain: "El inglés no permite 'Lives John here?'; siempre se necesita el auxiliar do/does/is antes del sujeto." }
+      ]
+    },
+    {
+      id: "count-noncount", num: "26", category: "Cantidad y sustantivos incontables", title: "Count / non-count nouns",
+      truco: "Pregúntate '¿puedo decir two ___?'. Si suena raro, es incontable. Grupo MISHA: Money, Information, Sugar, Homework, Advice.",
+      lesson: "<p><b>Count (contables):</b> se cuentan uno por uno: book, dog, apple.</p>" +
+        "<p><b>Non-count (incontables):</b> son como una 'masa', no se cuentan por unidad: water, rice, money, information.</p>" +
+        "<p>Los incontables nunca llevan -s ni a/an, y siempre usan is: money is, information is.</p>" +
+        "<p><b>Grupo MISHA</b> (incontables en inglés aunque en español los digamos en plural): Money, Information, Sugar, Homework, Advice.</p>" +
+        "<p>Para pedir 'una unidad': a piece of information, a glass of water, a cup of coffee.</p>",
+      questions: [
+        { type: "mc", prompt: "¿Cuál de estos es non-count (incontable)?", options: ["book", "water", "apple", "dog"], answer: 1,
+          explain: "Water no se cuenta por unidades ('two waters' suena raro), es non-count." },
+        { type: "mc", prompt: "¿Qué pregunta te ayuda a saber si un noun es contable?", options: ["¿puedo decir 'two ___'?", "¿empieza con vocal?"], answer: 0,
+          explain: "Si 'two ___' suena natural, es count; si suena raro, es non-count." },
+        { type: "mc", prompt: "Los sustantivos incontables siempre van con...", options: ["is", "are"], answer: 0,
+          explain: "Los non-count nunca llevan -s ni a/an, y siempre usan is: money is, information is." },
+        { type: "mc", prompt: "¿Cuál palabra pertenece al grupo MISHA (incontable en inglés aunque en español la digamos en plural)?", options: ["books", "money", "apples", "dogs"], answer: 1,
+          explain: "MISHA: Money, Information, Sugar, Homework, Advice. En español decimos 'los consejos', pero advice es incontable en inglés." },
+        { type: "fill", prompt: "Para pedir 'una unidad' de information: a ___ of information", answer: "piece",
+          explain: "a piece of information, igual que a glass of water o a cup of coffee." },
+        { type: "mc", prompt: "¿Cuál oración es correcta?", options: ["There is money on the table.", "There are money on the table."], answer: 0,
+          explain: "Money es incontable → siempre is, nunca are." }
+      ]
+    },
+    {
+      id: "some-any-much-many", num: "27", category: "Cantidad y sustantivos incontables", title: "Some / Any / Much / Many",
+      truco: "SOME dice que sí, ANY dice que no (o pregunta). MANY = se cuenta con los dedos (contable plural). MUCH = suena a 'mush' (incontable).",
+      lesson: "<p>Para elegir, en orden: 1) ¿afirmativa, negativa o pregunta? 2) ¿contable o incontable? 3) ¿singular o plural?</p>" +
+        "<div class=\"table-scroll\"><table class=\"lesson-table\"><tr><th></th><th>Contable sing.</th><th>Contable plural</th><th>Incontable</th></tr>" +
+        "<tr><td>Afirmativa</td><td>a / an</td><td>some</td><td>some</td></tr>" +
+        "<tr><td>Negativa</td><td>not a / not any</td><td>not any</td><td>not any</td></tr>" +
+        "<tr><td>Pregunta</td><td>a / an</td><td>any</td><td>any</td></tr></table></div>" +
+        "<p><b>Excepción 1:</b> al ofrecer o pedir algo se usa <b>some</b> aunque sea pregunta: Would you like some coffee? Can I have some water?</p>" +
+        "<p><b>Excepción 2:</b> cuando quien pregunta ya espera o supone que la respuesta va a ser 'sí' (no es una pregunta neutral, es casi una confirmación). 'Do you have any juice?' es neutral (no sé si hay). 'Does he have some bread?' ya supone que sí tiene.</p>" +
+        "<p><b>Much/many:</b> many = contable plural (How many books...?). much = incontable (How much water...?). En afirmaciones normales se prefiere <b>a lot of</b> (sirve para ambos), ya que much/many suenan formales.</p>",
+      questions: [
+        { type: "mc", prompt: "I have ___ books. (afirmativa)", options: ["some", "any"], answer: 0,
+          explain: "Afirmativa → some: I have some books." },
+        { type: "mc", prompt: "I don't have ___ books. (negativa)", options: ["some", "any"], answer: 1,
+          explain: "Negativa → any: I don't have any books." },
+        { type: "mc", prompt: "Do you have ___ books? (pregunta)", options: ["some", "any"], answer: 1,
+          explain: "Pregunta → any: Do you have any books?" },
+        { type: "mc", prompt: "Would you like ___ coffee? (ofrecer algo)", options: ["some", "any"], answer: 0,
+          explain: "Excepción: al ofrecer o pedir algo se usa some aunque sea pregunta: Would you like some coffee?" },
+        { type: "mc", prompt: "I want ___ apple. (contable singular, afirmativa)", options: ["an", "some"], answer: 0,
+          explain: "Contable singular en afirmativa → a/an (aquí an, porque apple empieza con sonido de vocal): I want an apple." },
+        { type: "mc", prompt: "How ___ books do you have? (contable plural)", options: ["much", "many"], answer: 1,
+          explain: "Many se usa con contables plurales: How many books...?" },
+        { type: "mc", prompt: "How ___ water do you need? (incontable)", options: ["much", "many"], answer: 0,
+          explain: "Much se usa con incontables: How much water...?" },
+        { type: "mc", prompt: "En afirmaciones normales de cantidad, se prefiere...", options: ["much / many", "a lot of"], answer: 1,
+          explain: "Much/many suenan formales en afirmaciones; se prefiere a lot of, que sirve para contables e incontables." },
+        { type: "mc", prompt: "Sabes que tu hermana siempre tiene café en casa y se lo confirmas: Do you have ___ coffee?", options: ["any", "some"], answer: 1,
+          explain: "Excepción 2: ya esperas/supones que la respuesta es sí, así que se usa some aunque sea pregunta." },
+        { type: "mc", prompt: "Estás en una tienda nueva y no sabes si venden leche: Do you have ___ milk?", options: ["any", "some"], answer: 0,
+          explain: "Pregunta neutral, de verdad no sabes la respuesta → any." }
+      ]
+    },
+    {
+      id: "id-would-had", num: "28", category: "Contracciones y would", title: "I'd (I would / I had)",
+      truco: "I'd + verbo normal (like, go, help) = would. I'd + verbo 'terminado' (participio: finished, seen, gone) = had.",
+      lesson: "<p><b>I'd</b> es una contracción de <b>I would</b> (la más común) o <b>I had</b> (menos común).</p>" +
+        "<p><b>I would:</b> para peticiones educadas, deseos o cosas hipotéticas. I'd like a coffee. I'd go if I could. I'd love to help.</p>" +
+        "<p><b>I had:</b> para algo que ya había pasado antes de otro momento (past perfect). I'd finished my homework before dinner.</p>" +
+        "<p>Mira lo que viene después: I'd + like/love/want/go (verbo base) → would. I'd + verbo en participio (finished, seen, gone) → had.</p>" +
+        "<p><b>Error común:</b> pensar que I'd siempre es lo mismo. En la mayoría de conversaciones cotidianas, I'd = I would, sobre todo en peticiones (I'd like...).</p>",
+      questions: [
+        { type: "mc", prompt: "I'd like a coffee. → I'd significa...", options: ["I would", "I had"], answer: 0,
+          explain: "I'd like = I would like: forma educada de pedir algo." },
+        { type: "mc", prompt: "I'd finished my homework before dinner. → I'd significa...", options: ["I would", "I had"], answer: 1,
+          explain: "Antes de un verbo en participio (finished), I'd = I had." },
+        { type: "mc", prompt: "¿Cuál es la forma más educada de pedir un café?", options: ["I want a coffee.", "I'd like a coffee."], answer: 1,
+          explain: "I'd like es más suave y educado que I want." },
+        { type: "mc", prompt: "I'd go if I could. → I'd significa...", options: ["I would", "I had"], answer: 0,
+          explain: "Va seguido de un verbo base (go), no de un participio, así que es would." },
+        { type: "mc", prompt: "¿Qué tipo de verbo sigue normalmente a I'd cuando significa I had?", options: ["verbo base (like, go, help)", "verbo en participio (finished, seen, gone)"], answer: 1,
+          explain: "I had siempre va seguido del verbo en su forma de participio pasado." },
+        { type: "fill", prompt: "Traduce: 'Me encantaría ayudar.' (usa I'd)", answer: "I'd love to help", alt: ["I would love to help"],
+          explain: "I'd love to help = I would love to help." }
+      ]
+    },
+    {
+      id: "present-progressive", num: "29", category: "Presente progresivo", title: "Present Progressive (afirmación, negación, preguntas)",
+      truco: "Si veo -ing, siempre hay to be (am/is/are) en algún lado. Nunca uso do/does con el progressive.",
+      lesson: "<p>Se usa para acciones que están pasando <b>ahora mismo</b>.</p>" +
+        "<p><b>Afirmación:</b> sujeto + to be (am/is/are) + verbo-ing. I am reading. She is sleeping. They are playing.</p>" +
+        "<p><b>Negación:</b> sujeto + to be + not + verbo-ing. I'm not working. She isn't sleeping. They aren't playing.</p>" +
+        "<p><b>Preguntas sí/no:</b> to be + sujeto + verbo-ing? Is she sleeping? Are they playing?</p>" +
+        "<p><b>Preguntas WH:</b> WH + to be + sujeto + verbo-ing? What are you doing? Where is he going? Who is Guy talking to?</p>" +
+        "<p><b>Reglas del -ing:</b> play → playing (normal). write → writing (se quita la e). run → running (se dobla la consonante).</p>" +
+        "<p><b>Error común:</b> mezclar do/does con -ing (I don't working ❌ → I'm not working ✅), u olvidar mover el to be antes del sujeto en preguntas (What you are doing? ❌ → What are you doing? ✅).</p>",
+      questions: [
+        { type: "mc", prompt: "She ___ sleeping right now.", options: ["is", "does"], answer: 0,
+          explain: "El progressive siempre usa to be, nunca do/does." },
+        { type: "mc", prompt: "Negativo de 'They are playing.'", options: ["They don't playing.", "They aren't playing."], answer: 1,
+          explain: "Se agrega not después del to be: aren't." },
+        { type: "mc", prompt: "Pregunta sí/no de 'He is working.'", options: ["Does he working?", "Is he working?"], answer: 1,
+          explain: "El to be se mueve antes del sujeto: Is he working?" },
+        { type: "mc", prompt: "'What ___ you doing?'", options: ["do", "are"], answer: 1,
+          explain: "WH + to be + sujeto + verbo-ing: What are you doing?" },
+        { type: "mc", prompt: "Forma correcta de negar 'I am working.'", options: ["I'm not working.", "I not working."], answer: 0,
+          explain: "Nunca se omite el to be en la negación." },
+        { type: "fill", prompt: "Traduce: '¿Con quién está hablando Guy?' (usa is)", answer: "Who is Guy talking to", alt: ["Who is Guy talking to?"],
+          explain: "WH (who) + is + sujeto (Guy) + verbo-ing (talking) + to al final." }
+      ]
+    },
+    {
+      id: "pronouns", num: "30", category: "Descripciones y posesión", title: "Pronombres personales (subject pronouns)",
+      truco: "Persona sola → he/she/it. Grupo → we/they (según si me incluye o no).",
+      lesson: "<p>Un pronombre reemplaza a un sustantivo para no repetir nombres.</p>" +
+        "<p><b>I</b> = yo mismo. <b>He</b> = un hombre. <b>She</b> = una mujer. <b>It</b> = una cosa/animal. <b>We</b> = grupo conmigo incluido. <b>They</b> = otro grupo.</p>" +
+        "<p>Singular: Maria → she. Carlos → he. The book → it.</p>" +
+        "<p>Plural: Maria & Carlos → they. My sister & I → we. The phones → they.</p>",
+      questions: [
+        { type: "mc", prompt: "'The dog is brown.' → reemplaza 'the dog'", options: ["It", "He"], answer: 0,
+          explain: "Un animal/cosa se reemplaza con it." },
+        { type: "mc", prompt: "'Luis and I are friends.' → reemplaza 'Luis and I'", options: ["They", "We"], answer: 1,
+          explain: "Grupo que me incluye a mí = we." },
+        { type: "mc", prompt: "'Maria and Carlos are here.' → reemplaza 'Maria and Carlos'", options: ["We", "They"], answer: 1,
+          explain: "Grupo que no me incluye = they." },
+        { type: "fill", prompt: "'Carlos studies.' → reemplaza Carlos con el pronombre", answer: "He", alt: ["he"],
+          explain: "Carlos es un hombre → He." }
+      ]
+    },
+    {
+      id: "short-answers", num: "31", category: "Presente simple", title: "Respuestas cortas: YES no se contrae, NO sí",
+      truco: "Un YES contraído suena raro y cortado en inglés. El NO sí se contrae porque ahí sí suena natural.",
+      lesson: "<p>Regla para to be, do/does, y have/has: <b>YES nunca se contrae. NO siempre se contrae.</b></p>" +
+        "<p>Are you okay? → Yes, I am. (nunca 'Yes, I'm') / No, I'm not.</p>" +
+        "<p>Does she work here? → Yes, she does. / No, she doesn't.</p>" +
+        "<p>Do you have a car? → Yes, I do. / No, I don't.</p>",
+      questions: [
+        { type: "mc", prompt: "Respuesta correcta a 'Are you tired?'", options: ["Yes, I'm.", "Yes, I am."], answer: 1,
+          explain: "YES nunca se contrae." },
+        { type: "mc", prompt: "Respuesta correcta a 'Does she work here?' (negativo)", options: ["No, she doesn't.", "No, she does not work here she."], answer: 0,
+          explain: "NO sí se contrae: doesn't." },
+        { type: "mc", prompt: "Respuesta correcta a 'Do they live in Panama?'", options: ["Yes, they do.", "Yes, they're."], answer: 0,
+          explain: "YES completo: 'Yes, they do.'" },
+        { type: "fill", prompt: "Traduce: 'Sí, lo soy.' (respondiendo a Are you a teacher?)", answer: "Yes, I am", alt: ["Yes I am"],
+          explain: "Yes nunca se contrae." }
+      ]
+    },
+    {
+      id: "in-on-at-place", num: "32", category: "Preposiciones", title: "Prepositions of place: IN / ON / AT",
+      truco: "IN = dentro/área grande. ON = encima de una superficie. AT = un punto exacto.",
+      lesson: "<p><b>IN</b> = dentro de algo, área amplia. I live IN Panama City. She is IN the kitchen.</p>" +
+        "<p><b>ON</b> = sobre una superficie. The book is ON the table. We live ON the 3rd floor.</p>" +
+        "<p><b>AT</b> = un punto específico. I am AT work. We meet AT Niko's.</p>" +
+        "<p><b>IN vs AT, la que más confunde:</b> IN = área amplia (una ciudad entera). AT = un punto exacto (un lugar con nombre). 'I live IN Panama City' (toda la ciudad) vs 'I am AT work' (un lugar preciso).</p>" +
+        "<p>Mismo patrón con <b>arrive</b>: arrive IN a city/country, arrive AT a specific point.</p>" +
+        "<p><b>Error común:</b> We live on Panama City ❌ → in ✅. My phone is at the table ❌ → on ✅. I have breakfast in work ❌ → at ✅.</p>",
+      questions: [
+        { type: "mc", prompt: "I live ___ Panama City.", options: ["in", "at"], answer: 0,
+          explain: "Ciudad = área amplia → in." },
+        { type: "mc", prompt: "The book is ___ the table.", options: ["in", "on"], answer: 1,
+          explain: "Superficie → on." },
+        { type: "mc", prompt: "I am ___ work every day.", options: ["at", "in"], answer: 0,
+          explain: "Punto específico → at." },
+        { type: "mc", prompt: "She is ___ the kitchen.", options: ["in", "on"], answer: 0,
+          explain: "Espacio cerrado → in." },
+        { type: "fill", prompt: "Traduce: 'Nos vemos en Niko's.' (usa meet)", answer: "We meet at Niko's", alt: ["We meet at Nikos"],
+          explain: "Lugar específico con nombre → at." }
+      ]
+    },
+    {
+      id: "possessive-advanced", num: "33", category: "Descripciones y posesión", title: "Posesión avanzada: reglas completas de 's",
+      truco: "Si la palabra ya termina en -s y es plural, solo agrego el apóstrofe ('). En los demás casos, agrego 's completo.",
+      lesson: "<p>Extiende el tema de possessive 's a todos los casos:</p>" +
+        "<p><b>Singular:</b> Maria's book, the dog's tail.</p>" +
+        "<p><b>Plural terminado en -s:</b> solo apóstrofe → the girls' room, my parents' car.</p>" +
+        "<p><b>Plural irregular (sin -s):</b> + 's → the children's toys, the men's room.</p>" +
+        "<p><b>Singular terminado en -s:</b> + 's igual (se dice doble s) → James's car, my boss's office.</p>" +
+        "<p>Con grupos o instituciones (no personas), en inglés natural se prefiere 'of/in' en vez de 's.</p>",
+      questions: [
+        { type: "mc", prompt: "El cuarto de las niñas (varias niñas)", options: ["the girls' room", "the girl's room"], answer: 0,
+          explain: "Plural terminado en -s: solo apóstrofe." },
+        { type: "mc", prompt: "Los juguetes de los niños (children, plural irregular)", options: ["the childrens' toys", "the children's toys"], answer: 1,
+          explain: "Plural irregular sin -s: se agrega 's completo." },
+        { type: "mc", prompt: "El carro de James (nombre termina en s)", options: ["James' car", "James's car"], answer: 1,
+          explain: "Singular terminado en s: igual se agrega 's." },
+        { type: "fill", prompt: "Traduce: 'el carro de mis padres' (parents, plural)", answer: "my parents' car",
+          explain: "Plural terminado en -s → solo apóstrofe." }
+      ]
+    },
+    {
+      id: "which-verb", num: "34", category: "Verbos base", title: "Which verb do I use: to be / do-does / have-has",
+      truco: "¿Quién soy o cómo estoy? → to be. ¿Una acción o costumbre? → do/does. ¿Algo que tengo? → have/has.",
+      lesson: "<p>Marco de decisión para elegir el verbo correcto:</p>" +
+        "<p><b>to be:</b> identidad, descripción, estado. Subject + am/is/are + noun/adj. I am a teacher. She is tired.</p>" +
+        "<p><b>do/does:</b> acciones, hábitos, gustos. Do/does + subject + verbo base. Do you like coffee?</p>" +
+        "<p><b>have/has:</b> posesiones, experiencias. Subject + have/has + noun. I have a car.</p>" +
+        "<p><b>Error común:</b> 'I am like coffee' ❌ (like es acción, no identidad) → 'I like coffee' ✅.</p>",
+      questions: [
+        { type: "mc", prompt: "I ___ a teacher. (identidad)", options: ["am", "do"], answer: 0,
+          explain: "Identidad → to be." },
+        { type: "mc", prompt: "She ___ like chocolate. (gusto/acción)", options: ["is", "does"], answer: 1,
+          explain: "Acción/gusto → do/does." },
+        { type: "mc", prompt: "They ___ a big house. (posesión)", options: ["have", "are"], answer: 0,
+          explain: "Posesión → have/has." },
+        { type: "mc", prompt: "He ___ very tired today. (estado)", options: ["is", "does"], answer: 0,
+          explain: "Estado → to be." },
+        { type: "fill", prompt: "Corrige el error: 'I am like coffee.'", answer: "I like coffee", alt: ["I like coffee."],
+          explain: "Like es una acción/gusto, no identidad — nunca 'am like'." }
+      ]
+    },
+    {
+      id: "would-like-have-meals", num: "35", category: "Comida y cantidad", title: "Would like, Have para comidas, 'a coffee' vs 'some coffee'",
+      truco: "SOME + incontable = la sustancia en general. A/AN + el mismo incontable = una porción servida.",
+      lesson: "<p><b>Have</b> también significa 'tomar/comer' con comidas: I have breakfast at seven. She has a sandwich for lunch.</p>" +
+        "<p><b>Would like</b> (I'd like) es la forma educada de pedir algo, más formal que want.</p>" +
+        "<p>'I want coffee.' → directo, informal, con amigos. 'I'd like some coffee, please.' → educado, formal, en restaurantes y con desconocidos.</p>" +
+        "<p><b>La regla de la porción:</b> sustantivos incontables (coffee, tea, salad, ice cream) SÍ pueden llevar A/AN cuando significan 'una porción': some coffee (café en general) vs a coffee (= una taza de café). Some water vs a water (= un vaso de agua).</p>",
+      questions: [
+        { type: "mc", prompt: "Forma más educada de pedir en un restaurante", options: ["I want a coffee.", "I'd like a coffee, please."], answer: 1,
+          explain: "Would like es más educado que want." },
+        { type: "mc", prompt: "'Can I have a coffee, please?' → 'a coffee' significa...", options: ["café en general", "una taza de café"], answer: 1,
+          explain: "A/AN + incontable = una porción servida." },
+        { type: "mc", prompt: "'I have ___ at seven every morning.' (comida)", options: ["breakfast", "am breakfast"], answer: 0,
+          explain: "Have = tomar/comer una comida." },
+        { type: "fill", prompt: "Traduce: 'Me gustaría un café, por favor.' (usa I'd)", answer: "I'd like a coffee, please", alt: ["I would like a coffee, please"],
+          explain: "I'd like + a coffee (una porción) + please." }
+      ]
+    },
+    {
+      id: "days-time-prices", num: "36", category: "Tiempo y días", title: "Days of the week + IN/AT/ON de tiempo + it's vs they're (precios)",
+      truco: "Para tiempo: IN lo grande (mes/año), ON el día, AT la hora exacta. Para precios: uno = it's, varios = they're.",
+      lesson: "<p><b>Días de la semana:</b> Monday, Tuesday, Wednesday, Thursday, Friday, Saturday, Sunday — siempre con mayúscula en inglés (a diferencia del español).</p>" +
+        "<p><b>IT'S + ON para días:</b> 'What day is it?' → 'It's Monday.' Para el día de la semana siempre se usa ON: I work ON Monday. Nunca IN, nunca AT.</p>" +
+        "<p><b>Prepositions of TIME</b> (mismas 3 palabras que el tema de lugar, pero para tiempo):</p>" +
+        "<p><b>IN</b> = meses, años, estaciones, partes del día → in August, in 2026, in the morning.</p>" +
+        "<p><b>ON</b> = días de la semana, fechas específicas → on Monday, on August 5th.</p>" +
+        "<p><b>AT</b> = horas exactas, noon/night/midnight → at 7:00, at noon, at night.</p>" +
+        "<p><b>Precios — it's vs they're:</b> un solo objeto → It's twelve dollars. Varios objetos → They're five dollars. Misma lógica que to be: uno = is, varios = are.</p>",
+      questions: [
+        { type: "mc", prompt: "My birthday is ___ August.", options: ["in", "on"], answer: 0,
+          explain: "Mes → in." },
+        { type: "mc", prompt: "The store opens ___ Monday.", options: ["on", "at"], answer: 0,
+          explain: "Día de la semana → on." },
+        { type: "mc", prompt: "The store opens ___ 9:00.", options: ["in", "at"], answer: 1,
+          explain: "Hora exacta → at." },
+        { type: "mc", prompt: "'How much are these shoes?' → respuesta", options: ["It's ten dollars.", "They're ten dollars."], answer: 1,
+          explain: "Shoes es plural → they're." },
+        { type: "fill", prompt: "Traduce: 'Trabajo los lunes.' (usa on)", answer: "I work on Monday", alt: ["I work on Mondays"],
+          explain: "Días de la semana siempre con ON, y con mayúscula." }
+      ]
+    },
+    {
+      id: "frequency-adverbs", num: "37", category: "Tiempo y días", title: "Frequency adverbs (always, usually, sometimes, rarely, never)",
+      truco: "Verbo de acción → adverbio antes. To be → adverbio después. Con auxiliar → adverbio en medio.",
+      lesson: "<p>Dicen con qué frecuencia pasa algo: <b>always</b> (siempre, 100%), <b>usually</b> (usualmente, ~80%), <b>sometimes</b> (a veces, ~50%), <b>rarely</b> (raramente, ~20%), <b>never</b> (nunca, 0%).</p>" +
+        "<p><b>Regla 1 — con verbos de acción:</b> sujeto + ADVERBIO + verbo. I always eat breakfast.</p>" +
+        "<p><b>Regla 2 — con to be:</b> sujeto + to be + ADVERBIO (orden contrario). She is always late.</p>" +
+        "<p><b>Regla 3 — con auxiliares (do/does/don't/doesn't):</b> el adverbio va entre el auxiliar y el verbo. I don't usually eat lunch. Do you always get up early?</p>" +
+        "<p><b>Never ya es negativo</b> — nunca se combina con don't/doesn't: 'I don't never go.' ❌ → 'I never go.' ✅</p>" +
+        "<p>Frecuencia con número exacto (once/twice/three times a day) va al final de la oración: I brush my teeth three times a day.</p>",
+      questions: [
+        { type: "mc", prompt: "'I ___ eat breakfast.' (verbo de acción, always)", options: ["I always eat", "I eat always"], answer: 0,
+          explain: "Con verbo de acción, el adverbio va antes." },
+        { type: "mc", prompt: "'She ___ late.' (to be, always)", options: ["always is", "is always"], answer: 1,
+          explain: "Con to be, el adverbio va después." },
+        { type: "mc", prompt: "'I don't ___ eat lunch.' (usually)", options: ["usually", "am usually"], answer: 0,
+          explain: "Con auxiliar, el adverbio va entre don't y el verbo." },
+        { type: "mc", prompt: "Forma correcta de decir 'nunca voy'", options: ["I don't never go.", "I never go."], answer: 1,
+          explain: "Never ya es negativo, no se combina con don't." },
+        { type: "fill", prompt: "Traduce: 'Ella siempre está cansada.' (to be)", answer: "She is always tired", alt: ["She's always tired"],
+          explain: "To be + adverbio después." }
+      ]
+    },
+    {
+      id: "invitations", num: "38", category: "Tiempo y días", title: "Invitaciones: Let's / Do you want to / Would you like to",
+      truco: "Let's = yo incluido. Do you want to = casual, con amigos. Would you like to = formal, más educado.",
+      lesson: "<p>Tres formas de invitar a alguien, de menos a más formal:</p>" +
+        "<p><b>Let's + verbo base</b> = 'vamos a...', tú también participas. Let's go for lunch!</p>" +
+        "<p><b>Do you want to + verbo base</b> = invitación directa e informal, con amigos. Do you want to go to the beach?</p>" +
+        "<p><b>Would you like to + verbo base</b> = invitación educada y formal, con desconocidos o gente que no conoces bien. Would you like to have dinner with me?</p>",
+      questions: [
+        { type: "mc", prompt: "Invitar a tu jefe de forma educada a tomar un café", options: ["Do you want to have a coffee?", "Would you like to have a coffee?"], answer: 1,
+          explain: "Con el jefe, forma educada: would you like to." },
+        { type: "mc", prompt: "Invitar a tu mejor amigo a nadar este fin de semana", options: ["Would you like to go swimming?", "Do you want to go swimming?"], answer: 1,
+          explain: "Con un amigo, forma casual: do you want to." },
+        { type: "mc", prompt: "Sugerir que tú y un compañero almuercen juntos, ambos van", options: ["Let's have lunch!", "Would you like to have lunch?"], answer: 0,
+          explain: "Let's incluye al que habla." },
+        { type: "fill", prompt: "Traduce: 'Vamos a estudiar juntos.' (usa Let's)", answer: "Let's study together", alt: ["Let's study together."],
+          explain: "Let's + verbo base." }
+      ]
+    },
+    {
+      id: "formulas-summary", num: "39", category: "Repaso general", title: "Resumen: fórmulas para armar oraciones",
+      truco: "Antes de armar cualquier oración, pregúntate: ¿qué tipo de verbo es (to be, have, acción, -ing)? y ¿es afirmación, negación o pregunta? Con esas dos respuestas, la fórmula sale sola.",
+      lesson: "<p><b>Verbos base:</b></p>" +
+        "<div class=\"table-scroll\"><table class=\"lesson-table\"><tr><th></th><th>Afirmación</th><th>Negación</th><th>Pregunta</th></tr>" +
+        "<tr><td>To be</td><td>Sujeto + am/is/are + compl.</td><td>Sujeto + am/is/are + not + compl.</td><td>Am/Is/Are + sujeto + compl.?</td></tr>" +
+        "<tr><td>Have/Has</td><td>Sujeto + have/has + sustantivo</td><td>Sujeto + don't/doesn't + have + sustantivo</td><td>Do/Does + sujeto + have + sustantivo?</td></tr>" +
+        "<tr><td>Present Simple</td><td>Sujeto + verbo (+s si he/she/it)</td><td>Sujeto + don't/doesn't + verbo base</td><td>Do/Does + sujeto + verbo base?</td></tr>" +
+        "<tr><td>Present Progressive</td><td>Sujeto + am/is/are + verbo-ing</td><td>Sujeto + am/is/are + not + verbo-ing</td><td>Am/Is/Are + sujeto + verbo-ing?</td></tr>" +
+        "</table></div>" +
+        "<p><b>Preguntas WH:</b> con verbo normal, WH + do/does + sujeto + verbo base? Con to be, WH + am/is/are + sujeto? Con to be + progressive, WH + am/is/are + sujeto + verbo-ing? Who como sujeto (excepción, sin do/does): Who + verbo (+s)? Posesión: Whose + sustantivo + is/are + this/that/these/those?</p>" +
+        "<p><b>Hay / existencia:</b> There is/are + sustantivo. Negación: There isn't/aren't + sustantivo. Pregunta: Is/Are there + sustantivo?</p>" +
+        "<p><b>Posesión:</b> Sustantivo + 's + cosa poseída (Maria's book). Plural en -s: solo apóstrofe (the girls' room).</p>" +
+        "<p><b>Frequency adverbs:</b> con verbo de acción, sujeto + adverbio + verbo. Con to be, sujeto + to be + adverbio. Con auxiliar, sujeto + auxiliar + adverbio + verbo.</p>" +
+        "<p><b>Peticiones y ofertas:</b> I'd like + sustantivo/to + verbo (educado) vs I want (directo). Let's + verbo base (incluye al que habla). Do you want to + verbo base? (casual). Would you like to + verbo base? (formal).</p>",
+      questions: [
+        { type: "mc", prompt: "Fórmula de negación de to be", options: ["Sujeto + am/is/are + not + complemento", "Sujeto + don't/doesn't + verbo base"], answer: 0,
+          explain: "To be niega agregando not después del verbo." },
+        { type: "mc", prompt: "Fórmula de pregunta de Present Simple", options: ["Am/Is/Are + sujeto + verbo?", "Do/Does + sujeto + verbo base?"], answer: 1,
+          explain: "Present Simple usa do/does como auxiliar de pregunta." },
+        { type: "mc", prompt: "'What are you doing?' sigue la fórmula de...", options: ["WH + do/does + sujeto + verbo base", "WH + am/is/are + sujeto + verbo-ing"], answer: 1,
+          explain: "Present Progressive: WH + to be + sujeto + verbo-ing." },
+        { type: "mc", prompt: "Fórmula para decir que algo existe", options: ["There is/are + sustantivo", "It is/are + sustantivo"], answer: 0,
+          explain: "There is/are indica existencia." },
+        { type: "mc", prompt: "Invitación formal, con desconocidos", options: ["Do you want to...?", "Would you like to...?"], answer: 1,
+          explain: "Would you like to es la forma educada/formal." },
+        { type: "fill", prompt: "Completa la fórmula: Present Simple negativo → Sujeto + ___ + verbo base", answer: "don't/doesn't", alt: ["dont/doesnt", "don't or doesn't"],
+          explain: "Sujeto + don't/doesn't + verbo base." }
+      ]
+    },
+    {
+      id: "going-to", num: "40", category: "Futuro", title: "Going to — planes y predicciones",
+      truco: "Going to = ya lo decidí o ya lo veo venir. Will (tema 41) = lo decido en este momento.",
+      lesson: "<p>Se usa para dos cosas, con la misma estructura:</p>" +
+        "<p><b>1. Plan/intención</b> (decidido ANTES de hablar): I'm going to study tonight. We're going to go shopping.</p>" +
+        "<p><b>2. Predicción</b> (basada en evidencia que ves AHORA): It's going to rain tomorrow. Look at those clouds!</p>" +
+        "<p><b>Por qué se parece al present progressive:</b> 'going to' viene de movimiento literal (I am going to the store = caminando ahora). Si tu plan ya está decidido — ya 'en marcha' en tu mente — usas la misma forma, aunque la acción pase después. Lo que es PRESENTE es tu decisión; lo FUTURO es la acción misma. En español pasa igual: 'Voy a estudiar' usa presente (voy) para algo futuro.</p>" +
+        "<p><b>Fórmula:</b> sujeto + am/is/are + going to + verbo base.</p>" +
+        "<p>Afirmación: I'm going to study tonight. Negación: I'm not going to study tonight. Pregunta: Are you going to study tonight? What are they going to do?</p>",
+      questions: [
+        { type: "mc", prompt: "I ___ study tonight. (plan ya decidido)", options: ["am going to", "will"], answer: 0,
+          explain: "Plan decidido antes de hablar → going to." },
+        { type: "mc", prompt: "Look at those clouds! It ___ rain.", options: ["is going to", "do"], answer: 0,
+          explain: "Predicción con evidencia visible ahora → going to." },
+        { type: "mc", prompt: "Negativo de 'She's going to wear a hat.'", options: ["She isn't going to wear a hat.", "She don't going to wear a hat."], answer: 0,
+          explain: "Sujeto + am/is/are + not + going to + verbo." },
+        { type: "mc", prompt: "Pregunta de 'They are going to have a party.'", options: ["Are they going to have a party?", "Do they going to have a party?"], answer: 0,
+          explain: "Am/is/are + sujeto + going to + verbo?" },
+        { type: "fill", prompt: "Traduce: 'Va a llover mañana.' (usa going to)", answer: "It's going to rain tomorrow", alt: ["It is going to rain tomorrow"],
+          explain: "It's going to + verbo base." }
+      ]
+    },
+    {
+      id: "can", num: "41", category: "Futuro", title: "Can — habilidad y can con verbos de percepción",
+      truco: "Can es la 'super muleta': ability (I can swim), y también reemplaza al -ing con verbos que no lo aceptan (hear, see, smell, taste, feel, understand).",
+      lesson: "<p><b>CAN = poder/saber</b> — algo que eres capaz de hacer.</p>" +
+        "<p><b>Fórmula:</b> sujeto + can + verbo base. Nunca cambia. Nunca 's'. Nunca 'to'. She can fix computers (no 'She cans' ❌, no 'can to fix' ❌).</p>" +
+        "<p><b>Negación:</b> can't (conversación) o cannot (formal/escrito, una sola palabra). I can't speak Japanese. I cannot attend the meeting.</p>" +
+        "<p><b>Pregunta:</b> Can va primero. Can you send a text message? → Yes, I can. / No, I can't.</p>" +
+        "<p><b>Caso especial — CAN + verbos de percepción:</b> hear, see, smell, taste, feel, understand casi nunca usan -ing, aunque hables de 'ahora mismo'. Para estos, CAN llena el espacio: 'I am hearing the music' ❌ → 'I can hear the music' ✅. 'I am understanding you' ❌ → 'I can understand you now' ✅.</p>",
+      questions: [
+        { type: "mc", prompt: "She ___ fix computers. (habilidad)", options: ["can", "cans"], answer: 0,
+          explain: "Can nunca cambia con el sujeto." },
+        { type: "mc", prompt: "Forma correcta: 'no puedo nadar'", options: ["I can't swim.", "I can't to swim."], answer: 0,
+          explain: "Nunca 'to' después de can/can't." },
+        { type: "mc", prompt: "'Ahora mismo escucho la música' (right now)", options: ["I am hearing the music.", "I can hear the music."], answer: 1,
+          explain: "Hear casi nunca usa -ing; can llena el espacio." },
+        { type: "mc", prompt: "Pregunta correcta para 'they can fix computers'", options: ["Can they fix computers?", "Do they can fix computers?"], answer: 0,
+          explain: "Can va primero, sin do/does." },
+        { type: "fill", prompt: "Traduce: 'Puedo entenderte ahora.' (usa can)", answer: "I can understand you now", alt: ["I can understand you now."],
+          explain: "Understand casi nunca usa -ing; can + verbo base." }
+      ]
+    },
+    {
+      id: "will", num: "42", category: "Futuro", title: "Will — predicciones, promesas, decisiones instantáneas",
+      truco: "Will = lo decido AHORA (o predigo/prometo). Going to = ya lo tenía decidido o ya lo veo venir.",
+      lesson: "<p><b>WILL tiene tres usos</b>, el contexto dice cuál:</p>" +
+        "<p><b>1. Predicción</b> (lo que crees que pasará): I think it will rain tomorrow. Palabras señal: I think, I believe, probably, maybe.</p>" +
+        "<p><b>2. Promesa</b> (compromiso con alguien): I'll call you later. I won't tell anyone.</p>" +
+        "<p><b>3. Decisión instantánea</b> (decides en el momento, sin plan previo): I'll take it! The phone is ringing — I'll get it!</p>" +
+        "<p><b>Fórmula:</b> sujeto + will + verbo base. Igual para todos los sujetos. Sin S. Sin TO. Contracción: I'll, you'll, he'll, she'll, we'll, they'll. Negativo: <b>won't</b> (= will + not, irregular).</p>" +
+        "<p><b>Will vs Going To:</b> para predicciones son intercambiables ('I think it will rain' = 'I think it's going to rain'). Solo will funciona para decisiones instantáneas ('I'll take it!' — going to necesitaría un plan de antes). Se prefiere going to cuando ya lo planeaste antes ('I'm going to study tonight'). Se prefiere will para promesas espontáneas ('I'll help you').</p>",
+      questions: [
+        { type: "mc", prompt: "'The phone is ringing... I ___ get it!' (decisión instantánea)", options: ["will", "am going to"], answer: 0,
+          explain: "Decisión en el momento → will, no going to." },
+        { type: "mc", prompt: "Negativo de 'I will tell anyone.'", options: ["I won't tell anyone.", "I willn't tell anyone."], answer: 0,
+          explain: "Won't es la contracción correcta (irregular)." },
+        { type: "mc", prompt: "'I think it ___ rain tomorrow.' (predicción)", options: ["will", "am"], answer: 0,
+          explain: "I think + will = predicción." },
+        { type: "mc", prompt: "Promesa: 'Te lo prometo, no voy a decir nada.'", options: ["I promise I won't say anything.", "I promise I don't say anything."], answer: 0,
+          explain: "Promesa = will/won't." },
+        { type: "fill", prompt: "Traduce: 'Te ayudaré.' (promesa espontánea, usa 'll)", answer: "I'll help you", alt: ["I will help you"],
+          explain: "Will para promesas/decisiones espontáneas." }
+      ]
+    },
+    {
+      id: "three-futures", num: "43", category: "Futuro", title: "Tres formas de hablar del futuro (comparación)",
+      truco: "¿Horario que no depende de mí? → Simple. ¿Ya quedé con alguien? → Progressive. ¿Mi plan/intención en general? → Going to.",
+      lesson: "<p>Además de will y going to, el <b>present simple</b> y el <b>present progressive</b> también se usan para el futuro — cada uno con un trabajo distinto:</p>" +
+        "<div class=\"table-scroll\"><table class=\"lesson-table\"><tr><th>Forma</th><th>Uso</th><th>Ejemplo</th></tr>" +
+        "<tr><td>Present Simple</td><td>Algo programado, horario fijo (no personal)</td><td>The train leaves at 9:00 tomorrow.</td></tr>" +
+        "<tr><td>Present Progressive</td><td>Un plan o arreglo ya organizado con alguien</td><td>I'm having dinner with my sister tonight.</td></tr>" +
+        "<tr><td>Going to</td><td>Un plan o intención, quizás menos específico</td><td>We're going to watch a movie this weekend.</td></tr>" +
+        "</table></div>" +
+        "<p>Más ejemplos: The museum opens at 10 on Sundays (horario fijo → Simple). She's meeting her boss at 3pm (arreglo con alguien → Progressive). He's going to call you later (intención → Going to).</p>",
+      questions: [
+        { type: "mc", prompt: "'The train leaves at 9:00 tomorrow.' — ¿qué forma es?", options: ["Present Simple (horario)", "Going to (intención)"], answer: 0,
+          explain: "Horario fijo, no depende de la persona → Present Simple." },
+        { type: "mc", prompt: "'I'm having dinner with my sister tonight.' — ¿qué forma es?", options: ["Present Progressive (arreglo)", "Present Simple (horario)"], answer: 0,
+          explain: "Arreglo ya organizado con alguien → Present Progressive." },
+        { type: "mc", prompt: "'We're going to watch a movie this weekend.' — ¿qué forma es?", options: ["Going to (intención)", "Present Simple (horario)"], answer: 0,
+          explain: "Plan/intención general → Going to." },
+        { type: "mc", prompt: "'The museum opens at 10 on Sundays.' — ¿qué forma es?", options: ["Present Simple (horario)", "Present Progressive (arreglo)"], answer: 0,
+          explain: "Horario fijo del museo → Present Simple." },
+        { type: "fill", prompt: "Traduce: 'Me reúno con mi jefe a las 3.' (arreglo con alguien, usa Progressive)", answer: "I'm meeting my boss at 3", alt: ["I am meeting my boss at 3"],
+          explain: "Arreglo con alguien específico → Present Progressive." }
+      ]
+    },
+    {
+      id: "was-were", num: "44", category: "Pasado simple", title: "Was / Were (pasado de to be)",
+      truco: "La misma lógica de IS/ARE pero en pasado. I/He/She/It → was. You/We/They → were.",
+      lesson: "<p>WAS y WERE son el pasado de TO BE.</p>" +
+        "<div class=\"table-scroll\"><table class=\"lesson-table\"><tr><th>Pronombre</th><th>Presente</th><th>Pasado</th></tr>" +
+        "<tr><td>I</td><td>am</td><td>was</td></tr>" +
+        "<tr><td>He / She / It</td><td>is</td><td>was</td></tr>" +
+        "<tr><td>You / We / They</td><td>are</td><td>were</td></tr>" +
+        "</table></div>" +
+        "<p><b>Afirmación:</b> I was tired. She was at work. They were happy.</p>" +
+        "<p><b>Negación:</b> I wasn't home. He wasn't ready. They weren't here.</p>" +
+        "<p><b>Pregunta:</b> Was she at school? Were they on time?</p>" +
+        "<p><b>Palabras señal del pasado:</b> yesterday, last night, last week, last year, in 2020, ago, this morning.</p>" +
+        "<p><b>Error común:</b> 'They was happy' ❌ → 'They were happy' ✅. No existe contracción positiva ('I was' nunca se contrae).</p>",
+      questions: [
+        { type: "fill", prompt: "I ___ very tired yesterday.", answer: "was", explain: "I → was (pasado de am)." },
+        { type: "fill", prompt: "They ___ at the party last night.", answer: "were", explain: "They → were (pasado de are)." },
+        { type: "mc", prompt: "She ___ at school this morning.", options: ["was", "were"], answer: 0,
+          explain: "She (singular) → was." },
+        { type: "mc", prompt: "We ___ ready for the class last Monday.", options: ["was", "were"], answer: 1,
+          explain: "We → were." },
+        { type: "mc", prompt: "Negativo: 'He ___ at work yesterday.'", options: ["wasn't", "weren't"], answer: 0,
+          explain: "He (singular) → wasn't." },
+        { type: "mc", prompt: "Negativo: 'They ___ happy with the results.'", options: ["wasn't", "weren't"], answer: 1,
+          explain: "They (plural) → weren't." },
+        { type: "mc", prompt: "Pregunta: '___ you at home last night?'", options: ["Was", "Were"], answer: 1,
+          explain: "You → Were: Were you at home last night?" },
+        { type: "fill", prompt: "Traduce: '¿Dónde estaba ella ayer?' (WH + was)", answer: "Where was she yesterday", alt: ["Where was she yesterday?"],
+          explain: "WH (Where) + was + sujeto (she): Where was she yesterday?" }
+      ]
+    },
+    {
+      id: "three-tenses", num: "45", category: "Pasado simple", title: "Los 3 tiempos de TO BE: am/is/are — was/were — will be",
+      truco: "Mismo sujeto, solo cambia el verbo según el tiempo: am/is/are (ahora), was/were (antes), will be (después).",
+      lesson: "<p>TO BE tiene una forma para cada tiempo:</p>" +
+        "<div class=\"table-scroll\"><table class=\"lesson-table\"><tr><th>Tiempo</th><th>Forma</th><th>Ejemplo</th></tr>" +
+        "<tr><td>Presente</td><td>am / is / are</td><td>I am a student. She is tired.</td></tr>" +
+        "<tr><td>Pasado</td><td>was / were</td><td>I was a student. She was tired.</td></tr>" +
+        "<tr><td>Futuro</td><td>will be</td><td>I will be ready. She will be here.</td></tr>" +
+        "</table></div>" +
+        "<p><b>Vocabulario de transporte:</b> car, bus, train, subway, airplane, motorcycle, bicycle, boat.</p>" +
+        "<p>Preposición: <b>by</b> + transporte (by bus, by car). A pie: <b>on foot</b>.</p>" +
+        "<p><b>Frases útiles:</b> Me too! / Me neither! / Really? / I think so. / I don't think so.</p>",
+      questions: [
+        { type: "mc", prompt: "Presente: 'She ___ a teacher.'", options: ["is", "was"], answer: 0, explain: "Presente → is." },
+        { type: "mc", prompt: "Pasado: 'She ___ a teacher (last year).'", options: ["is", "was"], answer: 1, explain: "Pasado → was." },
+        { type: "fill", prompt: "Futuro: 'She ___ ready tomorrow.' (usa will be)", answer: "will be", explain: "Futuro con will → will be." },
+        { type: "mc", prompt: "Pasado: 'They ___ at the office yesterday.'", options: ["are", "were"], answer: 1, explain: "They + pasado → were." },
+        { type: "mc", prompt: "¿Cómo se dice 'voy en autobús'?", options: ["I go by bus.", "I go in bus."], answer: 0,
+          explain: "Transporte = by: I go by bus. Nunca 'in bus'." },
+        { type: "mc", prompt: "'A pie' en inglés:", options: ["by foot", "on foot"], answer: 1,
+          explain: "A pie = on foot (no 'by foot')." },
+        { type: "mc", prompt: "Tu amigo dice: 'I was tired yesterday.' Tú también. Respondes:", options: ["Me too!", "Me neither!"], answer: 0,
+          explain: "Me too = yo también (afirmativo). Me neither = yo tampoco (negativo)." },
+        { type: "fill", prompt: "Traduce: 'Estaban en casa anoche.' (They, pasado)", answer: "They were at home last night", alt: ["They were home last night"],
+          explain: "They + pasado → were." }
+      ]
+    },
+    {
+      id: "pronunciation", num: "46", category: "Pronunciación", title: "Pronunciación: familias de sonidos clave",
+      truco: "Las letras en inglés no siempre suenan como se escriben. Aprende las familias: -ture suena 'cher', -ough tiene 7 sonidos distintos.",
+      lesson: "<p>Algunos grupos de letras tienen sonidos fijos que vale la pena memorizar:</p>" +
+        "<div class=\"table-scroll\"><table class=\"lesson-table\"><tr><th>Grupo</th><th>Sonido</th><th>Ejemplos</th></tr>" +
+        "<tr><td>-ture</td><td>'cher'</td><td>picture, future, nature, adventure</td></tr>" +
+        "<tr><td>-ire</td><td>'aier'</td><td>fire, hire, tire, inspire</td></tr>" +
+        "<tr><td>oo (largo)</td><td>'uu'</td><td>food, school, cool, moon</td></tr>" +
+        "<tr><td>oo (corto)</td><td>'u'</td><td>book, look, cook, good</td></tr>" +
+        "<tr><td>ph</td><td>'f'</td><td>phone, photo, alphabet</td></tr>" +
+        "<tr><td>wh</td><td>'w' o 'j'</td><td>what, where (w); who, whole (j)</td></tr>" +
+        "<tr><td>ch</td><td>'ch' o 'k'</td><td>chair, check (ch); school, echo (k)</td></tr>" +
+        "<tr><td>dge</td><td>'dch'</td><td>bridge, fridge, judge, edge</td></tr>" +
+        "</table></div>" +
+        "<p><b>-OUGH tiene 7 sonidos diferentes:</b> through (uu) · though (ou) · thought (ot) · tough (af) · cough (of) · rough (af) · enough (inaf)</p>" +
+        "<p><b>Abreviaciones comunes:</b> Mr. = Mister, Mrs. = Missus (casada), Ms. = Miz (neutral), Dr. = Doctor, ASAP = As Soon As Possible.</p>",
+      questions: [
+        { type: "mc", prompt: "¿Cómo suena la terminación -ture en 'picture'?", options: ["'ture' como en español", "'cher'"], answer: 1,
+          explain: "-ture siempre suena 'cher': pic-cher, fu-cher, na-cher." },
+        { type: "mc", prompt: "'ph' en 'phone' suena como...", options: ["p", "f"], answer: 1,
+          explain: "ph siempre suena 'f': phone, photo, alphabet." },
+        { type: "mc", prompt: "¿Cuál 'oo' suena diferente al resto?", options: ["food", "book", "school", "moon"], answer: 1,
+          explain: "book tiene sonido corto ('u'). food/school/moon tienen sonido largo ('uu')." },
+        { type: "mc", prompt: "'wh' en 'who' suena como...", options: ["w (like 'what')", "j (like 'you')"], answer: 1,
+          explain: "En 'who' y 'whole', la w es muda y suena 'j': juu." },
+        { type: "mc", prompt: "'ch' en 'school' suena como...", options: ["ch (como 'chair')", "k (como 'cool')"], answer: 1,
+          explain: "En school y echo, ch suena como 'k'." },
+        { type: "mc", prompt: "Mrs. se pronuncia como...", options: ["Missis", "Missus"], answer: 1,
+          explain: "Mrs. = Missus. Se usa para mujeres casadas." },
+        { type: "mc", prompt: "'though' rima con...", options: ["go", "off"], answer: 0,
+          explain: "though suena 'dou', rima con go/show/know." }
+      ]
+    },
+    {
+      id: "common-errors", num: "47", category: "Repaso general", title: "Final Recap: 10 errores comunes del curso A1",
+      truco: "Los errores más frecuentes tienen un patrón: confundir IS/ARE, olvidar la -s en 3ra persona, y mezclar tiempos verbales.",
+      lesson: "<p>Los 10 errores más comunes que aparecieron en el curso — corrección y explicación:</p>" +
+        "<div class=\"table-scroll\"><table class=\"lesson-table\"><tr><th>❌ Error</th><th>✅ Correcto</th><th>¿Por qué?</th></tr>" +
+        "<tr><td>He cans swim</td><td>He can swim</td><td>Can nunca lleva -s</td></tr>" +
+        "<tr><td>She don't like it</td><td>She doesn't like it</td><td>He/She/It → doesn't</td></tr>" +
+        "<tr><td>They was happy</td><td>They were happy</td><td>They → were (plural)</td></tr>" +
+        "<tr><td>There is many buses</td><td>There are many buses</td><td>Buses es plural → there are</td></tr>" +
+        "<tr><td>I go in bus</td><td>I go by bus</td><td>Transporte → by</td></tr>" +
+        "<tr><td>I can to swim</td><td>I can swim</td><td>Después de can, verbo base sin 'to'</td></tr>" +
+        "<tr><td>I am like coffee</td><td>I like coffee</td><td>Like es acción, no identidad</td></tr>" +
+        "<tr><td>Does she plays?</td><td>Does she play?</td><td>Después de does, verbo base sin -s</td></tr>" +
+        "<tr><td>What you are doing?</td><td>What are you doing?</td><td>To be va antes del sujeto en preguntas</td></tr>" +
+        "<tr><td>I don't never go</td><td>I never go</td><td>Never ya es negativo</td></tr>" +
+        "</table></div>",
+      questions: [
+        { type: "mc", prompt: "¿Cuál está bien escrita?", options: ["He cans swim.", "He can swim."], answer: 1,
+          explain: "Can nunca lleva -s, para ningún sujeto." },
+        { type: "mc", prompt: "¿Cuál está bien escrita?", options: ["She don't like it.", "She doesn't like it."], answer: 1,
+          explain: "He/She/It → doesn't (no don't)." },
+        { type: "mc", prompt: "¿Cuál está bien escrita?", options: ["They was happy.", "They were happy."], answer: 1,
+          explain: "They (plural) → were, nunca was." },
+        { type: "mc", prompt: "¿Cuál está bien escrita?", options: ["There is many buses.", "There are many buses."], answer: 1,
+          explain: "Buses es plural → There are." },
+        { type: "mc", prompt: "¿Cuál está bien escrita?", options: ["I go in bus.", "I go by bus."], answer: 1,
+          explain: "Transporte → by: by bus, by car, by train." },
+        { type: "mc", prompt: "¿Cuál está bien escrita?", options: ["I can to swim.", "I can swim."], answer: 1,
+          explain: "Después de can, verbo base directo sin 'to'." },
+        { type: "mc", prompt: "¿Cuál está bien escrita?", options: ["Does she plays soccer?", "Does she play soccer?"], answer: 1,
+          explain: "Después de does, el verbo vuelve a su forma base: play, no plays." },
+        { type: "mc", prompt: "¿Cuál está bien escrita?", options: ["What you are doing?", "What are you doing?"], answer: 1,
+          explain: "En preguntas, to be se mueve antes del sujeto." },
+        { type: "mc", prompt: "¿Cuál está bien escrita?", options: ["I don't never go.", "I never go."], answer: 1,
+          explain: "Never ya es negativo, no se puede combinar con don't." },
+        { type: "fill", prompt: "Corrige: 'I am like coffee.'", answer: "I like coffee", alt: ["I like coffee."],
+          explain: "Like es una acción/gusto. Nunca se usa am/is/are con like." }
+      ]
+    },
+    {
+      id: "progressive-vs-simple-do", num: "48", category: "Presente progresivo", title: "Do/Does vs am/is/are: cuándo usar cada auxiliar",
+      truco: "¿Ves -ing? El auxiliar es am/is/are. ¿Ves verbo base? El auxiliar es do/does. Nunca se mezclan.",
+      lesson: "<p>El error más común es mezclar do/does con el Present Progressive. La regla es simple:</p>" +
+        "<div class=\"table-scroll\"><table class=\"lesson-table\"><tr><th>Tiempo</th><th>Auxiliar</th><th>Verbo</th><th>Ejemplo</th></tr>" +
+        "<tr><td>Present Simple</td><td>do / does</td><td>base (sin -ing)</td><td>She doesn't work here.</td></tr>" +
+        "<tr><td>Present Progressive</td><td>am / is / are</td><td>verbo + -ing</td><td>She isn't working right now.</td></tr>" +
+        "</table></div>" +
+        "<p><b>Negación:</b></p>" +
+        "<p>Simple → sujeto + don't/doesn't + verbo base: 'I <b>don't</b> eat meat.'</p>" +
+        "<p>Progressive → sujeto + am/is/are + not + verbo-ing: 'I<b>'m not</b> eating right now.'</p>" +
+        "<p><b>Pregunta:</b></p>" +
+        "<p>Simple → do/does + sujeto + verbo base: '<b>Does</b> she work here?'</p>" +
+        "<p>Progressive → am/is/are + sujeto + verbo-ing: '<b>Is</b> she working right now?'</p>" +
+        "<p><b>Recuerda:</b> to be y can nunca necesitan do/does. Cuando ya hay un auxiliar propio, do/does no entra.</p>",
+      questions: [
+        { type: "mc", prompt: "Negativo: 'She ___ working right now.'", options: ["doesn't", "isn't"], answer: 1,
+          explain: "Progressive → auxiliar es to be: She isn't working." },
+        { type: "mc", prompt: "Negativo: 'She ___ work on Sundays.'", options: ["doesn't", "isn't"], answer: 0,
+          explain: "Simple (hábito) → auxiliar es do/does: She doesn't work." },
+        { type: "mc", prompt: "Pregunta: '___ she eating lunch?'", options: ["Does", "Is"], answer: 1,
+          explain: "eating tiene -ing → auxiliar es to be: Is she eating?" },
+        { type: "mc", prompt: "Pregunta: '___ she eat lunch at noon?'", options: ["Does", "Is"], answer: 0,
+          explain: "eat sin -ing, hábito → auxiliar es do/does: Does she eat?" },
+        { type: "mc", prompt: "¿Cuál está bien formada?", options: ["I don't studying.", "I'm not studying."], answer: 1,
+          explain: "Con -ing nunca se usa don't — se usa am/is/are + not." },
+        { type: "mc", prompt: "¿Cuál está bien formada?", options: ["Do you eating?", "Are you eating?"], answer: 1,
+          explain: "Con -ing la pregunta se forma moviendo to be, no usando do." },
+        { type: "mc", prompt: "'Right now' en una oración es señal de...", options: ["Present Simple → do/does", "Present Progressive → am/is/are"], answer: 1,
+          explain: "Right now = ahora mismo → Progressive → auxiliar am/is/are." },
+        { type: "mc", prompt: "'Every day' en una oración es señal de...", options: ["Present Simple → do/does", "Present Progressive → am/is/are"], answer: 0,
+          explain: "Every day = rutina → Simple → auxiliar do/does." },
+        { type: "mc", prompt: "'Does she working?' tiene un error. El verbo tiene -ing, entonces el auxiliar correcto es...", options: ["Does she work?", "Is she working?"], answer: 1,
+          explain: "Working tiene -ing → el auxiliar debe ser to be: Is she working? (Does she work? es Present Simple, un tiempo diferente)." },
+        { type: "fill", prompt: "Corrige: 'I am not work today.' (mantén to be, agrega -ing al verbo)", answer: "I am not working today", alt: ["I'm not working today"],
+          explain: "Con to be como auxiliar, el verbo necesita -ing: I'm not working." }
+      ]
+    }
+  ];
