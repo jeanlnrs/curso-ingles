@@ -666,6 +666,102 @@ Ejemplos comparados:
 
 **Truco:** "¿Es un horario que no depende de mí (tren, tienda, cine)? → Simple. ¿Ya quedé con alguien específico? → Progressive. ¿Es mi plan/intención en general? → Going to."
 
+## 44. Was / Were (pasado de to be)
+WAS y WERE son el pasado de TO BE.
+
+| Pronombre | Presente | Pasado |
+|---|---|---|
+| I | am | was |
+| He / She / It | is | was |
+| You / We / They | are | were |
+
+Afirmación: I was tired. She was at work. They were happy.
+
+Negación: I wasn't home. He wasn't ready. They weren't here.
+
+Pregunta: Was she at school? Were they on time?
+
+Palabras señal del pasado: yesterday, last night, last week, last year, in 2020, ago, this morning.
+
+**Truco:** "La misma lógica de IS/ARE pero en pasado. I/He/She/It → was. You/We/They → were."
+
+Error común: "They was happy" ❌ → "They were happy" ✅. No existe contracción positiva ("I was" nunca se contrae).
+
+## 45. Los 3 tiempos de TO BE: am/is/are — was/were — will be
+TO BE tiene una forma para cada tiempo:
+
+| Tiempo | Forma | Ejemplo |
+|---|---|---|
+| Presente | am / is / are | I am a student. She is tired. |
+| Pasado | was / were | I was a student. She was tired. |
+| Futuro | will be | I will be ready. She will be here. |
+
+**Truco:** "Mismo sujeto, solo cambia el verbo según el tiempo: am/is/are (ahora), was/were (antes), will be (después)."
+
+Vocabulario de transporte: car, bus, train, subway, airplane, motorcycle, bicycle, boat.
+
+Preposición: **by** + transporte (by bus, by car). A pie: **on foot**.
+
+Frases útiles: Me too! / Me neither! / Really? / I think so. / I don't think so.
+
+## 46. Pronunciación: familias de sonidos clave
+Algunos grupos de letras tienen sonidos fijos que vale la pena memorizar:
+
+| Grupo | Sonido | Ejemplos |
+|---|---|---|
+| -ture | 'cher' | picture, future, nature, adventure |
+| -ire | 'aier' | fire, hire, tire, inspire |
+| oo (largo) | 'uu' | food, school, cool, moon |
+| oo (corto) | 'u' | book, look, cook, good |
+| ph | 'f' | phone, photo, alphabet |
+| wh | 'w' o 'j' | what, where (w); who, whole (j) |
+| ch | 'ch' o 'k' | chair, check (ch); school, echo (k) |
+| dge | 'dch' | bridge, fridge, judge, edge |
+
+**-OUGH tiene 7 sonidos diferentes:** through (uu) · though (ou) · thought (ot) · tough (af) · cough (of) · rough (af) · enough (inaf)
+
+Abreviaciones comunes: Mr. = Mister, Mrs. = Missus (casada), Ms. = Miz (neutral), Dr. = Doctor, ASAP = As Soon As Possible.
+
+**Truco:** "Las letras en inglés no siempre suenan como se escriben. Aprende las familias: -ture suena 'cher', -ough tiene 7 sonidos distintos."
+
+## 47. Final Recap: 10 errores comunes del curso A1
+Los 10 errores más comunes que aparecieron en el curso — corrección y explicación:
+
+| ❌ Error | ✅ Correcto | ¿Por qué? |
+|---|---|---|
+| He cans swim | He can swim | Can nunca lleva -s |
+| She don't like it | She doesn't like it | He/She/It → doesn't |
+| They was happy | They were happy | They → were (plural) |
+| There is many buses | There are many buses | Buses es plural → there are |
+| I go in bus | I go by bus | Transporte → by |
+| I can to swim | I can swim | Después de can, verbo base sin 'to' |
+| I am like coffee | I like coffee | Like es acción, no identidad |
+| Does she plays? | Does she play? | Después de does, verbo base sin -s |
+| What you are doing? | What are you doing? | To be va antes del sujeto en preguntas |
+| I don't never go | I never go | Never ya es negativo |
+
+**Truco:** "Los errores más frecuentes tienen un patrón: confundir IS/ARE, olvidar la -s en 3ra persona, y mezclar tiempos verbales."
+
+## 48. Do/Does vs am/is/are: cuándo usar cada auxiliar
+El error más común es mezclar do/does con el Present Progressive. La regla es simple:
+
+| Tiempo | Auxiliar | Verbo | Ejemplo |
+|---|---|---|---|
+| Present Simple | do / does | base (sin -ing) | She doesn't work here. |
+| Present Progressive | am / is / are | verbo + -ing | She isn't working right now. |
+
+**Negación:**
+- Simple → sujeto + don't/doesn't + verbo base: "I **don't** eat meat."
+- Progressive → sujeto + am/is/are + not + verbo-ing: "I**'m not** eating right now."
+
+**Pregunta:**
+- Simple → do/does + sujeto + verbo base: "**Does** she work here?"
+- Progressive → am/is/are + sujeto + verbo-ing: "**Is** she working right now?"
+
+Recuerda: to be y can nunca necesitan do/does. Cuando ya hay un auxiliar propio, do/does no entra.
+
+**Truco:** "¿Ves -ing? El auxiliar es am/is/are. ¿Ves verbo base? El auxiliar es do/does. Nunca se mezclan."
+
 ---
 
 # Trucos principales
@@ -695,6 +791,11 @@ Ejemplos comparados:
 - **Can:** ability + reemplaza al -ing con hear/see/smell/taste/feel/understand.
 - **Will:** lo decido ahora, predigo, o prometo — nunca S, nunca TO, negativo won't.
 - **3 futuros:** horario fijo → Simple. Arreglo con alguien → Progressive. Plan/intención → Going to.
+- **Was/Were:** misma lógica de is/are pero en pasado. I/He/She/It → was. You/We/They → were.
+- **3 tiempos de to be:** am/is/are (ahora), was/were (antes), will be (después) — mismo sujeto, cambia el verbo.
+- **Pronunciación:** las letras no siempre suenan como se escriben — aprende familias (-ture = "cher", -ough tiene 7 sonidos).
+- **10 errores comunes:** confundir is/are, olvidar la -s en 3ra persona, y mezclar tiempos verbales.
+- **Do/does vs am/is/are:** ¿ves -ing? → am/is/are. ¿ves verbo base? → do/does. Nunca se mezclan.
 
 ---
 
