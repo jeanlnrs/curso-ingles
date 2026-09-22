@@ -6,9 +6,15 @@ import Summary from "./Summary.jsx";
 export default function Board({
   view,
   topic,
+  topics,
+  progress,
+  lastTopicId,
+  reviewTopic,
   qIndex,
   correctCount,
   finishedOnce,
+  justMastered,
+  onSelectTopic,
   onShowLesson,
   onBeginQuiz,
   onRestartQuiz,
@@ -19,7 +25,13 @@ export default function Board({
   if (!topic || view === "intro") {
     return (
       <main className="board">
-        <Intro />
+        <Intro
+          topics={topics}
+          progress={progress}
+          lastTopicId={lastTopicId}
+          reviewTopic={reviewTopic}
+          onSelectTopic={onSelectTopic}
+        />
       </main>
     );
   }
@@ -63,6 +75,7 @@ export default function Board({
         <Summary
           topic={topic}
           correctCount={correctCount}
+          justMastered={justMastered}
           onRestartQuiz={onRestartQuiz}
           onShowLesson={onShowLesson}
           onBackToTopics={onBackToTopics}

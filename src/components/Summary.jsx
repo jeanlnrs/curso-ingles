@@ -1,17 +1,26 @@
-export default function Summary({ topic, correctCount, onRestartQuiz, onShowLesson, onBackToTopics }) {
+import ProgressRing from "./ProgressRing.jsx";
+import Confetti from "./Confetti.jsx";
+
+export default function Summary({ topic, correctCount, justMastered, onRestartQuiz, onShowLesson, onBackToTopics }) {
   const total = topic.questions.length;
-  const message =
-    correctCount === total
-      ? "¡Tema dominado! Repite cuando quieras para reforzarlo."
-      : "Vas bien. Repite el tema para mejorar tu marca o sigue con otro.";
+  const perfect = correctCount === total;
+  const message = perfect
+    ? justMastered
+      ? "¡Tema dominado! Así se hace."
+      : "¡Otra vez perfecto! Repite cuando quieras para reforzarlo."
+    : "Vas bien. Repite el tema para mejorar tu marca o sigue con otro.";
 
   return (
     <div className="summary">
+      {justMastered && <Confetti />}
       <div className="eyebrow">
         Tema {topic.num} · {topic.title} — resultado
       </div>
-      <div className="score mono">
-        {correctCount} <span>/ {total}</span>
+      <div className="summary-score">
+        <ProgressRing percent={total ? correctCount / total : 0} size={72} strokeWidth={6} showCheck />
+        <div className="score mono">
+          {correctCount} <span>/ {total}</span>
+        </div>
       </div>
       <p style={{ color: "var(--ink-soft)", maxWidth: "52ch" }}>{message}</p>
       <div className="truco-box">

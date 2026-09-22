@@ -22,6 +22,32 @@ export function topicStatus(progress, id) {
   return "practiced";
 }
 
+export function topicPercent(progress, id) {
+  const p = progress[id];
+  if (!p || !p.total) return 0;
+  return Math.max(0, Math.min(1, p.bestCorrect / p.total));
+}
+
+const REVIEW_AFTER_DAYS = 7;
+
+export function getReviewTopic(topics, progress) {
+  const now = Date.now();
+  let stalest = null;
+  let stalestAge = -1;
+
+  topics.forEach((t) => {
+    const p = progress[t.id];
+    if (!p || topicStatus(progress, t.id) !== "mastered" || !p.lastPracticedAt) return;
+    const ageDays = (now - new Date(p.lastPracticedAt).getTime()) / (1000 * 60 * 60 * 24);
+    if (ageDays >= REVIEW_AFTER_DAYS && ageDays > stalestAge) {
+      stalestAge = ageDays;
+      stalest = t;
+    }
+  });
+
+  return stalest;
+}
+
 export function normalize(s) {
   return s.trim().toLowerCase().replace(/[.!?]+$/, "").replace(/\s+/g, " ");
 }

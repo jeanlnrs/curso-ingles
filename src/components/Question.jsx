@@ -1,4 +1,4 @@
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { checkFillAnswer } from "../utils/progress.js";
 
 export default function Question({ topic, question, qIndex, onShowLesson, onAnswered, onAdvance, onBackToTopics }) {
@@ -7,6 +7,7 @@ export default function Question({ topic, question, qIndex, onShowLesson, onAnsw
   const [fillValue, setFillValue] = useState("");
   const [isCorrect, setIsCorrect] = useState(false);
   const nextBtnRef = useRef(null);
+  const touchStartX = useRef(null);
 
   function answerMC(i) {
     if (answered) return;
@@ -32,6 +33,35 @@ export default function Question({ topic, question, qIndex, onShowLesson, onAnsw
     if (e.key === "Enter" && !answered) answerFill();
   }
 
+  useEffect(() => {
+    function handleKeyDown(e) {
+      if (e.ctrlKey || e.metaKey || e.altKey) return;
+      if (!answered) {
+        if (question.type !== "mc") return;
+        const num = Number(e.key);
+        if (num >= 1 && num <= question.options.length) {
+          answerMC(num - 1);
+        }
+      } else if (e.key === "Enter" || e.key === " ") {
+        e.preventDefault();
+        onAdvance();
+      }
+    }
+    window.addEventListener("keydown", handleKeyDown);
+    return () => window.removeEventListener("keydown", handleKeyDown);
+  }, [answered, question, onAdvance]);
+
+  function handleTouchStart(e) {
+    touchStartX.current = e.touches[0].clientX;
+  }
+
+  function handleTouchEnd(e) {
+    if (touchStartX.current === null) return;
+    const deltaX = e.changedTouches[0].clientX - touchStartX.current;
+    touchStartX.current = null;
+    if (answered && deltaX < -40) onAdvance();
+  }
+
   const isLast = qIndex + 1 >= topic.questions.length;
   const correctText = question.type === "mc" ? question.options[question.answer] : question.answer;
 
@@ -51,11 +81,19 @@ export default function Question({ topic, question, qIndex, onShowLesson, onAnsw
         <span dangerouslySetInnerHTML={{ __html: topic.truco }} />
       </div>
 
-      <div className="q-progress mono">
-        Pregunta {qIndex + 1} de {topic.questions.length}
+      <div className="q-progress-block">
+        <div className="q-progress mono">
+          Pregunta {qIndex + 1} de {topic.questions.length}
+        </div>
+        <div className="quiz-progress-track">
+          <div
+            className="quiz-progress-fill"
+            style={{ width: `${((qIndex + 1) / topic.questions.length) * 100}%` }}
+          />
+        </div>
       </div>
 
-      <div className="q-card">
+      <div className="q-card" onTouchStart={handleTouchStart} onTouchEnd={handleTouchEnd}>
         <div className="q-prompt" dangerouslySetInnerHTML={{ __html: question.prompt }} />
 
         {question.type === "mc" ? (
@@ -66,6 +104,9 @@ export default function Question({ topic, question, qIndex, onShowLesson, onAnsw
               else if (answered && i === chosenIndex) cls += " incorrect";
               return (
                 <button key={i} type="button" className={cls} disabled={answered} onClick={() => answerMC(i)}>
+                  <span className="option-key mono" aria-hidden="true">
+                    {i + 1}
+                  </span>
                   {opt}
                 </button>
               );
@@ -114,6 +155,9 @@ export default function Question({ topic, question, qIndex, onShowLesson, onAnsw
         <button type="button" className="secondary-btn" onClick={onBackToTopics}>
           Volver a temas
         </button>
+        <div className="kbd-hint mono">
+          {question.type === "mc" ? `1-${question.options.length} · Enter` : "Enter"}
+        </div>
       </div>
     </>
   );
