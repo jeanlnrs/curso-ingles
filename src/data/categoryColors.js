@@ -17,7 +17,7 @@ const COLORS = {
   "Pronunciación": "#059669",
 };
 
-const DEFAULT_COLOR = "#1d4ed8";
+const DEFAULT_COLOR = "#8b5cf6";
 
 export function categoryColor(category) {
   return COLORS[category] || DEFAULT_COLOR;

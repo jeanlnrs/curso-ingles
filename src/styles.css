@@ -1,23 +1,24 @@
 :root {
-  --bg: #0d1117;
-  --surface: #151b24;
-  --surface-2: #1c2430;
-  --border: #273142;
-  --text: #e8ecf3;
-  --muted: #a3adbf;
-  --faint: #748096;
-  --primary: #6d95ff;
-  --primary-soft: #1b2745;
-  --primary-ink: #0b1020;
+  --bg: #100b1c;
+  --surface: #1a1329;
+  --surface-2: #221a35;
+  --border: #34294f;
+  --text: #f0ecf9;
+  --muted: #b3a6cf;
+  --faint: #8577a3;
+  --primary: #ab8ef0;
+  --primary-soft: #241c3a;
+  --primary-ink: #1c1033;
+  --primary-strong: #7c5cd6;
   --success: #4ade80;
   --success-soft: #14301f;
   --danger: #f87171;
   --danger-soft: #3a1717;
   --warn: #fbbf24;
   --warn-soft: #3a2a0c;
-  --shadow: 0 1px 2px rgba(0, 0, 0, 0.3), 0 6px 20px rgba(0, 0, 0, 0.25);
-  --radius: 14px;
-  --radius-sm: 10px;
+  --shadow: 0 1px 2px rgba(0, 0, 0, 0.35), 0 8px 24px rgba(0, 0, 0, 0.3);
+  --radius: 18px;
+  --radius-sm: 13px;
   --sidebar: 268px;
   color-scheme: dark;
 }
@@ -30,7 +31,7 @@ body {
   margin: 0;
   background: var(--bg);
   color: var(--text);
-  font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  font-family: "Sora", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
   font-size: 15px;
   line-height: 1.55;
   -webkit-font-smoothing: antialiased;
@@ -62,8 +63,9 @@ a { color: var(--primary); }
 
 .brand { display: flex; align-items: center; gap: 10px; padding: 4px 6px 14px; border-bottom: 1px solid var(--border); margin-bottom: 4px; }
 .brand-mark {
-  width: 36px; height: 36px; border-radius: 10px; display: grid; place-items: center; flex-shrink: 0;
-  background: var(--primary); color: var(--primary-ink); font-weight: 800; font-size: 0.85rem;
+  width: 36px; height: 36px; border-radius: 50%; display: grid; place-items: center; flex-shrink: 0;
+  background: var(--primary); color: var(--primary-ink);
+  font-weight: 800; font-size: 0.85rem;
 }
 .brand strong { display: block; font-size: 0.95rem; }
 .brand small { display: block; color: var(--muted); font-size: 0.74rem; }
@@ -99,11 +101,12 @@ a { color: var(--primary); }
 }
 
 .nav-item {
-  display: flex; align-items: center; gap: 10px; width: 100%; padding: 8px 10px; border-radius: 10px;
-  border: 0; background: transparent; color: var(--muted); text-align: left; font-weight: 550; font-size: 0.85rem;
+  display: flex; align-items: center; gap: 10px; width: 100%; padding: 9px 12px 9px 9px; border-radius: 10px;
+  border: 0; border-left: 3px solid transparent; background: transparent; color: var(--muted); text-align: left;
+  font-weight: 600; font-size: 0.85rem;
 }
 .nav-item:hover { background: var(--surface-2); color: var(--text); }
-.nav-item.active { background: var(--primary-soft); color: var(--primary); }
+.nav-item.active { background: var(--primary-soft); color: var(--primary); border-left-color: var(--primary); }
 .nav-item svg, .nav-item .icon { width: 18px; flex-shrink: 0; text-align: center; }
 
 .hint { font-size: 0.72rem; color: var(--faint); padding: 2px 4px 0; margin: 0; }
@@ -156,25 +159,25 @@ a { color: var(--primary); }
 /* ---------- badges & hero ---------- */
 
 .badge-letter {
-  width: 34px; height: 34px; border-radius: 10px; display: grid; place-items: center; flex-shrink: 0;
+  width: 34px; height: 34px; border-radius: 50%; display: grid; place-items: center; flex-shrink: 0;
   font-size: 1.05rem; color: #fff; line-height: 1;
 }
-.badge-letter.sm { width: 24px; height: 24px; border-radius: 7px; font-size: 0.8rem; }
-.badge-letter.lg { width: 44px; height: 44px; border-radius: 12px; font-size: 1.3rem; }
+.badge-letter.sm { width: 24px; height: 24px; font-size: 0.8rem; }
+.badge-letter.lg { width: 44px; height: 44px; font-size: 1.3rem; }
 
 .hero {
-  background: linear-gradient(135deg, var(--primary) 0%, #4338ca 100%); color: #fff;
+  background: var(--primary-strong); color: #fff;
   border-radius: var(--radius); padding: clamp(20px, 4vw, 28px);
   display: flex; justify-content: space-between; align-items: center; gap: 24px; flex-wrap: wrap;
 }
-.hero .eyebrow { color: rgba(255, 255, 255, 0.85); }
+.hero .eyebrow { color: rgba(255, 255, 255, 0.8); }
 .hero h2 { color: #fff; }
-.hero p { color: rgba(255, 255, 255, 0.88); max-width: 46ch; margin: 0; }
+.hero p { color: rgba(255, 255, 255, 0.85); max-width: 46ch; margin: 0; }
 .hero-body { display: flex; flex-direction: column; gap: 10px; flex: 1; min-width: 240px; }
 .hero-actions { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 4px; }
-.hero .primary-btn { background: #fff; color: var(--primary); border-color: #fff; }
-.hero .secondary-btn { background: rgba(255, 255, 255, 0.16); color: #fff; border-color: transparent; }
-.hero .secondary-btn:hover { background: rgba(255, 255, 255, 0.26); }
+.hero .primary-btn { background: #fff; color: var(--primary-ink); border-color: #fff; }
+.hero .secondary-btn { background: rgba(255, 255, 255, 0.14); color: #fff; border-color: transparent; }
+.hero .secondary-btn:hover { background: rgba(255, 255, 255, 0.22); }
 
 .hero-ring { position: relative; display: inline-grid; place-items: center; flex-shrink: 0; }
 .hero-ring .hero-ring-label { position: absolute; color: #fff; font-weight: 800; font-size: 1.3rem; letter-spacing: -0.02em; }
@@ -235,7 +238,7 @@ a { color: var(--primary); }
 
 .primary-btn, .start-btn {
   align-self: flex-start; background: var(--primary); color: var(--primary-ink); border: 1px solid var(--primary);
-  border-radius: var(--radius-sm); padding: 12px 20px; font-weight: 650; font-size: 0.95rem; cursor: pointer;
+  border-radius: 999px; padding: 12px 22px; font-weight: 700; font-size: 0.95rem; cursor: pointer;
   min-height: 44px; transition: filter 0.12s ease, transform 0.08s ease;
 }
 .primary-btn:hover, .start-btn:hover { filter: brightness(1.08); }
@@ -243,8 +246,8 @@ a { color: var(--primary); }
 .primary-btn:disabled, .start-btn:disabled { opacity: 0.5; cursor: not-allowed; }
 
 .secondary-btn {
-  background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-sm);
-  padding: 11px 18px; font-weight: 600; font-size: 0.9rem; cursor: pointer; color: var(--text); min-height: 44px;
+  background: var(--surface); border: 1px solid var(--border); border-radius: 999px;
+  padding: 11px 20px; font-weight: 600; font-size: 0.9rem; cursor: pointer; color: var(--text); min-height: 44px;
 }
 .secondary-btn:hover { background: var(--surface-2); }
 

@@ -1,4 +1,4 @@
-const COLORS = ["#1d4ed8", "#4ade80", "#15803d", "#fbbf24", "#93c5fd", "#4338ca"];
+const COLORS = ["#ab8ef0", "#7c5cd6", "#4ade80", "#fbbf24", "#e8ecf3"];
 
 function randomPiece(i) {
   return {
