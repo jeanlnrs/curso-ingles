@@ -13,7 +13,20 @@ export default function Header() {
   );
 }
 
-export function SidebarFoot({ topics, progress, theme, onToggleTheme, streakCount }) {
+export function SidebarNav({ page, onPanel, onEstudiar }) {
+  return (
+    <nav className="sidebar-nav" aria-label="Secciones">
+      <button type="button" className={"nav-item" + (page === "panel" ? " active" : "")} onClick={onPanel}>
+        <span className="icon" aria-hidden="true">🏠</span> Panel
+      </button>
+      <button type="button" className={"nav-item" + (page === "estudiar" ? " active" : "")} onClick={onEstudiar}>
+        <span className="icon" aria-hidden="true">📖</span> Estudiar
+      </button>
+    </nav>
+  );
+}
+
+export function SidebarFoot({ topics, progress, streakCount }) {
   const masteredCount = topics.filter((t) => topicStatus(progress, t.id) === "mastered").length;
   const total = topics.length;
   const percent = total ? masteredCount / total : 0;
@@ -37,15 +50,6 @@ export function SidebarFoot({ topics, progress, theme, onToggleTheme, streakCoun
           </span>
         )}
       </div>
-      <button
-        type="button"
-        className="nav-item"
-        onClick={onToggleTheme}
-        aria-label={theme === "dark" ? "Cambiar a tema claro" : "Cambiar a tema oscuro"}
-      >
-        <span aria-hidden="true">{theme === "dark" ? "☀️" : "🌙"}</span>
-        {theme === "dark" ? "Tema claro" : "Tema oscuro"}
-      </button>
       <p className="hint">Tu progreso se guarda en este navegador.</p>
     </div>
   );

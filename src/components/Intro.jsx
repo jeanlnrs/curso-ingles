@@ -40,8 +40,8 @@ export default function Intro({ topics, progress, lastTopicId, reviewTopic, onSe
   }
 
   return (
-    <div className="intro">
-      <div className="hero">
+    <div className="page-stack">
+      <div className="card hero">
         <div className="hero-body">
           <div className="eyebrow">Tu progreso</div>
           <h2>{allMastered ? "¡Dominaste todos los temas!" : "Bienvenido a tu tablero de práctica"}</h2>
@@ -74,21 +74,21 @@ export default function Intro({ topics, progress, lastTopicId, reviewTopic, onSe
       </div>
 
       <div className="stat-cards">
-        <div className="stat-card mastered">
+        <div className="card stat-card mastered">
           <div className="stat-number mono">{mastered}</div>
           <div className="stat-label">Dominados</div>
         </div>
-        <div className="stat-card practiced">
+        <div className="card stat-card practiced">
           <div className="stat-number mono">{practiced}</div>
           <div className="stat-label">En progreso</div>
         </div>
-        <div className="stat-card new">
+        <div className="card stat-card new">
           <div className="stat-number mono">{newCount}</div>
           <div className="stat-label">Nuevos</div>
         </div>
       </div>
 
-      <div>
+      <div className="card">
         <h3 style={{ marginBottom: 10 }}>Avance por categoría</h3>
         <div className="category-progress">
           {categoryStats.map((c) => (
