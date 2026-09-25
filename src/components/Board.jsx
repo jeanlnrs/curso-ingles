@@ -24,7 +24,7 @@ export default function Board({
 }) {
   if (!topic || view === "intro") {
     return (
-      <main className="board">
+      <div className="board">
         <Intro
           topics={topics}
           progress={progress}
@@ -32,13 +32,13 @@ export default function Board({
           reviewTopic={reviewTopic}
           onSelectTopic={onSelectTopic}
         />
-      </main>
+      </div>
     );
   }
 
   if (view === "lesson") {
     return (
-      <main className="board">
+      <div className="board">
         <Lesson
           topic={topic}
           qIndex={qIndex}
@@ -47,14 +47,14 @@ export default function Board({
           onRestartQuiz={onRestartQuiz}
           onBackToTopics={onBackToTopics}
         />
-      </main>
+      </div>
     );
   }
 
   if (view === "quiz") {
     const question = topic.questions[qIndex];
     return (
-      <main className="board">
+      <div className="board">
         <Question
           key={topic.id + "-" + qIndex}
           topic={topic}
@@ -65,13 +65,13 @@ export default function Board({
           onAdvance={onAdvance}
           onBackToTopics={onBackToTopics}
         />
-      </main>
+      </div>
     );
   }
 
   if (view === "summary") {
     return (
-      <main className="board">
+      <div className="board">
         <Summary
           topic={topic}
           correctCount={correctCount}
@@ -80,9 +80,9 @@ export default function Board({
           onShowLesson={onShowLesson}
           onBackToTopics={onBackToTopics}
         />
-      </main>
+      </div>
     );
   }
 
-  return <main className="board" />;
+  return <div className="board" />;
 }

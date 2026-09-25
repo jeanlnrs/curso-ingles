@@ -4,7 +4,7 @@ import { loadProgress, saveProgress, topicStatus, getReviewTopic } from "./utils
 import { loadTheme, saveTheme, applyTheme } from "./utils/theme.js";
 import { loadLastTopicId, saveLastTopicId } from "./utils/lastTopic.js";
 import { loadStreak, saveStreak, registerActivity } from "./utils/streak.js";
-import Header from "./components/Header.jsx";
+import Header, { SidebarFoot } from "./components/Header.jsx";
 import TopicNav from "./components/TopicNav.jsx";
 import Board from "./components/Board.jsx";
 
@@ -124,14 +124,8 @@ export default function App() {
 
   return (
     <div className="app">
-      <Header
-        topics={TOPICS}
-        progress={progress}
-        theme={theme}
-        onToggleTheme={toggleTheme}
-        streakCount={streak.count}
-      />
-      <div className="layout">
+      <aside className="sidebar">
+        <Header />
         <TopicNav
           categoryOrder={categoryOrder}
           topics={TOPICS}
@@ -139,27 +133,37 @@ export default function App() {
           activeTopicId={selectedTopicId}
           onSelect={selectTopic}
         />
-        <Board
-          view={view}
-          topic={currentTopic}
+        <SidebarFoot
           topics={TOPICS}
           progress={progress}
-          lastTopicId={lastTopicId}
-          reviewTopic={reviewTopic}
-          qIndex={qIndex}
-          correctCount={correctCount}
-          finishedOnce={finishedOnce}
-          justMastered={justMastered}
-          onSelectTopic={selectTopic}
-          onShowLesson={showLesson}
-          onBeginQuiz={beginQuiz}
-          onRestartQuiz={restartQuiz}
-          onAnswered={handleAnswered}
-          onAdvance={advance}
-          onBackToTopics={goToTopics}
+          theme={theme}
+          onToggleTheme={toggleTheme}
+          streakCount={streak.count}
         />
-      </div>
-      <footer className="hint">Tu progreso se guarda en este navegador. Elige un tema para empezar.</footer>
+      </aside>
+      <main className="main">
+        <div className="container">
+          <Board
+            view={view}
+            topic={currentTopic}
+            topics={TOPICS}
+            progress={progress}
+            lastTopicId={lastTopicId}
+            reviewTopic={reviewTopic}
+            qIndex={qIndex}
+            correctCount={correctCount}
+            finishedOnce={finishedOnce}
+            justMastered={justMastered}
+            onSelectTopic={selectTopic}
+            onShowLesson={showLesson}
+            onBeginQuiz={beginQuiz}
+            onRestartQuiz={restartQuiz}
+            onAnswered={handleAnswered}
+            onAdvance={advance}
+            onBackToTopics={goToTopics}
+          />
+        </div>
+      </main>
     </div>
   );
 }

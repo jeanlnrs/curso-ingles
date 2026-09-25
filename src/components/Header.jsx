@@ -1,37 +1,52 @@
 import { topicStatus } from "../utils/progress.js";
 import ProgressRing from "./ProgressRing.jsx";
 
-export default function Header({ topics, progress, theme, onToggleTheme, streakCount }) {
+export default function Header() {
+  return (
+    <div className="brand">
+      <span className="brand-mark" aria-hidden="true">TI</span>
+      <div>
+        <strong>Tablero de Inglés</strong>
+        <small>Practica lo aprendido, un tema a la vez</small>
+      </div>
+    </div>
+  );
+}
+
+export function SidebarFoot({ topics, progress, theme, onToggleTheme, streakCount }) {
   const masteredCount = topics.filter((t) => topicStatus(progress, t.id) === "mastered").length;
   const total = topics.length;
   const percent = total ? masteredCount / total : 0;
 
   return (
-    <header className="top">
-      <div className="title-block">
-        <h1>Tablero de Inglés</h1>
-        <div className="subtitle">Practica lo aprendido, un tema a la vez</div>
-      </div>
-      <div className="overall-progress">
-        {streakCount > 0 && (
-          <div className="streak-pill mono" title={`${streakCount} ${streakCount === 1 ? "día" : "días"} seguidos practicando`}>
-            🔥 {streakCount}
-          </div>
-        )}
-        <ProgressRing percent={percent} size={40} strokeWidth={4} showCheck />
-        <div className="count mono">
-          {masteredCount}/{total} temas dominados
+    <div className="sidebar-foot">
+      <div className="foot-progress">
+        <ProgressRing percent={percent} size={36} strokeWidth={4} showCheck />
+        <div className="foot-progress-text">
+          <span className="count mono">
+            {masteredCount}/{total}
+          </span>
+          <span className="foot-label">temas dominados</span>
         </div>
-        <button
-          type="button"
-          className="theme-toggle"
-          onClick={onToggleTheme}
-          aria-label={theme === "dark" ? "Cambiar a tema claro" : "Cambiar a tema oscuro"}
-          title={theme === "dark" ? "Tema claro" : "Tema oscuro"}
-        >
-          {theme === "dark" ? "☀️" : "🌙"}
-        </button>
+        {streakCount > 0 && (
+          <span
+            className="streak-pill mono"
+            title={`${streakCount} ${streakCount === 1 ? "día" : "días"} seguidos practicando`}
+          >
+            🔥 {streakCount}
+          </span>
+        )}
       </div>
-    </header>
+      <button
+        type="button"
+        className="nav-item"
+        onClick={onToggleTheme}
+        aria-label={theme === "dark" ? "Cambiar a tema claro" : "Cambiar a tema oscuro"}
+      >
+        <span aria-hidden="true">{theme === "dark" ? "☀️" : "🌙"}</span>
+        {theme === "dark" ? "Tema claro" : "Tema oscuro"}
+      </button>
+      <p className="hint">Tu progreso se guarda en este navegador.</p>
+    </div>
   );
 }

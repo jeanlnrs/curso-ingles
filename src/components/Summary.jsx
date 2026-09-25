@@ -22,7 +22,7 @@ export default function Summary({ topic, correctCount, justMastered, onRestartQu
           {correctCount} <span>/ {total}</span>
         </div>
       </div>
-      <p style={{ color: "var(--ink-soft)", maxWidth: "52ch" }}>{message}</p>
+      <p>{message}</p>
       <div className="truco-box">
         <span className="tag">Recuerda</span>
         <span dangerouslySetInnerHTML={{ __html: topic.truco }} />
