@@ -1,5 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import { checkFillAnswer } from "../utils/progress.js";
+import { categoryIcon } from "../data/categoryIcons.js";
+import { categoryColor } from "../data/categoryColors.js";
 
 export default function Question({ topic, question, qIndex, onShowLesson, onAnswered, onAdvance, onBackToTopics }) {
   const [answered, setAnswered] = useState(false);
@@ -69,6 +71,9 @@ export default function Question({ topic, question, qIndex, onShowLesson, onAnsw
     <>
       <div className="eyebrow-row">
         <div className="eyebrow">
+          <span className="badge-letter sm" style={{ background: categoryColor(topic.category) }} aria-hidden="true">
+            {categoryIcon(topic.category)}
+          </span>
           Tema {topic.num} · {topic.title}
         </div>
         <button type="button" className="lesson-link" onClick={onShowLesson}>

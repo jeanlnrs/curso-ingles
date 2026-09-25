@@ -1,5 +1,7 @@
 import ProgressRing from "./ProgressRing.jsx";
 import Confetti from "./Confetti.jsx";
+import { categoryIcon } from "../data/categoryIcons.js";
+import { categoryColor } from "../data/categoryColors.js";
 
 export default function Summary({ topic, correctCount, justMastered, onRestartQuiz, onShowLesson, onBackToTopics }) {
   const total = topic.questions.length;
@@ -14,6 +16,9 @@ export default function Summary({ topic, correctCount, justMastered, onRestartQu
     <div className="summary">
       {justMastered && <Confetti />}
       <div className="eyebrow">
+        <span className="badge-letter sm" style={{ background: categoryColor(topic.category) }} aria-hidden="true">
+          {categoryIcon(topic.category)}
+        </span>
         Tema {topic.num} · {topic.title} — resultado
       </div>
       <div className="summary-score">
