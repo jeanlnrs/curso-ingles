@@ -114,7 +114,7 @@ a { color: var(--primary); }
 /* ---------- main ---------- */
 
 .main { flex: 1; min-width: 0; padding: 28px clamp(16px, 4vw, 44px) 60px; }
-.container { max-width: 860px; margin: 0 auto; }
+.container { max-width: 960px; margin: 0 auto; }
 
 .progress-ring { flex-shrink: 0; }
 .progress-ring .ring-track { stroke: var(--surface-2); }
@@ -346,8 +346,11 @@ a { color: var(--primary); }
 .lesson-content b { color: var(--primary); font-weight: 650; }
 
 .table-scroll { overflow-x: auto; -webkit-overflow-scrolling: touch; border: 1px solid var(--border); border-radius: var(--radius-sm); }
-.lesson-table { border-collapse: collapse; font-size: 0.88rem; min-width: max-content; width: 100%; }
-.lesson-table th, .lesson-table td { padding: 9px 12px; border-bottom: 1px solid var(--border); text-align: left; vertical-align: top; }
+.lesson-table { border-collapse: collapse; font-size: 0.88rem; width: 100%; table-layout: fixed; }
+.lesson-table th, .lesson-table td {
+  padding: 9px 12px; border-bottom: 1px solid var(--border); text-align: left; vertical-align: top;
+  overflow-wrap: break-word; word-break: break-word;
+}
 .lesson-table tr:last-child td { border-bottom: 0; }
 .lesson-table th { background: var(--surface-2); font-weight: 650; color: var(--muted); font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.03em; }
 
