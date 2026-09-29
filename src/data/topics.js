@@ -855,5 +855,85 @@ export const TOPICS = [
         { type: "fill", prompt: "Corrige: 'I am not work today.' (mantén to be, agrega -ing al verbo)", answer: "I am not working today", alt: ["I'm not working today"],
           explain: "Con to be como auxiliar, el verbo necesita -ing: I'm not working." }
       ]
+    },
+    {
+      id: "comparatives-superlatives", num: "49", category: "Comparativos y adverbios", title: "Comparatives / Superlatives",
+      truco: "Corto se estira (-er/-est). Largo se acompaña (more/most). Comparative pide 'than', superlative pide 'the'.",
+      lesson: "<p><b>Comparative</b> compara 2 cosas ('más que'). <b>Superlative</b> compara 3 o más ('el/la más de un grupo').</p>" +
+        "<div class=\"table-scroll\"><table class=\"lesson-table\"><tr><th>Tipo de adjetivo</th><th>Comparative</th><th>Superlative</th><th>Ejemplo</th></tr>" +
+        "<tr><td>1 sílaba</td><td>+ er</td><td>the + est</td><td>tall → taller → the tallest</td></tr>" +
+        "<tr><td>1 sílaba, vocal+consonante final</td><td>dobla consonante + er</td><td>dobla + est</td><td>big → bigger → the biggest</td></tr>" +
+        "<tr><td>2 sílabas terminado en -y</td><td>quita y, + ier</td><td>the + iest</td><td>happy → happier → the happiest</td></tr>" +
+        "<tr><td>2+ sílabas (la mayoría)</td><td>more + adjetivo</td><td>the most + adjetivo</td><td>beautiful → more beautiful → the most beautiful</td></tr>" +
+        "</table></div>" +
+        "<p><b>Irregulares</b> (no siguen regla, hay que memorizarlos):</p>" +
+        "<div class=\"table-scroll\"><table class=\"lesson-table\"><tr><th>Adjetivo</th><th>Comparative</th><th>Superlative</th></tr>" +
+        "<tr><td>good</td><td>better</td><td>the best</td></tr>" +
+        "<tr><td>bad</td><td>worse</td><td>the worst</td></tr>" +
+        "<tr><td>far</td><td>farther/further</td><td>the farthest/furthest</td></tr>" +
+        "<tr><td>little</td><td>less</td><td>the least</td></tr>" +
+        "<tr><td>much/many</td><td>more</td><td>the most</td></tr>" +
+        "</table></div>" +
+        "<p><b>Estructura:</b> Comparative → sujeto + verbo + adjetivo-er/more adjetivo + <b>than</b> + algo. 'She is taller than her brother.'</p>" +
+        "<p>Superlative → sujeto + verbo + <b>the</b> + adjetivo-est/most adjetivo + (in/of + grupo). 'She is the tallest in the class.'</p>" +
+        "<p><b>Less / Least</b> funcionan igual que more/most pero para lo contrario (menor grado): 'This exercise is less difficult than the previous one.' (comparative) · 'This is the least difficult of all.' (superlative). 'Less' y 'least' siempre van con el adjetivo en su forma base, nunca con -er/-est.</p>" +
+        "<p><b>Errores comunes:</b> 'more heavier' ❌ (doble comparativo) → 'heavier' ✅. 'less harder' ❌ → 'less difficult' ✅. 'the baddest' ❌ → 'the worst' ✅ (bad es irregular). 'the most best' ❌ → 'the best' ✅.</p>",
+      questions: [
+        { type: "fill", prompt: "Fast (comparative): 'A car is ___ than a bike.'", answer: "faster",
+          explain: "1 sílaba → +er: fast → faster." },
+        { type: "fill", prompt: "Good (superlative): 'This is ___ restaurant in town.' (usa the)", answer: "the best",
+          explain: "Good es irregular → the best (no 'the goodest')." },
+        { type: "mc", prompt: "'My laptop is ___ than yours.' (heavy)", options: ["more heavier", "heavier"], answer: 1,
+          explain: "No se mezcla more con -er. Solo heavier." },
+        { type: "mc", prompt: "'This exercise is ___ difficult than the previous one.' (menor grado)", options: ["less", "the least"], answer: 0,
+          explain: "Comparando 2 cosas → less (comparative). 'The least' es superlative, para 3+." },
+        { type: "mc", prompt: "'This is ___ difficult exercise of all.' (menor grado, superlative)", options: ["less", "the least"], answer: 1,
+          explain: "Superlative siempre lleva 'the': the least." },
+        { type: "mc", prompt: "Comparative de 'bad':", options: ["badder", "worse"], answer: 1,
+          explain: "Bad es irregular: bad → worse → the worst. Nunca 'badder'." },
+        { type: "mc", prompt: "'Our team had ___ performance of the season.' (bad, superlative)", options: ["the baddest", "the worst"], answer: 1,
+          explain: "Superlative irregular de bad: the worst." },
+        { type: "mc", prompt: "Comparando a 2 personas: 'John speaks English ___ than Mark.' (fluently)", options: ["most fluently", "more fluently"], answer: 1,
+          explain: "Son solo 2 personas → comparative (more), no superlative (most)." },
+        { type: "fill", prompt: "Happy (superlative): 'She is ___ person I know.' (usa the)", answer: "the happiest",
+          explain: "2 sílabas terminado en -y: quita y, +iest → the happiest." },
+        { type: "fill", prompt: "Traduce: 'El oro es más caro que la plata.' (expensive)", answer: "Gold is more expensive than silver",
+          explain: "Expensive es largo (3 sílabas) → more expensive... than." }
+      ]
+    },
+    {
+      id: "adjective-vs-adverb", num: "50", category: "Comparativos y adverbios", title: "Adjective vs Adverb (good/well, sad/sadly)",
+      truco: "¿Describes una persona/cosa (qué es) o una acción (cómo la hace)? Persona/cosa → adjective. Acción → adverb (-ly).",
+      lesson: "<p><b>Adjective</b> describe un sustantivo (una persona o cosa): 'She is <b>sad</b>.' (sad describe a 'she').</p>" +
+        "<p><b>Adverb</b> describe un verbo (cómo se hace una acción). La mayoría se forma adjetivo + <b>-ly</b>: 'She looked at it <b>sadly</b>.' (sadly describe cómo miró).</p>" +
+        "<div class=\"table-scroll\"><table class=\"lesson-table\"><tr><th>Adjective</th><th>Adverb</th><th>Ejemplo con adverb</th></tr>" +
+        "<tr><td>sad</td><td>sadly</td><td>She looked at the vase sadly.</td></tr>" +
+        "<tr><td>dangerous</td><td>dangerously</td><td>He drives very dangerously.</td></tr>" +
+        "<tr><td>quick</td><td>quickly</td><td>She did the test quickly.</td></tr>" +
+        "<tr><td>beautiful</td><td>beautifully</td><td>She sings beautifully.</td></tr>" +
+        "<tr><td>good</td><td><b>well</b> (irregular)</td><td>He plays the piano well.</td></tr>" +
+        "</table></div>" +
+        "<p><b>Caso especial — good/well:</b> 'good' es el adjetivo, pero su adverbio NO es 'goodly' — es <b>well</b>, totalmente irregular. 'She is a good singer' (adjective, describe a 'singer') vs 'She sings well' (adverb, describe cómo canta).</p>" +
+        "<p><b>Verbos de los sentidos (look, smell, sound, taste, feel):</b> cuando describen cómo ES algo (una cualidad), van con adjective, no adverb: 'The roses smell <b>sweet</b>.' (no 'sweetly' — no describe cómo huelen accionando, describe su cualidad).</p>" +
+        "<p><b>Comparative/superlative de adverbios largos (terminados en -ly):</b> igual que con adjetivos largos, usan more/most, nunca -er/-est: 'more fluently', 'the most carefully'.</p>" +
+        "<p><b>Errores comunes:</b> 'He plays good' ❌ → 'He plays well' ✅ (describe la acción de tocar). 'She looked at it sad' ❌ → 'sadly' ✅. 'He drives very dangerous' ❌ → 'dangerously' ✅.</p>",
+      questions: [
+        { type: "mc", prompt: "'He plays the piano ___.' (describe cómo toca)", options: ["good", "well"], answer: 1,
+          explain: "Describe una acción (tocar) → adverb: well (irregular de good)." },
+        { type: "mc", prompt: "'She looked at the vase ___.' (describe cómo miró)", options: ["sad", "sadly"], answer: 1,
+          explain: "Describe la acción de mirar → adverb: sadly." },
+        { type: "mc", prompt: "'He drives very ___.' (describe cómo maneja)", options: ["dangerous", "dangerously"], answer: 1,
+          explain: "Describe una acción (manejar) → adverb: dangerously." },
+        { type: "mc", prompt: "'She is a ___ singer.' (describe al sustantivo 'singer')", options: ["good", "well"], answer: 0,
+          explain: "Describe un sustantivo (singer) → adjective: good." },
+        { type: "mc", prompt: "'The roses smell ___.' (describe la cualidad, no una acción)", options: ["sweet", "sweetly"], answer: 0,
+          explain: "Smell aquí describe una cualidad (cómo son), no una acción → adjective: sweet." },
+        { type: "mc", prompt: "'She did the test ___ and got an A.' (describe cómo lo hizo)", options: ["quick", "quickly"], answer: 1,
+          explain: "Describe la acción de hacer el examen → adverb: quickly." },
+        { type: "mc", prompt: "Comparando a 2 personas: 'John speaks more ___ than Mark.' (fluent, describe cómo habla)", options: ["fluent", "fluently"], answer: 1,
+          explain: "Describe la acción de hablar → adverb: fluently (more fluently, no fluenter)." },
+        { type: "fill", prompt: "Corrige: 'He drives very dangerous.'", answer: "He drives very dangerously",
+          explain: "Dangerous describe una acción (drives) → necesita -ly: dangerously." }
+      ]
     }
   ];

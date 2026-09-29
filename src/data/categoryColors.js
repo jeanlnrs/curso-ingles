@@ -15,6 +15,7 @@ const COLORS = {
   "Futuro": "#9333ea",
   "Pasado simple": "#b45309",
   "Pronunciación": "#059669",
+  "Comparativos y adverbios": "#c026d3",
 };
 
 const DEFAULT_COLOR = "#71717a";

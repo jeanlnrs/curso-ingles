@@ -15,6 +15,7 @@ const ICONS = {
   "Futuro": "🔮",
   "Pasado simple": "🕰️",
   "Pronunciación": "🔊",
+  "Comparativos y adverbios": "⚖️",
 };
 
 const DEFAULT_ICON = "📘";

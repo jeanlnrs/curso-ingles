@@ -762,6 +762,44 @@ Recuerda: to be y can nunca necesitan do/does. Cuando ya hay un auxiliar propio,
 
 **Truco:** "¿Ves -ing? El auxiliar es am/is/are. ¿Ves verbo base? El auxiliar es do/does. Nunca se mezclan."
 
+## 49. Comparatives / Superlatives
+**Comparative** compara 2 cosas ("más que"). **Superlative** compara 3 o más ("el/la más de un grupo").
+
+Reglas según la longitud del adjetivo:
+- 1 sílaba: +er / the +est → tall → taller → the tallest.
+- 1 sílaba, vocal+consonante final: dobla la consonante → big → bigger → the biggest.
+- 2 sílabas terminado en -y: quita y, +ier/+iest → happy → happier → the happiest.
+- 2+ sílabas (la mayoría): more/most + adjetivo → beautiful → more beautiful → the most beautiful.
+
+Irregulares (memorizar): good → better → the best. bad → worse → the worst. far → farther/further → the farthest/furthest. little → less → the least. much/many → more → the most.
+
+Estructura:
+- Comparative: sujeto + verbo + adjetivo-er/more adjetivo + **than** + algo. "She is taller than her brother."
+- Superlative: sujeto + verbo + **the** + adjetivo-est/most adjetivo + (in/of + grupo). "She is the tallest in the class."
+
+**Less/Least** funcionan igual que more/most pero para menor grado, siempre con el adjetivo en su forma base: "This exercise is less difficult than the previous one." (comparative) · "This is the least difficult of all." (superlative).
+
+**Truco:** "Corto se estira (-er/-est). Largo se acompaña (more/most). Comparative pide 'than', superlative pide 'the'."
+
+Errores comunes: "more heavier" ❌ (doble comparativo) → "heavier" ✅. "less harder" ❌ → "less difficult" ✅. "the baddest" ❌ → "the worst" ✅ (bad es irregular). "the most best" ❌ → "the best" ✅.
+
+## 50. Adjective vs Adverb (good/well, sad/sadly)
+**Adjective** describe un sustantivo (una persona o cosa): "She is **sad**." (sad describe a "she").
+
+**Adverb** describe un verbo (cómo se hace una acción). La mayoría se forma adjetivo + **-ly**: "She looked at it **sadly**." (sadly describe cómo miró).
+
+Ejemplos: sad→sadly, dangerous→dangerously, quick→quickly, beautiful→beautifully.
+
+**Caso especial — good/well:** el adverbio de "good" NO es "goodly" — es **well**, totalmente irregular. "She is a good singer" (adjective, describe a "singer") vs "She sings well" (adverb, describe cómo canta).
+
+**Verbos de los sentidos (look, smell, sound, taste, feel):** cuando describen una cualidad (cómo ES algo), van con adjective, no adverb: "The roses smell **sweet**." (no "sweetly").
+
+Comparative/superlative de adverbios largos (-ly): igual que adjetivos largos, usan more/most: "more fluently", "the most carefully".
+
+**Truco:** "¿Describes una persona/cosa (qué es) o una acción (cómo la hace)? Persona/cosa → adjective. Acción → adverb (-ly)."
+
+Errores comunes: "He plays good" ❌ → "He plays well" ✅. "She looked at it sad" ❌ → "sadly" ✅. "He drives very dangerous" ❌ → "dangerously" ✅.
+
 ---
 
 # Trucos principales
@@ -796,6 +834,8 @@ Recuerda: to be y can nunca necesitan do/does. Cuando ya hay un auxiliar propio,
 - **Pronunciación:** las letras no siempre suenan como se escriben — aprende familias (-ture = "cher", -ough tiene 7 sonidos).
 - **10 errores comunes:** confundir is/are, olvidar la -s en 3ra persona, y mezclar tiempos verbales.
 - **Do/does vs am/is/are:** ¿ves -ing? → am/is/are. ¿ves verbo base? → do/does. Nunca se mezclan.
+- **Comparatives/Superlatives:** corto se estira (-er/-est), largo se acompaña (more/most). Comparative pide "than", superlative pide "the".
+- **Adjective vs Adverb:** persona/cosa (qué es) → adjective. Acción (cómo la hace) → adverb (-ly). Good → well (irregular).
 
 ---
 
