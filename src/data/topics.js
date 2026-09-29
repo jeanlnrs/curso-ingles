@@ -877,7 +877,9 @@ export const TOPICS = [
         "<p><b>Estructura:</b> Comparative → sujeto + verbo + adjetivo-er/more adjetivo + <b>than</b> + algo. 'She is taller than her brother.'</p>" +
         "<p>Superlative → sujeto + verbo + <b>the</b> + adjetivo-est/most adjetivo + (in/of + grupo). 'She is the tallest in the class.'</p>" +
         "<p><b>Less / Least</b> funcionan igual que more/most pero para lo contrario (menor grado): 'This exercise is less difficult than the previous one.' (comparative) · 'This is the least difficult of all.' (superlative). 'Less' y 'least' siempre van con el adjetivo en su forma base, nunca con -er/-est.</p>" +
-        "<p><b>Errores comunes:</b> 'more heavier' ❌ (doble comparativo) → 'heavier' ✅. 'less harder' ❌ → 'less difficult' ✅. 'the baddest' ❌ → 'the worst' ✅ (bad es irregular). 'the most best' ❌ → 'the best' ✅.</p>",
+        "<p><b>Fewer / Fewest (nivel avanzado):</b> con sustantivos <b>contables en plural</b> (tema 26), se usa <b>fewer/fewest</b> en vez de less/least: 'There are fewer students this year.' (students se puede contar). Con incontables sí se usa less/least: 'There is less water in the bottle.'</p>" +
+        "<p><b>As + adjetivo + as (igualdad):</b> para decir que dos cosas son iguales, no se usa comparative — se usa la forma base entre 'as...as': 'Tom is as tall as Jerry.' (misma estatura). Negativo: 'This book is not as interesting as that one.'</p>" +
+        "<p><b>Errores comunes:</b> 'more heavier' ❌ (doble comparativo) → 'heavier' ✅. 'less harder' ❌ → 'less difficult' ✅. 'the baddest' ❌ → 'the worst' ✅ (bad es irregular). 'the most best' ❌ → 'the best' ✅. 'as taller as' ❌ → 'as tall as' ✅ (as...as siempre con la forma base).</p>",
       questions: [
         { type: "fill", prompt: "Fast (comparative): 'A car is ___ than a bike.'", answer: "faster",
           explain: "1 sílaba → +er: fast → faster." },
@@ -898,7 +900,46 @@ export const TOPICS = [
         { type: "fill", prompt: "Happy (superlative): 'She is ___ person I know.' (usa the)", answer: "the happiest",
           explain: "2 sílabas terminado en -y: quita y, +iest → the happiest." },
         { type: "fill", prompt: "Traduce: 'El oro es más caro que la plata.' (expensive)", answer: "Gold is more expensive than silver",
-          explain: "Expensive es largo (3 sílabas) → more expensive... than." }
+          explain: "Expensive es largo (3 sílabas) → more expensive... than." },
+        { type: "mc", prompt: "Elige la oración correcta:", options: [
+            "This movie is more good than that one.",
+            "This movie is better than that one.",
+            "This movie is more better than that one.",
+            "This movie is the best than that one."
+          ], answer: 1,
+          explain: "Good es irregular → better. 'More good' y 'more better' son dobles formas; 'the best' no lleva 'than'." },
+        { type: "mc", prompt: "Elige la oración correcta:", options: [
+            "She is the most tall girl in class.",
+            "She is the tallest girl in class.",
+            "She is tallest girl in class.",
+            "She is more tall than the class."
+          ], answer: 1,
+          explain: "Tall es 1 sílaba → tallest. Superlative siempre lleva 'the' (falta en la opción C)." },
+        { type: "mc", prompt: "Hot (comparative):", options: ["hoter", "hotter", "more hot", "most hot"], answer: 1,
+          explain: "1 sílaba, vocal+consonante final → dobla la consonante: hot → hotter." },
+        { type: "mc", prompt: "Easy (comparative):", options: ["easier", "more easy", "easyer", "easilier"], answer: 0,
+          explain: "2 sílabas terminado en -y → quita la y, +ier: easy → easier." },
+        { type: "mc", prompt: "'There are ___ students in this class than last year.' (students = contable, menor cantidad)", options: ["less", "fewer", "the least", "the fewest"], answer: 1,
+          explain: "Students es contable en plural → fewer (no less, que es para incontables)." },
+        { type: "mc", prompt: "'This is one of ___ books I've ever read.' (interesting, superlative)", options: ["the most interesting", "the interestingest", "more interesting", "most interesting"], answer: 0,
+          explain: "Superlative largo → the most + adjetivo. Sin 'the' (opción D) está incompleto." },
+        { type: "mc", prompt: "Far (comparative, distancia):", options: ["farer", "further", "more far", "most far"], answer: 1,
+          explain: "Far es irregular: far → farther/further. 'Farer' y 'more far' no existen." },
+        { type: "mc", prompt: "Elige la oración correcta:", options: [
+            "He is the most fastest runner.",
+            "He is the fastest runner.",
+            "He is most fast runner.",
+            "He is the fast runner."
+          ], answer: 1,
+          explain: "Fast es 1 sílaba → fastest. 'The most fastest' es doble superlativo." },
+        { type: "mc", prompt: "'Of the three routes, this one is ___ dangerous.' (menor grado, comparando 3)", options: ["less", "the least", "more less", "the less"], answer: 1,
+          explain: "Comparando 3 (of the three) → superlative: the least. 'The less' no existe como superlative." },
+        { type: "mc", prompt: "'This laptop is a lot ___ than my old one.' (fast)", options: ["fast", "faster", "more fast", "most fast"], answer: 1,
+          explain: "Comparative de 1 sílaba: fast → faster. 'A lot' solo intensifica, no cambia la regla." },
+        { type: "mc", prompt: "Igualdad: 'Tom is ___ Jerry.' (misma estatura, tall)", options: ["as tall as", "as taller as", "more tall as", "tallest as"], answer: 0,
+          explain: "Para igualdad se usa la forma base del adjetivo: as tall as." },
+        { type: "mc", prompt: "Igualdad negativa: 'This book is not ___ that one.' (interesting)", options: ["as interesting as", "more interesting as", "as more interesting", "interesting as"], answer: 0,
+          explain: "Negativo de igualdad: not as + adjetivo base + as." }
       ]
     },
     {
@@ -913,10 +954,21 @@ export const TOPICS = [
         "<tr><td>beautiful</td><td>beautifully</td><td>She sings beautifully.</td></tr>" +
         "<tr><td>good</td><td><b>well</b> (irregular)</td><td>He plays the piano well.</td></tr>" +
         "</table></div>" +
-        "<p><b>Caso especial — good/well:</b> 'good' es el adjetivo, pero su adverbio NO es 'goodly' — es <b>well</b>, totalmente irregular. 'She is a good singer' (adjective, describe a 'singer') vs 'She sings well' (adverb, describe cómo canta).</p>" +
-        "<p><b>Verbos de los sentidos (look, smell, sound, taste, feel):</b> cuando describen cómo ES algo (una cualidad), van con adjective, no adverb: 'The roses smell <b>sweet</b>.' (no 'sweetly' — no describe cómo huelen accionando, describe su cualidad).</p>" +
+        "<p><b>Caso especial — good/well:</b> 'good' es el adjetivo, pero su adverbio NO es 'goodly' — es <b>well</b>, totalmente irregular. 'She is a good singer' (adjective, describe a 'singer') vs 'She sings well' (adverb, describe cómo canta). Su comparative es también irregular: <b>better</b> (igual que good): 'He plays tennis better than his brother.'</p>" +
+        "<p><b>'Well' también puede ser adjective</b> cuando significa 'sano/de buena salud' (no 'bien hecho'): 'The patient is well again.' = El paciente ya está sano.</p>" +
+        "<p><b>Verbos de los sentidos y de estado (look, smell, sound, taste, feel, seem, become, appear):</b> cuando describen cómo ES algo (una cualidad), van con adjective, no adverb: 'The roses smell <b>sweet</b>.' 'She seems <b>happy</b>.' (no 'sweetly'/'happily' — no describen una acción, describen una cualidad).</p>" +
         "<p><b>Comparative/superlative de adverbios largos (terminados en -ly):</b> igual que con adjetivos largos, usan more/most, nunca -er/-est: 'more fluently', 'the most carefully'.</p>" +
-        "<p><b>Errores comunes:</b> 'He plays good' ❌ → 'He plays well' ✅ (describe la acción de tocar). 'She looked at it sad' ❌ → 'sadly' ✅. 'He drives very dangerous' ❌ → 'dangerously' ✅.</p>",
+        "<p><b>Adverbios engañosos (nivel avanzado):</b> algunos NO se forman con -ly, y agregarles -ly les cambia el significado por completo:</p>" +
+        "<div class=\"table-scroll\"><table class=\"lesson-table\"><tr><th>Palabra</th><th>Significado</th><th>Ejemplo</th></tr>" +
+        "<tr><td>hard</td><td>con esfuerzo (adverb)</td><td>He works hard every day.</td></tr>" +
+        "<tr><td>hardly</td><td>apenas (adverb, ¡no es lo mismo!)</td><td>I hardly know him.</td></tr>" +
+        "<tr><td>late</td><td>tarde (adverb)</td><td>She arrived late.</td></tr>" +
+        "<tr><td>lately</td><td>recientemente (adverb, ¡no es lo mismo!)</td><td>I haven't seen him lately.</td></tr>" +
+        "<tr><td>high</td><td>alto, en altura literal (adverb)</td><td>The kite flew high.</td></tr>" +
+        "<tr><td>highly</td><td>muy, figurado (adverb, ¡no es lo mismo!)</td><td>This book is highly recommended.</td></tr>" +
+        "<tr><td>fast</td><td>rápido — <b>no cambia</b>, es igual como adjective y adverb</td><td>He is a fast runner. / He runs fast.</td></tr>" +
+        "</table></div>" +
+        "<p><b>Errores comunes:</b> 'He plays good' ❌ → 'He plays well' ✅ (describe la acción de tocar). 'She looked at it sad' ❌ → 'sadly' ✅. 'He drives very dangerous' ❌ → 'dangerously' ✅. 'He runs fastly' ❌ → 'He runs fast' ✅ (fast no lleva -ly).</p>",
       questions: [
         { type: "mc", prompt: "'He plays the piano ___.' (describe cómo toca)", options: ["good", "well"], answer: 1,
           explain: "Describe una acción (tocar) → adverb: well (irregular de good)." },
@@ -933,7 +985,37 @@ export const TOPICS = [
         { type: "mc", prompt: "Comparando a 2 personas: 'John speaks more ___ than Mark.' (fluent, describe cómo habla)", options: ["fluent", "fluently"], answer: 1,
           explain: "Describe la acción de hablar → adverb: fluently (more fluently, no fluenter)." },
         { type: "fill", prompt: "Corrige: 'He drives very dangerous.'", answer: "He drives very dangerously",
-          explain: "Dangerous describe una acción (drives) → necesita -ly: dangerously." }
+          explain: "Dangerous describe una acción (drives) → necesita -ly: dangerously." },
+        { type: "mc", prompt: "Elige la oración correcta:", options: [
+            "She seems happily today.",
+            "She seems happy today.",
+            "She seem happy today.",
+            "She seems happily good today."
+          ], answer: 1,
+          explain: "'Seem' es un verbo de estado (como look/smell) → va con adjective: happy, no happily." },
+        { type: "mc", prompt: "'He works ___ every day.' (con mucho esfuerzo)", options: ["hard", "hardly", "harder", "hardly ever"], answer: 0,
+          explain: "'Hard' = con esfuerzo. 'Hardly' significa 'apenas', no es lo mismo." },
+        { type: "mc", prompt: "'I ___ know him, we just met once.' (apenas lo conozco)", options: ["hard", "hardly", "hardest", "more hard"], answer: 1,
+          explain: "'Apenas' = hardly. Ojo: no es el adverbio de 'hard', tiene su propio significado." },
+        { type: "mc", prompt: "'She arrived ___ to the meeting.' (tarde)", options: ["late", "lately", "latest", "more late"], answer: 0,
+          explain: "'Tarde' = late (no lleva -ly)." },
+        { type: "mc", prompt: "'I haven't seen him ___.' (recientemente)", options: ["late", "lately", "later", "latest"], answer: 1,
+          explain: "'Recientemente' = lately. 'Late' + ly cambia el significado por completo." },
+        { type: "mc", prompt: "'He runs ___.' (describe cómo corre)", options: ["fast", "fastly", "fastest", "more fast"], answer: 0,
+          explain: "'Fast' no cambia de forma — es igual como adjective y adverb. 'Fastly' no existe." },
+        { type: "mc", prompt: "'The kite flew ___ in the sky.' (altura literal)", options: ["high", "highly", "higher", "highest"], answer: 0,
+          explain: "Altura literal → high. 'Highly' es figurado ('muy'), como en 'highly recommended'." },
+        { type: "mc", prompt: "'This soup tastes ___.' (describe la cualidad, no una acción)", options: ["delicious", "deliciously", "more delicious", "most deliciously"], answer: 0,
+          explain: "Taste aquí describe una cualidad (cómo sabe) → adjective: delicious." },
+        { type: "mc", prompt: "'He plays tennis ___ than his brother.' (well, comparative)", options: ["weller", "more well", "better", "gooder"], answer: 2,
+          explain: "El comparative de well (y de good) es irregular: better." },
+        { type: "mc", prompt: "Elige la oración correcta:", options: [
+            "He looked at the sunset happy.",
+            "He looked at the sunset happily.",
+            "He looked at the sunset happilyly.",
+            "He looked the sunset happily."
+          ], answer: 1,
+          explain: "'Look at' describe una acción (cómo miró) → adverb: happily. (La opción D le falta 'at')." }
       ]
     }
   ];
